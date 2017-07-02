@@ -1,0 +1,9 @@
+{
+  "name": "flatpage-template",
+  "version": "1.0.0",
+  "description": "A good starting point for developing flatpages.",
+  "main": "index.js",
+  "repository": "https://github.com/daily-bruin/flatpage-template.git",
+  "author": "Nathan Smith <nathan@nathansmith.io>",
+  "license": "MIT"
+}
