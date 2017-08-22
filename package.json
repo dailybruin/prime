@@ -9,6 +9,9 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
-    "gulp": "^3.9.1"
+    "eslint": "^4.5.0",
+    "eslint-config-uclaradio": "^1.0.8",
+    "gulp": "^3.9.1",
+    "prettier": "^1.5.3"
   }
 }

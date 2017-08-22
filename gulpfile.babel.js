@@ -1,5 +1,5 @@
-import gulp from "gulp";
+import gulp from 'gulp';
 
-gulp.task("default", () => {
-  console.log("hello");
+gulp.task('default', () => {
+  console.log('hello');
 });
