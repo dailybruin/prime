@@ -5,5 +5,10 @@
   "main": "index.js",
   "repository": "https://github.com/daily-bruin/flatpage-template.git",
   "author": "Nathan Smith <nathan@nathansmith.io>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "gulp": "^3.9.1"
+  }
 }
