@@ -12,6 +12,7 @@
     "eslint": "^4.5.0",
     "eslint-config-uclaradio": "^1.0.8",
     "gulp": "^3.9.1",
+    "htmlhint": "^0.9.13",
     "prettier": "^1.5.3"
   }
 }
