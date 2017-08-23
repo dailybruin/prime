@@ -17,6 +17,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "htmlhint": "^0.9.13",
-    "prettier": "^1.5.3"
+    "prettier": "^1.5.3",
+    "webpack-stream": "^4.0.0"
   }
 }
