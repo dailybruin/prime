@@ -4,10 +4,15 @@ import sass from 'gulp-sass';
 import webpack from 'webpack-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import bs from 'browser-sync';
+import del from 'del';
 
 const browserSync = bs.create();
 
-gulp.task('default', () => {});
+function clean() {
+  return del(['build/']);
+}
+
+gulp.task('default', clean);
 
 gulp.task('styles', () =>
   gulp
