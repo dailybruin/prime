@@ -9,9 +9,11 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
+    "browser-sync": "^2.18.13",
     "eslint": "^4.5.0",
     "eslint-config-uclaradio": "^1.0.8",
-    "gulp": "^3.9.1",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-nunjucks-render": "^2.2.1",
     "htmlhint": "^0.9.13",
     "prettier": "^1.5.3"
   }
