@@ -1,6 +1,10 @@
 import gulp from 'gulp';
 import nunjucksRender from 'gulp-nunjucks-render';
+
+// Styling related packages
 import sass from 'gulp-sass';
+import postcss from 'gulp-postcss';
+import autoprefixer from 'autoprefixer';
 import webpack from 'webpack-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import bs from 'browser-sync';
@@ -19,6 +23,7 @@ gulp.task('styles', () =>
     .src('./src/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css'))
 );
