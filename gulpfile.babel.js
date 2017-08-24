@@ -16,8 +16,6 @@ function clean() {
   return del(['build/']);
 }
 
-gulp.task('default', clean);
-
 gulp.task('styles', () =>
   gulp
     .src('./src/scss/**/*.scss')
@@ -26,6 +24,7 @@ gulp.task('styles', () =>
     .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css'))
+    .pipe(browserSync.stream())
 );
 
 gulp.task('scripts', () =>
@@ -43,7 +42,7 @@ gulp.task('scripts', () =>
 
 gulp.task('html', () =>
   gulp
-    .src('src/*.html')
+    .src('src/*.{njk,html}')
     .pipe(
       nunjucksRender({
         path: ['src/partials/'],
@@ -52,12 +51,16 @@ gulp.task('html', () =>
     .pipe(gulp.dest('build/'))
 );
 
-gulp.task('browser-sync', () => {
-  gulp.task('browser-sync', () => {
-    browserSync.init({
-      server: {
-        baseDir: './build',
-      },
-    });
+gulp.task('browser-sync', ['html', 'styles', 'scripts'], () => {
+  browserSync.init({
+    server: {
+      baseDir: './build',
+    },
   });
+
+  gulp.watch('./src/scss/**/*.scss', ['styles']);
+  gulp.watch('./src/js/**/*.js', ['scripts']);
+  // gulp.watch('src/index.njk').on('change', browserSync.reload);
 });
+
+gulp.task('default', ['browser-sync']);
