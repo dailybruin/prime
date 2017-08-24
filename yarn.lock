@@ -1426,6 +1426,12 @@ crypto-browserify@^3.11.0:
     public-encrypt "^4.0.0"
     randombytes "^2.0.0"
 
+css-tree@1.0.0-alpha19:
+  version "1.0.0-alpha19"
+  resolved "https://registry.yarnpkg.com/css-tree/-/css-tree-1.0.0-alpha19.tgz#949aa846c2c15b3979792e8fce05f6b6e3ebcad4"
+  dependencies:
+    source-map "^0.5.3"
+
 css@2.X, css@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/css/-/css-2.2.1.tgz#73a4c81de85db664d4ee674f7d47085e3b2d55dc"
@@ -1440,6 +1446,12 @@ csslint@0.10.0:
   resolved "https://registry.yarnpkg.com/csslint/-/csslint-0.10.0.tgz#3a6a04e7565c8e9d19beb49767c7ec96e8365805"
   dependencies:
     parserlib "~0.2.2"
+
+csso@^3.0.0:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/csso/-/csso-3.1.1.tgz#ab427584486c2e02e180327511b0b02a9179c272"
+  dependencies:
+    css-tree "1.0.0-alpha19"
 
 currently-unhandled@^0.4.1:
   version "0.4.1"
@@ -2613,6 +2625,14 @@ graceful-fs@~1.2.0:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-1.2.3.tgz#15a4806a57547cb2d2dbf27f42e89a8c3451b364"
 
+gulp-csso@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-csso/-/gulp-csso-3.0.0.tgz#13d0add6663f4ca398f4d414ff8dcc349b219b2c"
+  dependencies:
+    csso "^3.0.0"
+    gulp-util "^3.0.6"
+    vinyl-sourcemaps-apply "^0.2.1"
+
 gulp-nunjucks-render@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/gulp-nunjucks-render/-/gulp-nunjucks-render-2.2.1.tgz#371c6acafe94ba9d69ce5a5fc43c1523863b10f0"
@@ -2658,7 +2678,7 @@ gulp-sourcemaps@^2.6.1:
     through2 "2.X"
     vinyl "1.X"
 
-gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.7, gulp-util@^3.0.8:
+gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.6, gulp-util@^3.0.7, gulp-util@^3.0.8:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
