@@ -5,6 +5,8 @@ import nunjucksRender from 'gulp-nunjucks-render';
 import sass from 'gulp-sass';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
+import minifyCSS from 'gulp-csso';
+
 import webpack from 'webpack-stream';
 import sourcemaps from 'gulp-sourcemaps';
 import bs from 'browser-sync';
@@ -12,11 +14,9 @@ import del from 'del';
 
 const browserSync = bs.create();
 
-function clean() {
-  return del(['build/']);
-}
+gulp.task('clean', () => del(['build/']));
 
-gulp.task('styles', () =>
+gulp.task('styles:dev', () =>
   gulp
     .src('./src/scss/**/*.scss')
     .pipe(sourcemaps.init())
@@ -24,6 +24,16 @@ gulp.task('styles', () =>
     .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./build/css'))
+    .pipe(browserSync.stream())
+);
+
+gulp.task('styles:prod', () =>
+  gulp
+    .src('./src/scss/**/*.scss')
+    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(postcss([autoprefixer()]))
+    .pipe(minifyCSS())
+    .pipe.pipe(gulp.dest('./build/css'))
     .pipe(browserSync.stream())
 );
 
