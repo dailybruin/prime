@@ -6,6 +6,13 @@
   "repository": "https://github.com/daily-bruin/flatpage-template.git",
   "author": "Nathan Smith <nathan@nathansmith.io>",
   "license": "MIT",
+  "scripts": {
+    "postcheckout": "yarn",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": ["prettier --single-quote --trailing-comma es5 --write", "git add"]
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.0",
@@ -18,6 +25,8 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
     "htmlhint": "^0.9.13",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.3",
     "prettier": "^1.5.3",
     "webpack-stream": "^4.0.0"
   }
