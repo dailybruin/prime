@@ -1,6 +1,9 @@
 import gulp from 'gulp';
 import nunjucksRender from 'gulp-nunjucks-render';
 
+// images
+import imagemin from 'gulp-imagemin';
+
 // Styling related packages
 import sass from 'gulp-sass';
 import postcss from 'gulp-postcss';
@@ -15,6 +18,10 @@ import del from 'del';
 const browserSync = bs.create();
 
 gulp.task('clean', () => del(['build/']));
+
+gulp.task('images:prod', () =>
+  gulp.src('src/images/*').pipe(imagemin()).pipe(gulp.dest('dist/images'))
+);
 
 gulp.task('styles:dev', () =>
   gulp
