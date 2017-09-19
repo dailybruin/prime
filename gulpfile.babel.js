@@ -33,7 +33,11 @@ gulp.task('styles:dev', () =>
   gulp
     .src('./src/scss/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(
+      sass({
+        outputStyle: 'expanded',
+      }).on('error', sass.logError)
+    )
     .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dev/css'))
@@ -43,7 +47,11 @@ gulp.task('styles:dev', () =>
 gulp.task('styles:prod', () =>
   gulp
     .src('./src/scss/**/*.scss')
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(
+      sass({
+        outputStyle: 'expanded',
+      }).on('error', sass.logError)
+    )
     .pipe(postcss([autoprefixer()]))
     .pipe(minifyCSS())
     .pipe(gulp.dest('./prod/css'))
@@ -119,12 +127,18 @@ gulp.task(
     browserSync.init({
       server: {
         baseDir: './dev',
+        serveStaticOptions: {
+          extensions: ['html'],
+        },
       },
     });
 
+    gulp.watch('./src/img/**/*', ['images:dev']);
     gulp.watch('./src/scss/**/*.scss', ['styles:dev']);
     gulp.watch('./src/js/**/*.js', ['scripts:dev']);
-    gulp.watch('src/*.{njk,html}').on('change', browserSync.reload);
+    gulp
+      .watch(['src/*.{njk,html}', 'src/partials/*.{njk,html}'], ['html:dev'])
+      .on('change', browserSync.reload);
   }
 );
 
