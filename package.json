@@ -1,0 +1,43 @@
+{
+  "name": "flatpage-template",
+  "version": "1.0.0",
+  "description": "A good starting point for developing flatpages.",
+  "main": "index.js",
+  "repository": "https://github.com/daily-bruin/flatpage-template.git",
+  "author": "Nathan Smith <nathan@nathansmith.io>",
+  "license": "MIT",
+  "scripts": {
+    "postcheckout": "yarn",
+    "precommit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --single-quote --trailing-comma es5 --write",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "browser-sync": "^2.18.13",
+    "del": "^3.0.0",
+    "eslint": "^4.5.0",
+    "eslint-config-uclaradio": "^1.0.8",
+    "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^3.3.0",
+    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-postcss": "^7.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-uglify": "^3.0.0",
+    "htmlhint": "^0.9.13",
+    "husky": "^0.14.3",
+    "lint-staged": "^4.0.3",
+    "prettier": "^1.5.3",
+    "webpack-stream": "^4.0.0"
+  }
+}
