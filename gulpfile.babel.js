@@ -1,10 +1,10 @@
 import gulp from 'gulp';
 import nunjucksRender from 'gulp-nunjucks-render';
 
-// images
+// Images
 import imagemin from 'gulp-imagemin';
 
-// html
+// HTML
 import htmlmin from 'gulp-htmlmin';
 
 // Styling related packages
@@ -13,7 +13,7 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import minifyCSS from 'gulp-csso';
 
-// javasacript
+// JavaScript
 import webpack from 'webpack-stream';
 import uglify from 'gulp-uglify';
 
@@ -102,7 +102,7 @@ gulp.task('html:dev', () =>
     .src('src/*.{njk,html}')
     .pipe(
       nunjucksRender({
-        path: ['src/partials/'],
+        path: ['src/'],
       })
     )
     .pipe(gulp.dest('dev/'))
@@ -113,7 +113,7 @@ gulp.task('html:prod', () =>
     .src('src/*.{njk,html}')
     .pipe(
       nunjucksRender({
-        path: ['src/partials/'],
+        path: ['src/'],
       })
     )
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -137,7 +137,7 @@ gulp.task(
     gulp.watch('./src/scss/**/*.scss', ['styles:dev']);
     gulp.watch('./src/js/**/*.js', ['scripts:dev']);
     gulp
-      .watch(['src/*.{njk,html}', 'src/partials/*.{njk,html}'], ['html:dev'])
+      .watch('src/**/*.{njk,html}', ['html:dev'])
       .on('change', browserSync.reload);
   }
 );
