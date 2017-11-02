@@ -1,10 +1,10 @@
 import gulp from 'gulp';
 import nunjucksRender from 'gulp-nunjucks-render';
 
-// images
+// Images
 import imagemin from 'gulp-imagemin';
 
-// html
+// HTML
 import htmlmin from 'gulp-htmlmin';
 
 // Styling related packages
@@ -13,7 +13,7 @@ import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
 import minifyCSS from 'gulp-csso';
 
-// javasacript
+// JavaScript
 import webpack from 'webpack-stream';
 import uglify from 'gulp-uglify';
 
@@ -33,7 +33,11 @@ gulp.task('styles:dev', () =>
   gulp
     .src('./src/scss/**/*.scss')
     .pipe(sourcemaps.init())
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(
+      sass({
+        outputStyle: 'expanded',
+      }).on('error', sass.logError)
+    )
     .pipe(postcss([autoprefixer()]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('./dev/css'))
@@ -43,7 +47,11 @@ gulp.task('styles:dev', () =>
 gulp.task('styles:prod', () =>
   gulp
     .src('./src/scss/**/*.scss')
-    .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
+    .pipe(
+      sass({
+        outputStyle: 'expanded',
+      }).on('error', sass.logError)
+    )
     .pipe(postcss([autoprefixer()]))
     .pipe(minifyCSS())
     .pipe(gulp.dest('./prod/css'))
@@ -94,7 +102,7 @@ gulp.task('html:dev', () =>
     .src('src/*.{njk,html}')
     .pipe(
       nunjucksRender({
-        path: ['src/partials/'],
+        path: ['src/'],
       })
     )
     .pipe(gulp.dest('dev/'))
@@ -105,7 +113,7 @@ gulp.task('html:prod', () =>
     .src('src/*.{njk,html}')
     .pipe(
       nunjucksRender({
-        path: ['src/partials/'],
+        path: ['src/'],
       })
     )
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -119,12 +127,18 @@ gulp.task(
     browserSync.init({
       server: {
         baseDir: './dev',
+        serveStaticOptions: {
+          extensions: ['html'],
+        },
       },
     });
 
+    gulp.watch('./src/img/**/*', ['images:dev']);
     gulp.watch('./src/scss/**/*.scss', ['styles:dev']);
     gulp.watch('./src/js/**/*.js', ['scripts:dev']);
-    gulp.watch('src/*.{njk,html}').on('change', browserSync.reload);
+    gulp
+      .watch('src/**/*.{njk,html}', ['html:dev'])
+      .on('change', browserSync.reload);
   }
 );
 
