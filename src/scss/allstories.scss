@@ -1,0 +1,93 @@
+.allstories {
+	margin: auto
+
+}
+
+/* mainstory.njk */
+#arimo {
+	font-family: 'Arimo', sans-serif;
+}
+
+#ropa {
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+#montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#oswald {
+	font-family: 'Oswald', sans-serif;
+}
+
+.photo {
+	width: 70%;
+	height: 30%;
+	background: grey;
+	opacity: 0.75;
+	margin-right: 44pt;
+	padding-bottom: 4.816pt;
+}
+
+.photo-credit-wrapper {
+	width: 40%;
+	float: right;
+}
+
+.photo-credit-name, .photo-credit-title {
+	display: inline;
+}
+
+.photo-credit-name {
+	width: 90%;
+	height: 10%;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 8pt;
+	text-align: left;
+}
+
+.photo-credit-title {
+	width: 90%;
+	height: 10%;
+	font-variant: small-caps;
+	text-align:left; 
+}
+
+
+.category {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16pt;
+	font-weight: bold;
+	padding-top: 26.8pt;
+	padding-bottom: 18.7pt;
+}
+
+.title {
+	font-family: 'Ropa Sans', sans-serif;
+	font-size: 48pt;
+	line-height: 54pt;
+	letter-spacing: -40;
+	padding-bottom: 41.1pt;
+}
+
+.author {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 19pt;
+	font-weight: bold;
+	padding-bottom: 17.593pt;
+}
+
+.description {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 17pt;
+	line-height: 20.4pt;
+	font-weight: lighter;
+}
+
+.black-line {
+	width: 100%;
+	border-bottom: 1px solid black;
+	opacity: 0.5;
+	margin: 1%;
+}
+
