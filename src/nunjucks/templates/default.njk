@@ -5,8 +5,13 @@
 <body>
   {% include "../partials/header.njk" %}
 
+  {% include "./allstories.njk" %}
+
   <div class="content">
     {% block content %}{% endblock %}
+
+    <!-- {% include "../partials/3col_container.njk" %} -->
+    {% include "../partials/latest_stories.njk" %}
   </div>
 
   {% include "../partials/footer.njk" %}
