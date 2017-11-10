@@ -1,10 +1,9 @@
 .top-bar-wrapper {
   position: fixed;
-
+  background-color: rgb(0,0,0);
 }
 
 .top-bar{
-  background-color: rgb(0, 0, 0);
   padding: 0;
 }
 
@@ -30,8 +29,6 @@
 }
 
 .logo {
-  text-align: center;
-  background-color: rgb(0, 0, 0);
-  color: rgb(255, 255, 255);
-  margin: 0;
+  display: block;    
+  margin: 0 auto;
 }
