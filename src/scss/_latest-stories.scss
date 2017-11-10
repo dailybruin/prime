@@ -1,6 +1,4 @@
 .latest-stories__container {
-  padding-left: 70px;
-  padding-right: 70px;
   .latest-stories__title {
     color: gray;
     text-align: center;
@@ -10,9 +8,9 @@
     border-top: 1px solid gray;
     padding-top: 20px;
     padding-bottom: 20px;
-    &:last-child {
+/*    &:last-child {
       border-bottom: 1px solid black;
-    }
+    }*/
   }
   .latest-stories__imgbox {
     .latest-stories__imgbox-img {

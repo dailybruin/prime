@@ -1,21 +1,12 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-US">
 {% include "../partials/head.njk" %}
-
 <body>
   {% include "../partials/header.njk" %}
 
-  {% include "./allstories.njk" %}
-
-  <div class="content">
-    {% block content %}{% endblock %}
-
-    <!-- {% include "../partials/3col_container.njk" %} -->
-    {% include "../partials/latest_stories.njk" %}
-  </div>
+   {% block content %}{% endblock %}
 
   {% include "../partials/footer.njk" %}
   {% include "../partials/scripts.njk" %}
 </body>
-
 </html>
