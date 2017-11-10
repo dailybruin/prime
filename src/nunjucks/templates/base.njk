@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-US">
 {% include "../partials/head.njk" %}
-
 <body>
   {% include "../partials/header.njk" %}
 
-  <div class="content">
-    {% block content %}{% endblock %}
-  </div>
+   {% block content %}{% endblock %}
 
   {% include "../partials/footer.njk" %}
   {% include "../partials/scripts.njk" %}
 </body>
-
 </html>
