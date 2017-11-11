@@ -1,6 +1,53 @@
 .section {
-	.h1 {
-		font-family: Lato;
+	h1 {
+		font-family: 'Lora';
 		font-size: 65px;
 	}
+
+	.main-story {
+		text-align: center;
+		.title {
+			font-family: 'Ropa Sans', sans-serif;
+			font-size: 37pt;
+			line-height: 33pt;	  	
+		}
+	    .author {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 14pt;
+			font-weight: bold;
+	    }
+	    .body {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 12pt;
+			font-weight: lighter;   
+		}
+	}
+
+	p {
+		text-align: left;
+	}
+    .block {
+	    padding-top: 20px;
+	    padding-left: 20px;
+
+	    .title {
+			font-family: 'Ropa Sans', sans-serif;
+			font-size: 27pt;
+			line-height: 33pt;	  	
+		}
+	  	.imgbox {
+	    }
+
+	    .author {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 14pt;
+			font-weight: bold;
+	    }
+	    .body {
+			font-family: 'Montserrat', sans-serif;
+			font-size: 12pt;
+			font-weight: lighter;   
+		}
+	}
 }
+

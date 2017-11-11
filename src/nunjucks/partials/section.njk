@@ -1,3 +1,41 @@
 <div class="section">
 	<h1>Arts</h1>
+	<hr class="black-line">
+    <hr class="black-line">
+    <div class="row">
+    	<div class="column medium-8">
+    		<div class="main-article">
+    			<div class="col3__block-imgbox">
+				    <img class="col3__block-imgbox-img" src="../../img/helix-nebula-1400x1400.jpg" alt="test_img_1">
+				    <p>some caption shown here</p>
+				</div>
+			</div>
+			<div class="main-story">
+				<div class="title">I actually like health bars they're very very good 4 u</div>
+	    		<div class="author">BY SOMEONE HERE</div>
+	    		<p class="body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</p>
+	    	</div>
+    	</div>
+
+    	<div class="column medium-4">
+    		<div class="row">
+		        {% include "./side_main_stories.njk" %}
+		    </div>
+		    <hr class="black-line">
+		    <div class="row">
+		        {% include "./side_main_stories.njk" %}
+		    </div>
+		    <hr class="black-line">
+		    <div class="row">
+		        {% include "./side_main_stories.njk" %}
+		  </div>
+    	</div>
+    </div>
+	<hr class="black-line">
+    <hr class="black-line">
+
+    <div class="row">
+	  {% include "./latest_stories.njk" %}
+	</div>
+	
 </div>
