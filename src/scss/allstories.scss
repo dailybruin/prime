@@ -19,11 +19,14 @@
 .navbar-padding {
 	padding-top: 100px;
 }
+
 .photo {
+ 	margin-bottom: 38.464pt;
+
 	img {
 		display: block;
 	    overflow: hidden;
-		width: 688px;
+		width: 788px;
 		height: 470px;
 		background: grey;
 		margin-right: 44px;
@@ -88,8 +91,16 @@
 	width: 100%;
 	border-bottom: 1px solid black;
 	opacity: 0.5;
-	margin: 1%;
+	margin: 0.3%;
 }
 .main-story-padding {
 	padding-bottom: 43px;
+}
+
+.space {
+  padding-bottom:33px;
+}
+
+.main-story {
+	padding-left: 44px;
 }
