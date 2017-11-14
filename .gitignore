@@ -64,3 +64,5 @@ typings/
 /build
 /prod
 /dev
+
+.idea/*
