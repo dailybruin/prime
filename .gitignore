@@ -64,3 +64,11 @@ typings/
 /build
 /prod
 /dev
+
+# swap files
+*.swp
+*.swo
+*~
+
+# MAC files
+.DS_Store
