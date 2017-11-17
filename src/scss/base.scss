@@ -1,5 +1,22 @@
 @import '3col';
 @import 'latest-stories';
+@import 'footer';
+@import '_colors';
+
+/* Standardize */
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid;
+}
 
 /*icon styles*/
 .fi-social-facebook {
