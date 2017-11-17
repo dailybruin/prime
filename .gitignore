@@ -65,6 +65,8 @@ typings/
 /prod
 /dev
 
+.idea/*
+
 # swap files
 *.swp
 *.swo
