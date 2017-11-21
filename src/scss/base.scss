@@ -1,11 +1,11 @@
-@import '3col';
-@import 'latest-stories';
-@import 'footer';
-@import '_colors';
+@import "3col";
+@import "latest-stories";
+@import "footer";
+@import "_colors";
 
 /* Standardize */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
 
@@ -18,27 +18,32 @@ a:hover {
   border-bottom: 1px solid;
 }
 
-/*icon styles*/
+/* icon styles */
 .fi-social-facebook {
   color: dodgerblue;
   font-size: 2rem;
 }
+
 .fi-social-youtube {
   color: red;
   font-size: 2rem;
 }
+
 .fi-social-pinterest {
   color: darkred;
   font-size: 2rem;
 }
+
 i.fi-social-instagram {
   color: brown;
   font-size: 2rem;
 }
+
 i.fi-social-tumblr {
   color: navy;
   font-size: 2rem;
 }
+
 .fi-social-twitter {
   color: skyblue;
   font-size: 2rem;

@@ -1,12 +1,12 @@
 .top-bar-wrapper {
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
   position: fixed;
   width: 100%;
-  background-color: rgb(0,0,0);
+  background-color: rgb(0, 0, 0);
   z-index: 100;
 }
 
-.top-bar{
+.top-bar {
   padding: 0;
 }
 
@@ -29,7 +29,7 @@
 .top-bar li {
   display: inline-block;
   background-color: rgb(0, 0, 0);
-  padding: 0 25px; 
+  padding: 0 25px;
 }
 
 .top-bar a {
@@ -49,7 +49,7 @@
 }
 
 .logo {
-  display: block;    
+  display: block;
   margin: 0 auto;
 }
 
@@ -60,6 +60,7 @@
   height: 6%;
   float: left;
   transition: all 1s ease;
+
   &.logo-hidden {
     transform: translateX(-100%);
     margin-left: 0%;
@@ -72,11 +73,11 @@
   opacity: 100%;
   width: 15%;
   transition: all 1s ease;
+
   &.logo-hidden {
     transform: translateY(-100%);
     opacity: 0%;
-    width: 0px;
+    width: 0;
     transition: all 1s ease;
   }
 }
-

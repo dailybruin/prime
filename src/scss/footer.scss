@@ -1,4 +1,4 @@
-@import '_colors';
+@import "_colors";
 
 footer {
   height: 74.5px;
@@ -9,24 +9,26 @@ footer {
 
   .logo-col {
     text-align: center;
+
     .db-logo {
       height: 40px;
     }
   }
 
   .text-left {
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
   }
 
   .social-right {
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
+
     ul {
-      float:right;
+      float: right;
+
       li {
         display: inline-block;
         margin-right: 10px;
       }
-
     }
   }
 
@@ -38,7 +40,6 @@ footer {
       color: $white;
     }
   }
-
 }
 
 // .about-prime {
@@ -50,7 +51,6 @@ footer {
 //   top: 33%;
 //   width: 30%;
 //   font-family: 'Lato';
-
 
 // }
 
