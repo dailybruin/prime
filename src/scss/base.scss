@@ -2,6 +2,8 @@
 @import 'latest-stories';
 @import 'footer';
 @import '_colors';
+@import 'phonetab';
+@import 'headers';
 
 /* Standardize */
 body {
@@ -12,10 +14,6 @@ body {
 a {
   font-weight: bold;
   text-decoration: none;
-}
-
-a:hover {
-  border-bottom: 1px solid;
 }
 
 /*icon styles*/

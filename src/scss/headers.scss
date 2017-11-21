@@ -1,13 +1,33 @@
+@import '_colors';
+
 .top-bar-wrapper {
   font-family: 'Lato', sans-serif;
   position: fixed;
   width: 100%;
-  background-color: rgb(0,0,0);
+  background-color: $header-footer-black;
   z-index: 100;
+
+  .top-bar {
+    background-color: $header-footer-black;
+    padding: 0;
+
+    & ul {
+      background-color: $header-footer-black;
+    }
+
+    height: 50px;
+
+    .menu {
+      font-size: 1.2rem;
+    }
+
+  }
 }
 
-.top-bar{
-  padding: 0;
+#top-bar-logo {
+  &.top-bar-logo-fixed {
+    width: 30%;
+  }
 }
 
 // .top-bar-logo {
@@ -17,19 +37,16 @@
 .top-bar-center {
   width: 100%;
   display: block;
-  background-color: black;
 }
 
 .top-bar-menu {
   margin: auto;
-  background-color: black !important;
   text-align: center;
 }
 
 .top-bar li {
   display: inline-block;
-  background-color: rgb(0, 0, 0);
-  padding: 0 25px; 
+  padding: 0 25px;
 }
 
 .top-bar a {
@@ -38,18 +55,16 @@
 }
 
 .top-bar input {
-  background-color: rgb(0, 0, 0);
   border: none;
   padding: 0;
 }
 
 .top-bar a:hover {
   background-color: rgb(255, 255, 255);
-  color: rgb(0, 0, 0);
 }
 
 .logo {
-  display: block;    
+  display: block;
   margin: 0 auto;
 }
 
