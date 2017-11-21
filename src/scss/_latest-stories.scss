@@ -45,6 +45,10 @@
     .latest-stories__block-imgbox-photo-credit-name, .latest-stories__block-imgbox-photo-credit-title {
       display: inline;
     }
+
+    .latest-stories__block-imgbox-photo-credit-title {
+      font-variant: small-caps;
+    }
   }
   .latest-stories__textbox {
     padding-left: 30px;
