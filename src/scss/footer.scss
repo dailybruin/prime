@@ -1,6 +1,11 @@
 @import '_colors';
 
 footer {
+  &.hidden {
+    display: none;
+  }
+
+
   height: 74.5px;
   padding-top: 1em;
   width: 100%;
