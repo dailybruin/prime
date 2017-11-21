@@ -10,6 +10,7 @@
     font-family: 'Montserrat', 'sans-serif';
     font-weight: bolder;
     font-size: 1em;
+    padding-top: 1.3em;
   }
   .latest-stories__textbox-title {
     font-family: 'Ropa Sans', sans-serif;
@@ -21,6 +22,7 @@
     font-family: 'Montserrat', 'sans-serif';
     font-weight: bolder;
     font-size: 1em;
+    padding-bottom: 0.5em;
   }
   .latest-stories__textbox-body {
     font-family: 'Montserrat', 'sans-serif';
@@ -28,15 +30,12 @@
     font-size: 12pt;
     line-height: 20pt;
   }
-  .latest-stories__block {
-    border-top: 1px solid gray;
-    padding-top: 20px;
-    padding-bottom: 20px;
-/*    &:last-child {
-      border-bottom: 1px solid black;
-    }*/
+  .latest-stories__black-line {
+    border-bottom: 0.05em solid black;
+    margin-top: 1.5em;
   }
   .latest-stories__imgbox {
+    margin-top: 0.9em;
     .latest-stories__block-imgbox-photo-credit-wrapper {
       float: right;
       color: gray;
@@ -49,5 +48,10 @@
   }
   .latest-stories__textbox {
     padding-left: 30px;
+    margin-top: 0.7em;
   }
+}
+
+.latest-stories__space {
+  padding-bottom: 2.5em;
 }
