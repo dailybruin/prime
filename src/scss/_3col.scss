@@ -1,11 +1,6 @@
 .col3__block {
   .col3__block-imgbox {
     overflow:hidden;
-    p {
-      text-align: right;
-      color: gray;
-      font-size: 1em;
-    }
     .col3__block-imgbox-img {
       display: block;
       /* margin:-21.875% 0; */
@@ -15,21 +10,43 @@
       object-fit: cover; */
       vertical-align: center;
     }
+    .col3__block-imgbox-photo-credit-wrapper {
+      float: right;
+      color: gray;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6em;
+      .col3__block-imgbox-photo-credit-title, .col3__block-imgbox-photo-credit-name {
+        display: inline;
+      }
+    }
   }
 
 
-  .col3__block-textbox { 
+  .col3__block-textbox {
     .col3__block-textbox-pretitle {
-      font-size: 1.5em;
+      font-size: 1em;
       text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bolder;
     }
     .col3__block-textbox-title {
       font-size: 2em;
       text-align: left;
+      font-family: 'Ropa Sans', sans-serif;
+      line-height: 39.6pt;
+      letter-spacing: -40;
     }
     .col3__block-textbox-author {
-      font-size: 1.5em;
+      font-size: 1em;
       text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+    }
+
+    .col3__block-textbox-body {
+      font-size: 12pt;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: lighter;
     }
   }
 
@@ -38,6 +55,3 @@
 
   }
 }
-
-
-
