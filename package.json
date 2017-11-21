@@ -10,6 +10,9 @@
     "postcheckout": "yarn",
     "precommit": "lint-staged"
   },
+  "stylelint": {
+    "extends": "@uclaradio/stylelint-config-uclaradio"
+  },
   "lint-staged": {
     "*.js": [
       "prettier --single-quote --trailing-comma es5 --write",
@@ -17,6 +20,7 @@
     ]
   },
   "devDependencies": {
+    "@uclaradio/stylelint-config-uclaradio": "^1.0.5",
     "autoprefixer": "^7.1.2",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",

@@ -60,6 +60,7 @@
   height: 6%;
   float: left;
   transition: all 1s ease;
+
   &.logo-hidden {
     transform: translateX(-100%);
     margin-left: 0%;
@@ -72,10 +73,11 @@
   opacity: 100%;
   width: 15%;
   transition: all 1s ease;
+
   &.logo-hidden {
     transform: translateY(-100%);
     opacity: 0%;
-    width: 0px;
+    width: 0;
     transition: all 1s ease;
   }
 }
