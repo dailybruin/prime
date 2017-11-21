@@ -1,11 +1,11 @@
-@import '3col';
-@import 'latest-stories';
-@import 'footer';
-@import '_colors';
+@import "3col";
+@import "latest-stories";
+@import "footer";
+@import "_colors";
 
 /* Standardize */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
 
@@ -18,7 +18,7 @@ a:hover {
   border-bottom: 1px solid;
 }
 
-/*icon styles*/
+/* icon styles */
 .fi-social-facebook {
   color: dodgerblue;
   font-size: 2rem;

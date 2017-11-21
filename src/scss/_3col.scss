@@ -1,6 +1,6 @@
 .col3__block {
   .col3__block-imgbox {
-    overflow:hidden;
+    overflow: hidden;
 
     p {
       text-align: right;
@@ -21,8 +21,7 @@
     }
   }
 
-
-  .col3__block-textbox { 
+  .col3__block-textbox {
     .col3__block-textbox-pretitle {
       font-size: 1.5em;
       text-align: left;
@@ -41,9 +40,5 @@
 
   &:not(:last-child) {
     border-right: 1px solid gray;
-
   }
 }
-
-
-
