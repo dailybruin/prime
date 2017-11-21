@@ -1,8 +1,31 @@
 .latest-stories__container {
   .latest-stories__title {
-    color: gray;
     text-align: center;
+    font-size: 0.5em;
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: lighter;
+  }
+  .latest-stories__textbox-pretitle {
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: bolder;
+    font-size: 16pt;
+  }
+  .latest-stories__textbox-title {
+    font-family: 'Ropa Sans', sans-serif;
+    line-height: 39.6pt;
+    letter-spacing: -40;
     font-size: 2em;
+  }
+  .latest-stories__textbox-author {
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: bolder;
+    font-size: 1em;
+  }
+  .latest-stories__textbox-body {
+    font-family: 'Montserrat', 'sans-serif';
+    font-weight: lighter;
+    font-size: 12pt;
+    line-height: 20pt;
   }
   .latest-stories__block {
     border-top: 1px solid gray;
@@ -13,12 +36,14 @@
     }*/
   }
   .latest-stories__imgbox {
-    .latest-stories__imgbox-img {
-    }
-    p {
-      text-align: right;
+    .latest-stories__block-imgbox-photo-credit-wrapper {
+      float: right;
       color: gray;
-      font-size: 1em;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.6em;
+    }
+    .latest-stories__block-imgbox-photo-credit-name, .latest-stories__block-imgbox-photo-credit-title {
+      display: inline;
     }
   }
   .latest-stories__textbox {
