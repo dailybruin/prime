@@ -1,4 +1,4 @@
-@import '_colors';
+@import "colors";
 
 footer {
   height: 74.5px;
@@ -9,24 +9,43 @@ footer {
 
   .logo-col {
     text-align: center;
+
     .db-logo {
       height: 40px;
     }
   }
 
   .text-left {
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
   }
 
   .social-right {
-    margin-top:0.5rem;
+    margin-top: 0.5rem;
+
     ul {
-      float:right;
+      float: right;
+
       li {
+        font-size: 20px;
         display: inline-block;
         margin-right: 10px;
-      }
 
+        a {
+          color: $white;
+        }
+
+        .fa-facebook-square:hover {
+          color: $facebook-blue;
+        }
+
+        .fa-twitter-square:hover {
+          color: $twitter-blue;
+        }
+
+        .fa-instagram:hover {
+          color: $instagram-pink;
+        }
+      }
     }
   }
 
@@ -35,10 +54,10 @@ footer {
     color: $white;
 
     &:hover {
+      border-bottom: 1px solid;
       color: $white;
     }
   }
-
 }
 
 // .about-prime {
@@ -50,7 +69,6 @@ footer {
 //   top: 33%;
 //   width: 30%;
 //   font-family: 'Lato';
-
 
 // }
 
