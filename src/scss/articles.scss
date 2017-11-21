@@ -1,0 +1,41 @@
+.article__category {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 18pt;
+  line-height: 1;
+}
+
+.article__title {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 45pt;
+  line-height: 1.1;
+  margin-bottom: 38px;
+}
+
+.article__author {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15pt;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.article__issue {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15pt;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+article {
+  p:first-child:first-letter {
+    float: left;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+  }
+
+  p {
+    font-family: 'PT Serif', serif;
+  }
+}
