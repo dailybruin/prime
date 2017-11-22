@@ -1,0 +1,61 @@
+.page-number__container {
+  font-family: 'Oswald', 'sans-serif';
+  font-size: 1em;
+  float: right;
+  .page-number__number {
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    a.page-number__number-link:link,
+    a.page-number__number-link:visited {
+      border: 1px solid black;
+      border-radius: 50%;
+      height: 2em;
+      width: 2em;
+      padding: 0.1em;
+      text-align: center;
+      color: black;
+      display: block;
+    }
+    a.page-number__number-link:hover,
+    a.page-number__number-link:active {
+      background-color: black;
+      color: white;
+      border-radius: 50%;
+      height: 2em;
+      width: 2em;
+      padding: 0.1em;
+      text-align: center;
+    }
+  }
+  .page-number__dots {
+    text-align: center;
+    margin-right: -1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .page-number__word {
+    margin-right: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    a.page-number__word-link:link,
+    a.page-number__word-link:visited {
+      border: 1px solid black;
+      height: 2em;
+      width: 3em;
+      padding: 0.2em;
+      text-align: center;
+      color: black;
+      display: block;
+    }
+    a.page-number__word-link:hover,
+    a.page-number__word-link:active {
+      background-color: black;
+      color: white;
+      height: 2em;
+      width: 3em;
+      padding: 0.2em;
+      text-align: center;
+    }
+  }
+}
