@@ -5,7 +5,7 @@
   .page-number__number {
     margin-right: 0.5em;
     margin-bottom: 1em;
-    margin-top: 1em;
+    margin-top: 0.5em;
     a.page-number__number-link:link,
     a.page-number__number-link:visited {
       border: 1px solid black;
@@ -31,13 +31,13 @@
   .page-number__dots {
     text-align: center;
     margin-right: -1em;
-    margin-top: 1em;
     margin-bottom: 1em;
+    margin-top: 0.5em;
   }
   .page-number__word {
     margin-right: 0.5em;
     margin-bottom: 1em;
-    margin-top: 1em;
+    margin-top: 0.5em;
     a.page-number__word-link:link,
     a.page-number__word-link:visited {
       border: 1px solid black;
