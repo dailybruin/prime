@@ -1,4 +1,4 @@
-@import '_colors';
+@import 'colors';
 @import '_utils';
 
 $topbar-font: 'Lato', sans-serif;
@@ -37,7 +37,7 @@ $topbar-height: 50px;
 
     @media screen and (max-width: $small-only) {
       &.hidden {
-         height: 10px;
+        height: 10px;
       }
     }
 
@@ -55,8 +55,6 @@ $topbar-height: 50px;
         color: $header-footer-black;
       }
     }
-
-
 
     .left-bar-logo {
       position: absolute;
@@ -90,7 +88,6 @@ $topbar-height: 50px;
 //   display: inline-block;
 //   padding: 0 25px;
 // }
-
 
 // .top-bar input {
 //   border: none;
@@ -132,4 +129,3 @@ $topbar-height: 50px;
 //     transition: all 1s ease;
 //   }
 // }
-
