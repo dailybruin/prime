@@ -1,0 +1,104 @@
+/* mainstory.njk */
+#arimo {
+  font-family: 'Arimo', sans-serif;
+}
+
+#ropa {
+  font-family: 'Ropa Sans', sans-serif;
+}
+
+#montserrat {
+  font-family: 'Montserrat', sans-serif;
+}
+
+#oswald {
+  font-family: 'Oswald', sans-serif;
+}
+
+.navbar-padding {
+  padding-top: 100px;
+}
+
+.photo {
+  margin-bottom: 38.464pt;
+
+  img {
+    display: block;
+    overflow: hidden;
+    width: 788px;
+    height: 470px;
+    background: grey;
+    margin-right: 44px;
+    padding-bottom: 5px;
+  }
+  .photo-credit-wrapper {
+    float: right;
+  }
+  .photo-credit-name,
+  .photo-credit-title {
+    display: inline;
+  }
+
+  .photo-credit-name {
+    width: 90%;
+    height: 10%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 8px;
+    text-align: left;
+  }
+
+  .photo-credit-title {
+    width: 90%;
+    height: 10%;
+    font-variant: small-caps;
+    text-align: left;
+  }
+}
+
+.category {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  padding-top: 26.8px;
+  padding-bottom: 18.7px;
+}
+
+.title {
+  font-family: 'Ropa Sans', sans-serif;
+  font-size: 48px;
+  line-height: 54px;
+  letter-spacing: -40;
+  padding-bottom: 41.1px;
+}
+
+.author {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 19px;
+  font-weight: bold;
+  padding-bottom: 17.593px;
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  line-height: 20.4px;
+  font-weight: lighter;
+}
+
+.black-line {
+  width: 100%;
+  border-bottom: 1px solid black;
+  opacity: 0.5;
+  margin: 0.3%;
+}
+.main-story-padding {
+  padding-bottom: 43px;
+}
+
+.space {
+  padding-bottom: 33px;
+}
+
+.main-story {
+  padding-left: 44px;
+}

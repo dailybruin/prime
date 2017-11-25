@@ -1,0 +1,131 @@
+@import 'colors';
+@import '_utils';
+
+$topbar-font: 'Lato', sans-serif;
+$topbar-height: 50px;
+
+.top-bar-wrapper {
+  font-family: $topbar-font;
+  position: fixed;
+  width: 100%;
+  background-color: $header-footer-black;
+  z-index: 100;
+
+  .top-bar-logo {
+    opacity: 100%;
+    height: 90px;
+    transition: all 1s ease;
+    margin-top: 5px;
+    &.logo-hidden {
+      transform: translateY(-100%);
+      opacity: 0%;
+      height: 0;
+      transition: all 1s ease;
+      margin-top: 0px;
+    }
+  }
+
+  .top-bar {
+    background-color: $header-footer-black;
+    padding: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    height: $topbar-height;
+    transition: height 1s ease;
+
+    @media screen and (max-width: $small-only) {
+      &.hidden {
+        height: 10px;
+      }
+    }
+
+    & ul {
+      background-color: $header-footer-black;
+    }
+
+    a {
+      font-size: 1.2rem;
+      color: $white;
+      padding-bottom: 15px;
+
+      &:hover {
+        background-color: $white;
+        color: $header-footer-black;
+      }
+    }
+
+    .left-bar-logo {
+      position: absolute;
+      left: 0;
+      height: 45px;
+      padding-left: 10px;
+      transition: all 1s ease;
+      &.logo-hidden {
+        transform: translateX(-100%);
+        margin-left: 0%;
+        transition: all 1s ease;
+      }
+    }
+  }
+}
+// .top-bar-logo {
+//   width: 15%;
+// }
+
+// .top-bar-center {
+//   width: 100%;
+//   display: block;
+// }
+
+// .top-bar-menu {
+//   margin: auto;
+//   text-align: center;
+// }
+
+// .top-bar li {
+//   display: inline-block;
+//   padding: 0 25px;
+// }
+
+// .top-bar input {
+//   border: none;
+//   padding: 0;
+// }
+
+// .top-bar a:hover {
+//   background-color: rgb(255, 255, 255);
+// }
+
+.logo {
+  display: block;
+  margin: 0 auto;
+}
+
+// #left-bar-logo {
+//   margin-left: 1%;
+//   margin-top: 0.35%;
+//   width: 6%;
+//   height: 6%;
+//   float: left;
+//   transition: all 1s ease;
+//   &.logo-hidden {
+//     transform: translateX(-100%);
+//     margin-left: 0%;
+//     height: 6%;
+//     transition: all 1s ease;
+//   }
+// }
+
+// #top-bar-logo {
+//   opacity: 100%;
+//   width: 15%;
+//   transition: all 1s ease;
+//   &.logo-hidden {
+//     transform: translateY(-100%);
+//     opacity: 0%;
+//     width: 0px;
+//     transition: all 1s ease;
+//   }
+// }

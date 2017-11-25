@@ -1,3 +1,3 @@
-import hello from './module';
+import main from './main';
 
-hello();
+main();
