@@ -1,11 +1,16 @@
 @import "3col";
 @import "latest-stories";
+@import "page-numbers";
 @import "footer";
-@import "colors";
-@import "allstories";
+@import "_colors";
+@import "section";
 @import "tabs";
 
 /* Standardize */
+.navbar-padding {
+  padding-top: 200px;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
