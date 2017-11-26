@@ -1,6 +1,6 @@
 <div class="fixed top-bar-wrapper">
 <img id="top-bar-logo" class="logo top-bar-logo" src="../../img/primelogowhite.svg">
-  <nav class="top-bar">
+  <nav class="top-bar" id="top-bar">
     <div class="top-bar-center">
       <img id="left-bar-logo" class="logo left-bar-logo logo-hidden" src="../../img/primelogosmallwhite.svg">
       <ul class="menu top-bar-menu">
@@ -15,8 +15,6 @@
   </nav>
 </div>
 <script type="text/javascript">
-let isHidden
-
 $(window).scroll(function() {
   let $topBarLogoElem = $("#top-bar-logo");
   let $leftBarLogoElem = $("#left-bar-logo");
@@ -38,7 +36,34 @@ $(window).scroll(function() {
 });
 
 $(document).ready(function() {
-
-
+  let $window = $(window);
+  let $topbar = $('#top-bar');
+  let $topbarlogo = $('#top-bar-logo');
+  let ratio = $window.height() / $window.width();
+  if (ratio <= 0.65) {
+    $topbar.removeClass('hidden');
+    $topbarlogo.removeClass('top-bar-logo-fixed');
+  } else {
+    if (!$topbar.hasClass('hidden')) {
+      $topbar.addClass('hidden')
+    }
+    if (!$topbarlogo.hasClass('top-bar-logo-fixed')) {
+      $topbarlogo.addClass('top-bar-logo-fixed')
+    }
+  }
+  $window.resize(function() {
+    let ratio = $window.height() / $window.width();
+    if (ratio <= 0.65) {
+      $topbar.removeClass('hidden');
+      $topbarlogo.removeClass('top-bar-logo-fixed');
+    } else {
+      if (!$topbar.hasClass('hidden')) {
+        $topbar.addClass('hidden')
+      }
+      if (!$topbarlogo.hasClass('top-bar-logo-fixed')) {
+        $topbarlogo.addClass('top-bar-logo-fixed')
+      }
+    }
+  });
 });
 </script>

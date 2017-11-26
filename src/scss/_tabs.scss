@@ -10,6 +10,18 @@
   padding: 0;
 }
 
+#top-bar {
+  &.hidden {
+    display: none;
+  }
+}
+
+#top-bar-logo {
+  &.top-bar-logo-fixed {
+    width: 30%;
+  }
+}
+
 // .top-bar-logo {
 //   width: 15%;
 // }

@@ -1,0 +1,83 @@
+#phonetab__wrapper {
+  &.hidden {
+    display: none;
+  }
+
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+
+  .tab_background {
+    background-color: black;
+    height: 12vh;
+    padding-top: 3%;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+  li {
+    list-style-type: none;
+  }
+  .bar_wrapper {
+    margin: auto;
+    background-color: black;
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+    vertical-align: middle;
+    li {
+      display: table-cell;
+      width: 23%;
+      padding-right: 1px;
+      height: auto;
+      vertical-align: middle;
+
+      text-align: center;
+
+      &:not(:last-child) {
+        border-right: solid white 2px;
+      }
+    }
+    .text {
+      a {
+        display: block;
+        min-height: 100%;
+        padding: 4px 10px;
+        color: white;
+        text-align: center;
+        font-size: 1em;
+
+        text-decoration: none;
+
+        &:link {
+          color: white;
+          text-decoration: none;
+        }
+
+        &:hover {
+          color: white;
+          text-decoration: none;
+        }
+
+        &:visited {
+          color: white;
+          text-decoration: none;
+        }
+
+        &:active {
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+#footer-padder {
+  height: 12vh;
+  &.hidden {
+    display: none;
+  }
+}
