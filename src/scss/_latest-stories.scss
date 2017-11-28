@@ -20,7 +20,6 @@
     font-weight: bolder;
     font-size: 10px;
     font-weight: bold;
-    padding-top: 10px;
   }
   .latest-stories__textbox-title {
     font-family: "Ropa Sans", "sans-serif";
@@ -35,6 +34,7 @@
     letter-spacing: -40;
     font-size: 16px;
     font-weight: bold;
+    margin-bottom: 0.4em;
   }
   .latest-stories__textbox-author {
     font-family: "Montserrat", "sans-serif";
@@ -54,15 +54,23 @@
     font-size: 16px;
     line-height: 20px;
   }
-  .latest-stories__textbox-body {
+  .latest-stories__textbox-body-small {
     font-family: "Montserrat", "sans-serif";
     font-weight: lighter;
     font-size: 16px;
     line-height: 20px;
-    padding-left: 30px;
+    padding-right: 4em;
   }
   .latest-stories__black-line {
     border-bottom: 0.05em solid black;
+  }
+  .latest-stories__black-line-small {
+    border-bottom: 0.7em solid grey;
+    opacity: 0.5;
+    padding-top: 1em;
+  }
+  .latest-stories__space-small {
+    padding: 0.2em;
   }
 
   .latest-stories__imgbox {
