@@ -11,7 +11,9 @@
     "precommit": "lint-staged"
   },
   "babel": {
-    "presets": ["env"]
+    "presets": [
+      "env"
+    ]
   },
   "eslintConfig": {
     "extends": "uclaradio"
@@ -31,7 +33,10 @@
     ]
   },
   "lint-staged": {
-    "*.{js,scss,json,md}": ["prettier --write", "git add"]
+    "*.{js,scss,json,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "devDependencies": {
     "@uclaradio/stylelint-config-uclaradio": "^1.0.5",
