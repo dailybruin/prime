@@ -1,8 +1,29 @@
 .page-number__container {
   font-family: "Oswald", "sans-serif";
   font-size: 1em;
-  float: right;
+  margin-right: 2em;
+  //float: right;
+  text-align: right;
+
+  .page-number__number-wrapper {
+    $break-small: 320px;
+    $break-large: 636px;
+    @media screen and (min-width: $break-large) {
+      margin-right: 6em;
+    }
+  }
+
+  .page-number__word-wrapper {
+    display: block;
+    $break-small: 320px;
+    $break-large: 636px;
+    @media screen and (min-width: $break-large) {
+      margin-right: 5em;
+    }
+  }
+
   .page-number__number {
+    display: inline-block;
     margin-right: 0.5em;
     margin-bottom: 1em;
     margin-top: 0.5em;
@@ -29,15 +50,18 @@
     }
   }
   .page-number__dots {
+    display: inline-block;
     text-align: center;
     margin-right: -1em;
     margin-bottom: 1em;
     margin-top: 0.5em;
   }
   .page-number__word {
+    display: inline-block;
     margin-right: 0.5em;
+    // margin-right: 0.5em;
     margin-bottom: 1em;
-    margin-top: 0.5em;
+    // margin-top: 0.5em;
     a.page-number__word-link:link,
     a.page-number__word-link:visited {
       border: 1px solid black;
