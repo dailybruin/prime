@@ -1,3 +1,4 @@
 [submodule "text-cms"]
-	path = text-cms
+	path = backend
 	url = https://github.com/rodrigovalle/text-cms.git
+  branch = prime
