@@ -25,11 +25,14 @@
   img {
     display: block;
     overflow: hidden;
-    width: 788px;
+    max-width: 788px;
+    width: auto;
     height: 470px;
     background: grey;
     margin-right: 44px;
     padding-bottom: 5px;
+    display: block;
+    margin: auto;
   }
   .photo-credit-wrapper {
     float: right;
