@@ -1,11 +1,20 @@
 @import "colors";
+@import "utils";
 
 footer {
   &.hidden {
     display: none;
   }
 
-  height: 74.5px;
+  @media screen and (max-width: $small-only) {
+    height: 110px;
+  }
+
+  @media screen and (min-width: $small-only) {
+    height: 74.5px;
+  }
+
+  // height: 74.5px;
   padding-top: 1em;
   width: 100%;
   background-color: $header-footer-black;
@@ -61,6 +70,10 @@ footer {
       border-bottom: 1px solid;
       color: $white;
     }
+  }
+
+  .footer-padder {
+    height: 4.4em;
   }
 }
 
