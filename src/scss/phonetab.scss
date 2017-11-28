@@ -1,3 +1,5 @@
+@import "_colors";
+
 #phonetab__wrapper {
   &.hidden {
     display: none;
@@ -8,7 +10,7 @@
   bottom: 0;
 
   .tab_background {
-    background-color: black;
+    background-color: $header-footer-black;
     height: 12vh;
     padding-top: 3%;
   }
@@ -22,7 +24,7 @@
   }
   .bar_wrapper {
     margin: auto;
-    background-color: black;
+    background-color: $header-footer-black;
     display: table;
     table-layout: fixed;
     text-align: center;
