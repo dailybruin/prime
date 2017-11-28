@@ -15,6 +15,13 @@
     padding-top: 10px;
     padding-bottom: 14px;
   }
+  .latest-stories__textbox-pretitle-small {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: bolder;
+    font-size: 10px;
+    font-weight: bold;
+    padding-top: 10px;
+  }
   .latest-stories__textbox-title {
     font-family: "Ropa Sans", "sans-serif";
     line-height: 39.6px;
@@ -23,10 +30,22 @@
     font-weight: bold;
     padding-bottom: 14px;
   }
+  .latest-stories__textbox-title-small {
+    font-family: "Ropa Sans", "sans-serif";
+    letter-spacing: -40;
+    font-size: 16px;
+    font-weight: bold;
+  }
   .latest-stories__textbox-author {
     font-family: "Montserrat", "sans-serif";
     font-weight: bolder;
     font-size: 20px;
+    padding-bottom: 14px;
+  }
+  .latest-stories__textbox-author-small {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: bolder;
+    font-size: 10px;
     padding-bottom: 14px;
   }
   .latest-stories__textbox-body {
@@ -34,6 +53,13 @@
     font-weight: lighter;
     font-size: 16px;
     line-height: 20px;
+  }
+  .latest-stories__textbox-body {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 20px;
+    padding-left: 30px;
   }
   .latest-stories__black-line {
     border-bottom: 0.05em solid black;
