@@ -1,3 +1,12 @@
+{% macro inlineimg(src, name='Staff', db_position='Daily Bruin', float_pos='left', alt='') %}
+    <div class="article__inlineimg {{ float_pos }}">
+     <img src="{{src}}" alt={{alt}} />
+     <div class="article__block-imgbox-photo-credit-wrapper">
+        <div class="article__block-imgbox-photo-credit-name">{{ name }}</div>
+        <div class="article__block-imgbox-photo-credit-title">/{{db_position }}</div>
+     </div>
+    </div>
+{% endmacro %}
 <article>
 <p>
 Atiiscie nimodi utesed estium audam antissime nobis sumqui doloreici to ium quae erae. Luptate mporepe lignatusda dem harchiliqui qui non conecullor suntotatibus dem vel id ute volore vero dolorpore pra simi, quis ex earibea con nustrum con eos doluptate eturenectur sectates simpos aut adi aliquam accum quas simusda ectemquo bla- boriore estiandus ex eatecta dolorem dolesed molupta quistinti quatem natinciae of cabo. Ut ad quaerum harchil iquossum ad et laborem atis doluptur sam cus doluptae quos aut ev- elitio voluptatum, quam quam qui corrupi tiosam aut alite simet pe ditatur as mosae occus enis simagniame dolecti urecab inctor ratempos debis eos aut of ci berfere, velles exerferro blanihilique magnis aut aut rem qui odit ut quisquam expel il exerorita sequiatum enihili gendisto modion nia non num num, es iniaepudae volupta tionse intion pore, quo consequamus.
@@ -14,6 +23,8 @@ Ti voluptus, omniatemped mod magnis in corae molupta turehent.
 <p>
 Ihilluptat lit esequat lacestr uptatium que niscius explacea dolesto rerum, tem ant fuga. Luptiis essitiatus, saerro iliquosam laborup tatatem re dolupti busciur alit aliam quo com- modigent quiatio velis estescil imust volore cores eum qui sequam, ullibus dandae quist, aut mod expelisquam dunt dolenihillam invelig endebis sinumen ienderum quasi in con plabor- rore nonseribea doloriore volo et molorest vid que que molesti bearisc ienisci minverro et landelest vit, autat mo ommos ut quia comnis repelique laccabo reriore recate nus et fugit ea sunt re, quissecatius rerci comnimp orumqui voluptas simoditae magnimet atur?
 </p>
+
+{{ inlineimg("../../img/helix-nebula-1400x1400.jpg", "Hongyi Zhang", "Assistant Online Editor" ,"left")}}
 
 <p>
 Es maionec tureperibus coressitium vel idebitatenis eum ne soluptae nem aut et, voluptati- unt of cat uresed ute nonsequaspit eni re comnihi tatemquia apienimus soloris aut volup- tassunt perunt delestiatem experation conserrupta ium la sinimaximus ilit, simus, abo. Se di ulluptaecte parumet parum ea simolor estrum deliaspe adior aperatecte verum harum venit es re laborem quatquat volorernatur ad quatibe rrupta nobitium repelit volorem volupta tiasperibust volorempori a sa sam destium eos doluptata vel mostis escimus et est, con non- sequost utempor sim duntiam et, nihit, quo eatem inus ni conecat facia quis volorumquos is si audis eos ut ipsunt autemol uptiur solent.
@@ -34,6 +45,8 @@ Vende conet aliqui ut am liquis eria ditiis ducia everibust lique of cid modigna
 <p>
 Ommolorem evel molum dolor asped evelita temoluptam facestiatem harias aces ad mossit qui derspicil ex experibust maxim inciduc ipietur?
 </p>
+
+{{ inlineimg("../../img/helix-nebula-1400x1400.jpg", "Hongyi Zhang", "Daily Bruin" ,"right")}}
 
 <p>
 Ommolorem evel molum dolor asped evelita temoluptam facestiatem harias aces ad mossit qui derspicil ex experibust maxim inciduc ipietur?

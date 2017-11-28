@@ -7,16 +7,34 @@
 @import "tabs";
 @import "phonetab";
 @import "past_issues";
+@import "_utils";
 
 /* Standardize */
+html,
+body {
+  overflow-x: hidden;
+}
+
 .navbar-padding {
   padding-top: 200px;
+
+  @media screen and (max-width: $small-only) {
+    & {
+      padding-top: 105px;
+    }
+  }
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
+
+// @media screen and (max-width: $small-only) {
+//   html, body {
+//     overflow-x: hidden;
+//   }
+// }
 
 a {
   font-weight: bold;
