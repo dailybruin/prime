@@ -10,23 +10,41 @@
   .latest-stories__textbox-pretitle {
     font-family: "Montserrat", "sans-serif";
     font-weight: bolder;
-    font-size: 22px;
+    font-size: 1.2em;
     font-weight: bold;
-    padding-top: 10px;
-    padding-bottom: 14px;
+    padding-top: 1em;
+    padding-bottom: 0.3em;
+  }
+  .latest-stories__textbox-pretitle-small {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: bolder;
+    font-size: 10px;
+    font-weight: bold;
   }
   .latest-stories__textbox-title {
     font-family: "Ropa Sans", "sans-serif";
     line-height: 39.6px;
     letter-spacing: -40;
     font-size: 36px;
+    padding-bottom: 0.3em;
+  }
+  .latest-stories__textbox-title-small {
+    font-family: "Ropa Sans", "sans-serif";
+    letter-spacing: -40;
+    font-size: 16px;
     font-weight: bold;
-    padding-bottom: 14px;
+    margin-bottom: 0.4em;
   }
   .latest-stories__textbox-author {
     font-family: "Montserrat", "sans-serif";
     font-weight: bolder;
-    font-size: 20px;
+    font-size: 1em;
+    padding-bottom: 1em;
+  }
+  .latest-stories__textbox-author-small {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: bolder;
+    font-size: 10px;
     padding-bottom: 14px;
   }
   .latest-stories__textbox-body {
@@ -35,8 +53,22 @@
     font-size: 16px;
     line-height: 20px;
   }
+  .latest-stories__textbox-body-small {
+    font-family: "Montserrat", "sans-serif";
+    font-weight: lighter;
+    font-size: 16px;
+    line-height: 20px;
+    padding-right: 4em;
+  }
   .latest-stories__black-line {
     border-bottom: 0.05em solid black;
+  }
+  .latest-stories__black-line-small {
+    border-bottom: 0.7em solid grey;
+    opacity: 0.5;
+  }
+  .latest-stories__space-small {
+    padding: 0.6em;
   }
 
   .latest-stories__imgbox {
