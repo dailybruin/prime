@@ -10,6 +10,11 @@
 @import "_utils";
 
 /* Standardize */
+html,
+body {
+  overflow-x: hidden;
+}
+
 .navbar-padding {
   padding-top: 200px;
 
