@@ -8,6 +8,11 @@
 @import "phonetab";
 
 /* Standardize */
+html,
+body {
+  overflow-x: hidden;
+}
+
 .navbar-padding {
   padding-top: 200px;
 }
