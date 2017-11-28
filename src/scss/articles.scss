@@ -1,27 +1,74 @@
 .article__category {
-  font-family: 'Ropa Sans', sans-serif;
+  font-family: "Ropa Sans", sans-serif;
   font-size: 18pt;
   line-height: 1;
 }
 
 .article__title {
-  font-family: 'Ropa Sans', sans-serif;
+  font-family: "Ropa Sans", sans-serif;
   font-size: 45pt;
   line-height: 1.1;
   margin-bottom: 38px;
 }
 
+.article__inlineimg {
+  max-width: 400px;
+  width: auto;
+}
+
+.article__inlineimg.left {
+  float: left;
+  margin: 15px 30px 15px 0px;
+}
+
+.article__inlineimg.right {
+  float: right;
+  margin: 15px 0px 15px 30px;
+}
+
+.article__inlineimg__credit {
+  text-align: right;
+}
+
+.article__block-imgbox-photo-credit-wrapper {
+  float: right;
+  color: gray;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.6em;
+}
+.article__block-imgbox-photo-credit-name,
+.article__block-imgbox-photo-credit-title {
+  display: inline;
+}
+
+.article__block-imgbox-photo-credit-title {
+  font-variant: small-caps;
+}
+
 .article__author {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 15pt;
   font-weight: 700;
   line-height: 1;
 }
 
 .article__issue {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 15pt;
   font-weight: 400;
+  margin-bottom: 30px;
+}
+
+articleinfo {
+  margin-top: 140px;
+}
+
+#main {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#socialimage {
   margin-bottom: 30px;
 }
 
@@ -36,6 +83,6 @@ article {
   }
 
   p {
-    font-family: 'PT Serif', serif;
+    font-family: "PT Serif", serif;
   }
 }

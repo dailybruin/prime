@@ -1,3 +1,5 @@
+@import "_fonts";
+@import "_colors";
 /* mainstory.njk */
 #arimo {
   font-family: "Arimo", sans-serif;
@@ -25,11 +27,14 @@
   img {
     display: block;
     overflow: hidden;
-    width: 788px;
+    max-width: 788px;
+    width: auto;
     height: 470px;
     background: grey;
     margin-right: 44px;
     padding-bottom: 5px;
+    display: block;
+    margin: auto;
   }
   .photo-credit-wrapper {
     float: right;
@@ -101,4 +106,52 @@
 
 .main-story {
   padding-left: 44px;
+}
+
+// MOBILE
+
+.m-primary-story-item {
+  border-bottom: 8px solid $spacing-grey;
+
+  .content {
+    padding-left: 7px;
+    padding-right: 7px;
+  }
+
+  .mobile-photo {
+    height: 250px;
+    overflow: hidden;
+
+    img {
+      margin: 0 auto;
+      width: auto;
+      display: block;
+      object-fit: cover;
+      object-position: 50% 50%;
+    }
+  }
+
+  h3 {
+    font-family: $montserrat;
+    font-size: 13px;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    line-height: 10px;
+  }
+
+  h2 {
+    font-family: "Ropa Sans", sans-serif;
+    font-size: 28px;
+    line-height: 28px;
+    letter-spacing: -1px;
+    padding-top: 0px;
+  }
+
+  h4 {
+    font-family: $montserrat;
+    font-size: 14px;
+    line-height: 10px;
+    font-weight: bold;
+  }
 }
