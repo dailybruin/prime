@@ -111,7 +111,10 @@
 // MOBILE
 
 .m-primary-story-item {
-  border-bottom: 8px solid $spacing-grey;
+  .m-primary-story-item__black-line {
+    border-bottom: 0.7em solid grey;
+    opacity: 0.5;
+  }
 
   .content {
     padding-left: 7px;
@@ -121,6 +124,7 @@
   .mobile-photo {
     height: 250px;
     overflow: hidden;
+    padding-top: 0.3em;
 
     img {
       margin: 0 auto;
