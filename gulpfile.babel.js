@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import nunjucksRender from 'gulp-nunjucks-render';
 import nunjucks from 'nunjucks';
-import fs from 'fs';
+import fs from 'fs-extra';
 // Images
 import imagemin from 'gulp-imagemin';
 
@@ -127,6 +127,27 @@ gulp.task('html:dev', () =>
       });
     });
 
+    Object.entries(d.data).forEach(([slug, article]) => {
+      nunjucks.configure('src/');
+      let res = '';
+      if (article.comic) {
+        res = nunjucks.render('./comic.njk', article);
+      } else {
+        res = nunjucks.render('./article.njk', article);
+      }
+      fs.outputFile(
+        'dev/' + article.iss + '/' + slug + '.html',
+        res,
+        'utf8',
+        err => {
+          if (err) throw err;
+          console.log(
+            'Compiled ' + 'dev/' + article.iss + '/' + slug + '.html'
+          );
+        }
+      );
+    });
+
     //index, other statics
     gulp
       .src('src/*.{njk,html}')
@@ -175,7 +196,7 @@ gulp.task(
 );
 
 gulp.task('production', [
-  'html:prod',
+  'html:dev', //temporary
   'styles:prod',
   'scripts:prod',
   'images:prod',

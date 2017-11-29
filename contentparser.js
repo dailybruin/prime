@@ -11,6 +11,7 @@ export default function parseContent() {
         all_stories.push(slug);
         data[slug] = matter.read(file).data;
         data[slug].path = '/' + file.split('/')[1] + '/' + slug + '/';
+        data[slug].iss = file.split('/')[1];
       });
 
       let meta = require('./content/meta.json');

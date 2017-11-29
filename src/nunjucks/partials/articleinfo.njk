@@ -1,8 +1,8 @@
 <articleinfo>
-<p class="article__category">ARTS</p>
-<h1 class="article__title">I actually really like heath bars they're good 4 can go to the end</h1>
-<div class="article__author byline">BY SOMEONE HERE</div>
-<div class="article__issue">FALL 2017</div>
+<p class="article__category">{{ category }}</p>
+<h1 class="article__title">{{ title }}</h1>
+<div class="article__author byline">BY {{ author }}</div>
+<div class="article__issue">{{ issue }}</div>
 
 <div class="flex-container">
   <div class="row">
@@ -10,9 +10,9 @@
 
     <div class="column large-11" id="socialimage">
       <div id="image">
-      <img src="img/helix-nebula-1400x1400.jpg">
+      <img src="/img/helix-nebula-1400x1400.jpg">
       </div>
-      
+
       {# <div class="columns small-12 medium-8"> #}
       <div class="article__content">
         {% include "../partials/fillercontent.njk" %}
