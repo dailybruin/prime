@@ -10,8 +10,12 @@
     ]
   },
   "arts": {
-    "top": "recasting_the_past",
-    "featured": ["remixing_the_genre", "on_your_mark", "speak_for_yourself"]
+    "top": "on_your_mark",
+    "featured": [
+      "recasting_the_past",
+      "remixing_the_genre",
+      "speak_for_yourself"
+    ]
   },
   "culture": {
     "top": "major_decisions",

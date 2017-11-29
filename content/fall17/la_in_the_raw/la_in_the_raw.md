@@ -42,7 +42,11 @@ to find a few places worth trying.
 
 ![Michael Zshornack|right](web.rawseafood.aguachiles.picB.MZ.jpg)
 
-**Coni’Seafood \****3544 W Imperial Hwy \***\*Inglewood, CA 90303**
+**Coni’Seafood**
+
+**3544 W Imperial Hwy**
+
+**Inglewood, CA 90303**
 
 Coni’Seafood’s aguachiles dish is a thing of geometric beauty.
 
@@ -74,7 +78,11 @@ the best ceviche I’ve ever had.
 
 ![Michael Zshornack|right](web.rawseafood.sushi.ADX.picC.jpg)
 
-**Hamasaku \****11043 California State Route 2 \***\*Los Angeles, CA 90025**
+**Hamasaku**
+
+**1043 California State Route 2**
+
+**Los Angeles, CA 90025**
 
 Strip mall sushi may get a bad reputation, but Hamasaku makes a convincing case
 for it.
@@ -126,7 +134,11 @@ blowtorches.
 
 ![Michael Zshornack|right](web.rawseafood.oysters.picD.KH.jpg)
 
-**EMC Seafood & Raw Bar \****3500 W 6th St #101 \***\*Los Angeles, CA 90010**
+**EMC Seafood & Raw Bar**
+
+**3500 W 6th St #101**
+
+**Los Angeles, CA 90010**
 
 Cilantro, olives and blue cheese are all polarizing foods. But none of these
 compare to the fierce debate over a certain type of slimy, briny bivalve.

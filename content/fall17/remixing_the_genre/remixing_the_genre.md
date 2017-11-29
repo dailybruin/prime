@@ -78,8 +78,6 @@ changed his mind. Sedey’s love of history and appreciation for the musical’s
 ability to connect with audiences of all ages and interests converted him into a
 “Hamilton” fan.
 
-![Daniel Leibowitz and Nicole Anisgard Parra|left](Hamiltonpolitical.Aphoto.jpg)
-
 “(The musical) exposed history to a mass audience and in some way, made it
 cool,” Sedey said. “I have younger cousins who are 12, 13, 14, who never would
 have known anything about it.”
@@ -117,6 +115,8 @@ to financially support a production that features marginalized voices, as well
 as engage with the stories they had to tell. The soundtrack has sold more than 1
 million copies, making it the sixth best-selling cast recording of all time, and
 the musical has sold a record-breaking number of tickets.
+
+![Daniel Leibowitz and Nicole Anisgard Parra|left](HamiltonMusical.Aphoto.jpg)
 
 “You create this system that ends up representing and centering people like me,
 but it's being supported by the people who have all the power in the society,”

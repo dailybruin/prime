@@ -181,8 +181,6 @@ her acting dreams aside in high school. Le wasn’t involved in drama clubs and
 didn’t take any acting classes; instead she played basketball and volleyball and
 served on the student council.
 
-![Michael Zshornack|right](web.prime.krust.north.photoC.jpg)
-
 Yet Le applied to 18 colleges as a theater major.
 
 “I was so guilt-ridden,” Le said. “I thought, 'If I pursue this, I am the most
@@ -221,6 +219,8 @@ I don’t blame my parents for wanting me to be financially stable. I know my
 father didn’t ride a dilapidated boat into the middle of the ocean in 1975 for
 me to become a journalist. But when I think about the future, I don’t see myself
 in a white coat.
+
+![Michael Zshornack|right](web.prime.krust.north.photoC.jpg)
 
 I have called myself a perfectionist in many self-deprecating jokes told
 throughout the years, citing my fear of failure. I don’t think I have a fear of
