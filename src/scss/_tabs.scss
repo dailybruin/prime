@@ -8,6 +8,7 @@ $topbar-height: 50px;
   font-family: $topbar-font;
   position: fixed;
   width: 100%;
+  max-width: 100vw;
   background-color: $header-footer-black;
   z-index: 100;
 

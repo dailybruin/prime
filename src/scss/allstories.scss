@@ -112,8 +112,10 @@
 
 .m-primary-story-item {
   .m-primary-story-item__black-line {
-    border-bottom: 0.7em solid grey;
-    opacity: 0.5;
+    background-color: $spacing-grey;
+    height: 10px;
+    border: none;
+    margin-bottom: 0;
   }
 
   .content {
@@ -124,7 +126,6 @@
   .mobile-photo {
     height: 250px;
     overflow: hidden;
-    padding-top: 0.3em;
 
     img {
       margin: 0 auto;
