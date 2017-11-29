@@ -1,19 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div id="main">
-  <div>
-    {% include "partials/articleinfo.html" %}
-  </div>
-  <div class="columns small-12 medium-8">
-    <div class="content">
-      {{ article.html|safe }}
-    </div>
-  </div>
-  <div class="columns small-12 medium-4">
-    <div class="popular-stories">
-      {% include "partials/popular_stories.html" %}
-    </div>
-  </div>
+<div class="row">
+  {% include "partials/articles.html" %}
 </div>
 {% endblock %}

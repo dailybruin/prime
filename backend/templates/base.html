@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-US">
+<html class="no-js" style="overflow-x:hidden" lang="en-US">
 {% include "partials/head.html" %}
 <body>
 {% include "partials/tabs.html" %}
-  {% include "partials/header.html" %}
-
     {% block content %}{% endblock %}
 
+  {% include "partials/phonetab.html" %}
   {% include "partials/footer.html" %}
   {% include "partials/scripts.html" %}
 </body>

@@ -1,44 +1,15 @@
 <div class="fixed top-bar-wrapper">
-    <img id="top-bar-logo" class="logo top-bar-logo" src="{{ url_for('static', filename='img/primelogowhite.svg') }}">
-  <nav class="top-bar">
-    <div class="top-bar-center">
-      <img id="left-bar-logo" class="logo left-bar-logo logo-hidden" src="{{ url_for('static', filename='img/primelogosmallwhite.svg') }}">
-      <ul class="menu top-bar-menu">
-        <li><a href="#">ALL STORIES</a></li>
-        <li><a href="#">ARTS</a></li>
-        <li><a href="#">CULTURE</a></li>
-        <li><a href="#">LIFESTYLE</a></li>
-        <li><a href="#">PAST ISSUES</a></li>
-        <li><input type="search" placeholder="SEARCH"></li>
-      </ul>
-    </div>
+  <a href="/"><img id="top-bar-logo" class="logo top-bar-logo" src="{{ url_for('static', filename='img/primelogowhite.svg') }}"></a>
+
+  <a href="/"><img id="left-bar-logo" class="logo left-bar-logo logo-hidden" src="{{ url_for('static', filename='img/primelogosmallwhite.svg') }}"></a>
+  <nav class="top-bar hidden" id="top-bar">
+    <ul class="menu show-for-medium">
+      <li><a href="./index">ALL STORIES</a></li>
+      <li><a href="./section">ARTS</a></li>
+      <li><a href="./section">CULTURE</a></li>
+      <li><a href="./section">LIFESTYLE</a></li>
+      <li><a href="./past_issues">PAST ISSUES</a></li>
+      {# <li><input type="search" placeholder="SEARCH"></li> #}
+    </ul>
   </nav>
 </div>
-<script type="text/javascript">
-let isHidden
-
-$(window).scroll(function() {
-  let $topBarLogoElem = $("#top-bar-logo");
-  let $leftBarLogoElem = $("#left-bar-logo");
-  if ($(window).scrollTop() >= 800) {
-    if (!$topBarLogoElem.hasClass('logo-hidden')) {
-      $topBarLogoElem.addClass('logo-hidden');
-    }
-    if ($leftBarLogoElem.hasClass('logo-hidden')) {
-      $leftBarLogoElem.removeClass('logo-hidden');
-    }
-  } else {
-    if ($topBarLogoElem.hasClass('logo-hidden')) {
-      $topBarLogoElem.removeClass('logo-hidden');
-    }
-    if (!$leftBarLogoElem.hasClass('logo-hidden')) {
-      $leftBarLogoElem.addClass('logo-hidden');
-    }
-  }
-});
-
-$(document).ready(function() {
-
-
-});
-</script>
