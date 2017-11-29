@@ -1,0 +1,24 @@
+<articleinfo>
+<p class="article__category">{{ article.category }}</p>
+<h1 class="article__title">{{ article.title }}</h1>
+<div class="article__author byline">{{ article.author }}</div>
+<div class="article__issue">{{ article.issue }}</div>
+{# article date?? #}
+
+<i class="fa fa-facebook" aria-hidden="true"></i>
+<div class="flex-container">
+  <div id="article__social-buttons">
+    {# INCLUDE SOCIAL MEDIA HERE #}
+  </div>
+  <div id="socialimage">
+    <div id="social">
+    <i class="fa fa-facebook" aria-hidden="true"></i>
+    </div>
+    <div id="image">
+      <img src="{{ url_for('static', filename=article.image) }}">
+    </div>
+  </div>
+</div>
+</articleinfo>
+
+{# {% include "./socials.html" %} #}

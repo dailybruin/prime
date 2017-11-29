@@ -1,0 +1,8 @@
+# vim swap files
+*.sw?
+
+# python cache directory
+__pycache__/
+
+# python virtual environment
+venv/

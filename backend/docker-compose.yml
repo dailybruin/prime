@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - 5000:5000
+    depends_on:
+      - db
+      - search
+    volumes:
+      - ./content:/usr/src/app/content
+
+  search:
+    image: redislabs/redisearch:latest
+    depends_on:
+      - db
+
+  db:
+    image: redis:4
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf

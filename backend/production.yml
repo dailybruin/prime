@@ -1,0 +1,9 @@
+# https://docs.docker.com/compose/production/
+
+services:
+  web:
+    ports:
+      "80:5000"
+    restart: "on-failure"
+  db:
+    restart: "on-failure"

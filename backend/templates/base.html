@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US">
+{% include "partials/head.html" %}
+<body>
+{% include "partials/tabs.html" %}
+  {% include "partials/header.html" %}
+
+    {% block content %}{% endblock %}
+
+  {% include "partials/footer.html" %}
+  {% include "partials/scripts.html" %}
+</body>
+</html>
