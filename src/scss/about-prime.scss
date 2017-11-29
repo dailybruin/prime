@@ -1,14 +1,22 @@
 .about-prime__container {
+  padding: 20px;
+
   .about-prime__title {
     font-family: "Montserrat", sans-serif;
-    font-size: 4em;
+    font-size: 3em;
     font-stretch: condensed;
   }
   .about-prime__description {
     font-family: "Montserrat", sans-serif;
     font-size: 1em;
+
+    .about-prime__letter {
+      padding-left: 40px;
+      padding-right: 40px;
+      font-style: italic;
+    }
   }
   .about-prime__footer-padding {
-    padding: 2em;
+    padding: 1em;
   }
 }
