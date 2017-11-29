@@ -1,3 +1,16 @@
+@import "_colors";
+@import "_utils";
+
+.article__content {
+  padding-left: 95px;
+  padding-right: 95px;
+  padding-top: 50px;
+  @media screen and (max-width: $small-only) {
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+}
+
 .article__category {
   font-family: "Ropa Sans", sans-serif;
   font-size: 18pt;
@@ -9,6 +22,19 @@
   font-size: 45pt;
   line-height: 1.1;
   margin-bottom: 38px;
+
+  @media screen and (max-width: $small-only) {
+    font-size: 35px;
+    margin-bottom: 16px;
+  }
+}
+
+#article__social-buttons {
+  text-align: center;
+  @media screen and (max-width: $medium-up) {
+    text-align: left;
+    margin-bottom: 16px;
+  }
 }
 
 .article__inlineimg {
@@ -50,6 +76,10 @@
   font-size: 15pt;
   font-weight: 700;
   line-height: 1;
+
+  @media screen and (max-width: $small-only) {
+    font-size: 12px;
+  }
 }
 
 .article__issue {
@@ -57,6 +87,11 @@
   font-size: 15pt;
   font-weight: 400;
   margin-bottom: 30px;
+
+  @media screen and (max-width: $small-only) {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
 }
 
 articleinfo {

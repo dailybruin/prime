@@ -5,15 +5,23 @@
 <div class="article__issue">FALL 2017</div>
 
 <div class="flex-container">
-  <div id="article__social-buttons">
-    {# INCLUDE SOCIAL MEDIA HERE #}
-  </div>
-  <div id="socialimage">
-    <div id="image">
-    <img src="img/helix-nebula-1400x1400.jpg">
+  <div class="row">
+    <div class="column large-1" id="article__social-buttons"></div>
+
+    <div class="column large-11" id="socialimage">
+      <div id="image">
+      <img src="img/helix-nebula-1400x1400.jpg">
+      </div>
+      
+      {# <div class="columns small-12 medium-8"> #}
+      <div class="article__content">
+        {% include "../partials/fillercontent.njk" %}
+      </div>
+      {# </div> #}
+
     </div>
   </div>
 </div>
 </articleinfo>
 
-{# {% include "./socials.njk" %} #}
+{% include "./socials.njk" %}
