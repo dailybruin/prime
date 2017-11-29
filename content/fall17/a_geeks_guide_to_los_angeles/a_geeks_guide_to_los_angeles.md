@@ -5,7 +5,7 @@ category: 'Lifestyle'
 issue: 'Fall 2017'
 cover:
   img: 'prime.nerdylaguide.mapgraphic.Aart.png'
-  author: 'Olivia Mazzucato'
+  author: 'Leann Woo'
 excerpt: 'I decided to check out a variety of geeky activities that spanned the city to introduce people to geek culture and new spots in this sprawling city we call home.'
 ---
 

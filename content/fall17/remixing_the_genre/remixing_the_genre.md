@@ -4,8 +4,8 @@ author: 'Olivia Mazzucato'
 category: 'Arts'
 issue: 'Fall 2017'
 cover:
-  img: 'HamiltonMusical.Aphoto.jpg'
-  author: 'Olivia Mazzucato'
+  img: 'HamiltonMusical.Bphoto.jpg'
+  author: 'Daniel Leibowitz and Nicole Anisgard Parra'
 excerpt: 'While many musicals only influence the theater community, “Hamilton” has burst into mainstream pop culture with an unparalleled momentum. It has impacted musical theater as a genre, as well as the lives of audience members and fans.'
 ---
 

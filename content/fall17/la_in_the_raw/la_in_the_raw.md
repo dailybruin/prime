@@ -5,7 +5,7 @@ category: 'Lifestyle'
 issue: 'Fall 2017'
 cover:
   img: 'web.rawseafood.aguachiles.picA.MZ.jpg'
-  author: 'Linda Xu'
+  author: 'Michael Zshornack'
 excerpt: 'Angelenos take pride in their health, which means the greasy, breaded fish and creamy clam chowders of my native Seattle are hard to come by. But the city makes up for it with some fantastic raw seafood options, which I’ve trawled to find a few places worth trying.'
 ---
 
