@@ -25,6 +25,15 @@
 
   @media screen and (max-width: $small-only) {
     font-size: 35px;
+    margin-bottom: 16px;
+  }
+}
+
+#article__social-buttons {
+  text-align: center;
+  @media screen and (max-width: $medium-up) {
+    text-align: left;
+    margin-bottom: 16px;
   }
 }
 
