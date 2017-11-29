@@ -21,12 +21,28 @@ import sourcemaps from 'gulp-sourcemaps';
 import bs from 'browser-sync';
 import del from 'del';
 
+import contentParser from './contentparser';
+
 const browserSync = bs.create();
+
+gulp.task('contentimages:dev', () =>
+  gulp.src('content/**/*.+(jpg|png|jpeg)').pipe(gulp.dest('dev/img'))
+);
+
+gulp.task('contentimages:prod', () =>
+  gulp
+    .src('content/**/*.+(jpg|png|jpeg)')
+    .pipe(imagemin())
+    .pipe(gulp.dest('prod/img'))
+);
 
 gulp.task('images:dev', () => gulp.src('src/img/*').pipe(gulp.dest('dev/img')));
 
 gulp.task('images:prod', () =>
-  gulp.src('src/img/*').pipe(imagemin()).pipe(gulp.dest('prod/img'))
+  gulp
+    .src('src/img/*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('prod/img'))
 );
 
 gulp.task('styles:dev', () =>
@@ -98,14 +114,17 @@ gulp.task('scripts:prod', () =>
 );
 
 gulp.task('html:dev', () =>
-  gulp
-    .src('src/*.{njk,html}')
-    .pipe(
-      nunjucksRender({
-        path: ['src/'],
-      })
-    )
-    .pipe(gulp.dest('dev/'))
+  contentParser().then(d => {
+    gulp
+      .src('src/*.{njk,html}')
+      .pipe(
+        nunjucksRender({
+          path: ['src/'],
+          data: d,
+        })
+      )
+      .pipe(gulp.dest('dev/'));
+  })
 );
 
 gulp.task('html:prod', () =>
@@ -122,7 +141,7 @@ gulp.task('html:prod', () =>
 
 gulp.task(
   'development',
-  ['html:dev', 'styles:dev', 'scripts:dev', 'images:dev'],
+  ['html:dev', 'styles:dev', 'scripts:dev', 'images:dev', 'contentimages:dev'],
   () => {
     browserSync.init({
       server: {

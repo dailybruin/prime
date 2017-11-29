@@ -60,5 +60,7 @@
     "stylelint": "^8.2.0",
     "webpack-stream": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gray-matter": "^3.1.1"
+  }
 }

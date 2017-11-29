@@ -3,8 +3,8 @@
 		<div class="photo">
 			<img src="img/helix-nebula-1400x1400.jpg" >
 			<div class="photo-credit-wrapper">
-				<div class="photo-credit-name">AMY DIXON /
-					<div class="photo-credit-title">assistant photo editor</div>
+				<div class="photo-credit-name">{{ data[all.top].cover.author }} /
+					<div class="photo-credit-title">daily bruin</div>
 				</div>
 			</div>
 		</div>
@@ -13,17 +13,17 @@
 	<div class="column large-4">
 		<div class="main-story">
 			<div class="category">
-				CATEGORY
+				{{ data[all.top].category }}
 			</div>
 			<div class="title">
-				I actually really like health bars they're good
+				{{ data[all.top].title }}
 			</div>
 			<div class="author">
-				BY SOMEONE HERE
+				BY {{ data[all.top].author }}
 			</div>
 			<div class="description">
-				Really, heath bars are something close to an ideal chocolate. I think 100 grands are close but heath bars ooo they really take the cake hmm
-			</div>
+        {{ data[all.top].excerpt }}
+      </div>
 		</div>
 
   </div>
