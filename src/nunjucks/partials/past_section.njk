@@ -1,10 +1,12 @@
+{% import "./3col_container_pdf.njk" as pdfs %}
+
 <div class="past_section">
 	<h1>Past Issues</h1>
 	<hr class="section_black-line">
     <hr class="section_black-line">
-  	{% include "./3col_container_pdf.njk" %}
+   	{{ pdfs.pdf_col("img/Fall2015.jpg", "img/Fall2016.jpg", "img/Spring2016.jpg", "Fall 2015", "Fall 2016", "Spring 2016", "https://issuu.com/dailybruin/docs/primefall2015", "https://issuu.com/dailybruin/docs/primefall2016", "https://issuu.com/dailybruin/docs/primespring2016") }}
   	<hr class="section_black-line">
 	<hr class="section_black-line">
-  	{% include "./3col_container_pdf.njk" %}
+  	{{ pdfs.pdf_col("img/Winter2016.jpg", "img/Spring2017.jpg", "img/Winter2017.jpg", "Winter 2016", "Spring 2017", "Winter 2017", "https://issuu.com/dailybruin/docs/primewinter2016", "https://issuu.com/dailybruin/docs/primespring2017", "https://issuu.com/dailybruin/docs/primewinter2017") }}
 
 </div>
