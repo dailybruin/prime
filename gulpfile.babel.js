@@ -2,6 +2,8 @@ import gulp from 'gulp';
 import nunjucksRender from 'gulp-nunjucks-render';
 import nunjucks from 'nunjucks';
 import fs from 'fs-extra';
+import _ from 'lodash';
+
 // Images
 import imagemin from 'gulp-imagemin';
 
@@ -127,7 +129,7 @@ gulp.task('html:dev', () =>
       });
     });
 
-    Object.entries(d.data).forEach(([slug, article]) => {
+    _.forEach(d.data, (article, slug) => {
       nunjucks.configure('src/');
       let res = '';
       if (article.comic) {
