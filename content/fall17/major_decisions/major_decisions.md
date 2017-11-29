@@ -6,7 +6,7 @@ issue: 'Fall 2017'
 cover:
   img: 'web.kristie.PicA.MZ.jpg'
   author: 'Michael Zshornack'
-excerpt: 'My father is extremely proud of my family's life in quiet suburbia – his is the classic tale of an immigrant success story. He’s fulfilled most of his aspirations. The only thing left was to raise a doctor.'
+excerpt: 'My father is extremely proud of my family’s life in quiet suburbia – his is the classic tale of an immigrant success story. He’s fulfilled most of his aspirations. The only thing left was to raise a doctor.'
 ---
 
 “What is a person or event that changed the trajectory of your life?”
