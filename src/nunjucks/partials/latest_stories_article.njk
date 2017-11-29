@@ -1,7 +1,7 @@
 <div class="latest-stories__block">
   <div class="hide-for-small-only latest-stories__wrapper">
     <hr class="latest-stories__black-line">
-      <a href="{{ data[story].path }}"><div class="large-4 column latest-stories__imgbox" style="background-image: url('img{{ data[story].path }}{{ data[story].cover.img }}'); background-size: cover; background-position: 50% 50%; height: 250px;"></a>
+      <a href="{{ data[story].path }}"><div class="large-4 column latest-stories__imgbox" style="background-image: url('img{{ data[story].path }}/{{ data[story].cover.img }}'); background-size: cover; background-position: 50% 50%; height: 250px;"></a>
         {# <img src="img{{ data[story].path }}{{ data[story].cover.img }}" alt="test-img"> #}
         <div class="latest-stories__block-imgbox-photo-credit-wrapper">
           <div class="latest-stories__block-imgbox-photo-credit-name">{{ data[story].cover.author }} /</div>
@@ -35,7 +35,7 @@
       </a>
     </div>
     <div class="small-4 column latest-stories__imgbox-small">
-      <img src="img{{ data[story].path }}{{ data[story].cover.img }}" alt="test-img">
+      <img src="img{{ data[story].path }}/{{ data[story].cover.img }}" alt="test-img">
     </div>
     <div class="small-12 column latest-stories__textbox-body-small">
       <a class="link__article" href="{{ data[story].path }}">

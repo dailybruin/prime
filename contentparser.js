@@ -13,7 +13,7 @@ export default function parseContent() {
         all_stories.push(slug);
         let out = matter.read(file);
         data[slug] = out.data;
-        data[slug].path = '/' + file.split('/')[1] + '/' + slug + '/';
+        data[slug].path = '/' + file.split('/')[1] + '/' + slug;
         data[slug].iss = file.split('/')[1];
 
         let renderer = new marked.Renderer();

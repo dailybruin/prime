@@ -2,7 +2,7 @@
   {% for featured in all.featured %}
   <div class="columns medium-4 main-block">
     <div class="col3__block">
-      <div class="col3__block-imgbox" style="background-image:url('img{{ data[featured].path }}{{ data[featured].cover.img }}'); background-size: cover; background-position: 50% 50%; height: 225px;">
+      <div class="col3__block-imgbox" style="background-image:url('img{{ data[featured].path }}/{{ data[featured].cover.img }}'); background-size: cover; background-position: 50% 50%; height: 225px;">
         <div class="col3__block-imgbox-photo-credit-wrapper">
           <div class="col3__block-imgbox-photo-credit-name">{{ data[featured].cover.author }} /</div>
           <div class="col3__block-imgbox-photo-credit-title">daily bruin</div>
