@@ -11,6 +11,11 @@
 @import "about-prime";
 
 /* Standardize */
+html,
+body {
+  overflow-x: hidden;
+}
+
 .navbar-padding {
   padding-top: 200px;
 

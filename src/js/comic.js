@@ -1,4 +1,4 @@
-export default function initComics() {
+(function($) {
   var $pswp = $('.pswp')[0];
   var image = [];
 
@@ -50,4 +50,4 @@ export default function initComics() {
       lightBox.init();
     });
   });
-}
+})(jQuery);
