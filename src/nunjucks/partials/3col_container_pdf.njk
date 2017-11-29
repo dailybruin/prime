@@ -1,11 +1,14 @@
+{% import "./pdf_box.njk" as pdf_box %}
+{% macro pdf_col(img1, img2, img3, title1, title2, title3, link1, link2, link3) %}
 <div class="col3__pdf-wrapper">
   <div class="columns medium-4 main-block">
-    {% include "./pdf_box.njk" %}
+  	{{ pdf_box.single_issue(img1, title1, link1) }}
   </div>
   <div class="columns medium-4 main-block">
-    {% include "./pdf_box.njk" %}
+    {{ pdf_box.single_issue(img2, title2, link2) }}
   </div>
   <div class="columns medium-4 main-block">
-    {% include "./pdf_box.njk" %}
+    {{ pdf_box.single_issue(img3, title3, link3) }}
   </div>
 </div>
+{% endmacro %}
