@@ -166,7 +166,7 @@ like a big barrier (is) broken.”
 If Stephen Aron had to guess which figure from early American history would star
 in a hit musical, Alexander Hamilton would not have been at the top of his list.
 
-![Photo by Hannah Burnett, Illustration by Jae Su|right](Hamiltonpolitical.photoC.jpg)
+![Photo by Hannah Burnett, Illustration by Jae Su|right](HamiltonPolitical.photoC.jpg)
 
 Aron, chair of the history department at UCLA, said the fervor around a show
 about Hamilton fascinates him from a historian’s perspective, given the

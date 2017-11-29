@@ -1,3 +1,8 @@
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="prime | {{ title }}" />
+<meta property="og:description"        content="{{ excerpt }}" />
+<meta property="og:image"              content="http://prime.dailybruin.com/img{{ path }}/{{ cover.img }}" />
+
 <articleinfo>
 <p class="article__category">{{ category }}</p>
 <h1 class="article__title">{{ title }}</h1>
@@ -10,8 +15,10 @@
 
     <div class="column large-11" id="socialimage">
       <div id="image">
-      <img src="/img/{{ path }}/{{ cover.img }}">
+        <img src="/img{{ path }}/{{ cover.img }}">
       </div>
+
+      <div class="photo-credits-article" style="text-align: right;">{{ cover.author }}/DAILY BRUIN</div>
 
       {# <div class="columns small-12 medium-8"> #}
       <div class="article__content">
