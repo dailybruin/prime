@@ -1,16 +1,16 @@
 <div class="section_block">
   <div class="row">
     <div class="medium-7 column">
-      <div class="section_block-title">I actually like health bars they're good 4 u</div>
+      <div class="section_block-title">{{ data[featured].title }}</div>
     </div>
     <div class="medium-5 column imgbox">
-      <img src="img/helix-nebula-1400x1400.jpg" alt="test-img">
+      <img src="img{{ data[featured].path }}{{ data[featured].cover.img }}" alt="test-img">
     </div>
   </div>
   <div class="row">
     <div class="medium-12 column">
-      <div class="section_block-author">BY SOMEONE HERE</div>
-      <div class="section_block-body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum </div>
+      <div class="section_block-author">BY {{ data[featured].author }}</div>
+      <div class="section_block-body">{{ data[featured].excerpt }}</div>
     </div>
   </div>
 </div>

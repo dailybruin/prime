@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import nunjucksRender from 'gulp-nunjucks-render';
-
+import nunjucks from 'nunjucks';
+import fs from 'fs';
 // Images
 import imagemin from 'gulp-imagemin';
 
@@ -115,6 +116,18 @@ gulp.task('scripts:prod', () =>
 
 gulp.task('html:dev', () =>
   contentParser().then(d => {
+    d.categories.forEach(category => {
+      d.category = category;
+      d.this = d[category];
+      nunjucks.configure('src/');
+      let res = nunjucks.render('./section.njk', d);
+      fs.writeFile('dev/' + category + '.html', res, 'utf8', err => {
+        if (err) throw err;
+        console.log('Compiled ' + 'dev/' + category + '.html');
+      });
+    });
+
+    //index, other statics
     gulp
       .src('src/*.{njk,html}')
       .pipe(

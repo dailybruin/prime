@@ -1,5 +1,6 @@
 {
   "issue": "fall17",
+  "categories": ["arts", "culture", "lifestyle"],
   "all": {
     "top": "on_your_mark",
     "featured": [
@@ -7,5 +8,17 @@
       "major_decisions",
       "a_picture_of_independence"
     ]
+  },
+  "arts": {
+    "top": "recasting_the_past",
+    "featured": ["remixing_the_genre", "on_your_mark", "speak_for_yourself"]
+  },
+  "culture": {
+    "top": "major_decisions",
+    "featured": ["a_picture_of_independence"]
+  },
+  "lifestyle": {
+    "top": "a_geeks_guide_to_los_angeles",
+    "featured": ["an_uphill_battle", "la_in_the_raw"]
   }
 }
