@@ -1,0 +1,17 @@
+{% extends "base.njk" %}
+
+{% block content %}
+<div class="navbar-padding"></div>
+<div class="row show-for-medium">
+  {% include "./partials/section.html" %}
+</div>
+<div class="row show-for-small-only small-collapse">
+  {% include "./partials/mobile_primary_stories.html" %}
+</div>
+{% endblock %}
+<!-- <div class="row">
+  {% include "./partials/latest_stories.html" %}
+</div> -->
+<!-- <div class="row">
+  {% include "./partials/page_number.html" %}
+</div> -->
