@@ -8,6 +8,7 @@ $topbar-height: 50px;
   font-family: $topbar-font;
   position: fixed;
   width: 100%;
+  max-width: 100vw;
   background-color: $header-footer-black;
   z-index: 100;
 
@@ -60,18 +61,20 @@ $topbar-height: 50px;
         color: $header-footer-black;
       }
     }
+  }
 
-    .left-bar-logo {
-      position: absolute;
-      left: 0;
-      height: 45px;
-      padding-left: 10px;
+  .left-bar-logo {
+    position: absolute;
+    z-index: 2;
+    top: 2px;
+    left: 0;
+    height: 45px;
+    padding-left: 10px;
+    transition: all 1s ease;
+    &.logo-hidden {
+      transform: translateX(-100%);
+      margin-left: 0%;
       transition: all 1s ease;
-      &.logo-hidden {
-        transform: translateX(-100%);
-        margin-left: 0%;
-        transition: all 1s ease;
-      }
     }
   }
 }

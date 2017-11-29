@@ -1,3 +1,6 @@
+@import "utils";
+@import "_colors";
+
 .latest-stories__container {
   .latest-stories__title {
     text-align: center;
@@ -6,6 +9,12 @@
     font-weight: lighter;
     padding-top: 40px;
     padding-bottom: 20px;
+
+    @media screen and (max-width: $small-only) {
+      & {
+        padding-top: 15px;
+      }
+    }
   }
   .latest-stories__textbox-pretitle {
     font-family: "Montserrat", "sans-serif";
@@ -20,6 +29,17 @@
     font-weight: bolder;
     font-size: 10px;
     font-weight: bold;
+    margin-bottom: 5px;
+  }
+  .latest-stories__imgbox-small {
+    img {
+      margin: 0 auto;
+      max-height: 100px;
+    }
+    padding-right: 7px;
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-align: center;
   }
   .latest-stories__textbox-title {
     font-family: "Ropa Sans", "sans-serif";
@@ -28,12 +48,15 @@
     font-size: 36px;
     padding-bottom: 0.3em;
   }
+  .latest-stories__textbox-small {
+    padding-left: 7px;
+    padding-right: 0;
+  }
   .latest-stories__textbox-title-small {
     font-family: "Ropa Sans", "sans-serif";
-    letter-spacing: -40;
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 0.4em;
+    font-size: 1.5rem;
+    line-height: 1.3rem;
+    margin-bottom: 5px;
   }
   .latest-stories__textbox-author {
     font-family: "Montserrat", "sans-serif";
@@ -54,19 +77,29 @@
     line-height: 20px;
   }
   .latest-stories__textbox-body-small {
-    font-family: "Montserrat", "sans-serif";
-    font-weight: lighter;
-    font-size: 16px;
-    line-height: 20px;
-    padding-right: 4em;
+    padding-left: 7px;
+    padding-right: 7px;
+    p {
+      font-family: "Montserrat", "sans-serif";
+      font-weight: lighter;
+      font-size: 16px;
+      line-height: 18px;
+      margin-bottom: 0;
+    }
   }
+
   .latest-stories__black-line {
     border-bottom: 0.05em solid black;
   }
-  .latest-stories__black-line-small {
-    border-bottom: 0.7em solid grey;
-    opacity: 0.5;
+
+  .latest-stories__separator-small {
+    background-color: $spacing-grey;
+    height: 7px;
+    border: none;
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
+
   .latest-stories__space-small {
     padding: 0.6em;
   }
