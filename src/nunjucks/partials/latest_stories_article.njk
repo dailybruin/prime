@@ -1,8 +1,8 @@
 <div class="latest-stories__block">
   <div class="hide-for-small-only latest-stories__wrapper">
     <hr class="latest-stories__black-line">
-      <div class="large-4 column latest-stories__imgbox">
-        <img src="img{{ data[story].path }}{{ data[story].cover.img }}" alt="test-img">
+      <div class="large-4 column latest-stories__imgbox" style="background-image: url('img{{ data[story].path }}{{ data[story].cover.img }}'); background-size: cover; background-position: 50% 50%; height: 250px;">
+        {# <img src="img{{ data[story].path }}{{ data[story].cover.img }}" alt="test-img"> #}
         <div class="latest-stories__block-imgbox-photo-credit-wrapper">
           <div class="latest-stories__block-imgbox-photo-credit-name">{{ data[story].cover.author }} /</div>
           <div class="latest-stories__block-imgbox-photo-credit-title">daily bruin</div>

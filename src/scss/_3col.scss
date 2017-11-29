@@ -23,7 +23,9 @@
     }
     .col3__block-imgbox-photo-credit-wrapper {
       float: right;
-      color: gray;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 0 10px;
       font-family: "Montserrat", sans-serif;
       font-size: 0.6em;
       .col3__block-imgbox-photo-credit-title,
@@ -42,7 +44,7 @@
       text-align: left;
       font-family: "Montserrat", sans-serif;
       font-weight: bolder;
-      padding-top: 2em;
+      margin-top: 2em;
       text-transform: uppercase;
     }
 
