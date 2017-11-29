@@ -1,3 +1,5 @@
+import initComics from './comic';
+
 export default function main() {
   $(document).ready(() => {
     const $window = $(window);
@@ -36,5 +38,7 @@ export default function main() {
         }
       }
     });
+
+    initComics();
   });
 }
