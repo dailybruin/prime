@@ -1,0 +1,16 @@
+{% macro single_issue(img, title, link) %}
+
+{% if title == "" %}
+
+{% else %}
+<div class="col3__block">
+  <div class="col3__block-imgbox">
+    <!-- make the image a link later -->
+    <img src="{{ img }}" alt="test_img_1">
+  </div>
+  <div class="col3__block-textbox">
+    <a href="{{ link }}"><h2 class="col3__block-textbox-title" style="text-align: center;">{{ title }}</h2></a>
+  </div>
+</div>
+{% endif %}
+{% endmacro %}
