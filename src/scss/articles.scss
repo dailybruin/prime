@@ -1,11 +1,6 @@
 @import "_colors";
 @import "_utils";
 
-.article__social-icon:hover {
-  color: grey;
-  cursor: pointer;
-}
-
 .article__content {
   padding-left: 95px;
   padding-right: 95px;
@@ -27,6 +22,10 @@
   font-size: 45pt;
   line-height: 1.1;
   margin-bottom: 38px;
+
+  @media screen and (max-width: $small-only) {
+    font-size: 35px;
+  }
 }
 
 .article__inlineimg {
@@ -68,6 +67,10 @@
   font-size: 15pt;
   font-weight: 700;
   line-height: 1;
+
+  @media screen and (max-width: $small-only) {
+    font-size: 12px;
+  }
 }
 
 .article__issue {
@@ -75,6 +78,11 @@
   font-size: 15pt;
   font-weight: 400;
   margin-bottom: 30px;
+
+  @media screen and (max-width: $small-only) {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
 }
 
 articleinfo {
