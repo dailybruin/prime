@@ -1,13 +1,9 @@
 <div class="row">
+  {% for article in subarticles %}
   <div class="columns medium-4">
-    {% include "./allstories_box.html" %}
+    {% include "partials/allstories_box.html" %}
   </div>
-  <div class="columns medium-4">
-    {% include "./allstories_box.html" %}
-  </div>
-  <div class="columns medium-4">
-    {% include "./allstories_box.html" %}
-  </div>
+  {% endfor %}
 </div>
 
 <hr class="col3__black-line-top">

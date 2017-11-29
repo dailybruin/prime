@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="column large-8">
 		<div class="photo">
-			<img src="/img/helix-nebula-1400x1400.jpg" >
+      <img src="{{ url_for('static', filename=mainstory.image) }}" >
       <div class="photo-credit-wrapper">
         <div class="photo-credit-name">AMY DIXON /
           <div class="photo-credit-title">assistant photo editor</div>
@@ -13,16 +13,16 @@
 	<div class="column large-4">
 		<div class="main-story">
 			<div class="category">
-				CATEGORY
+        {{ mainstory.category }}
 			</div>
 			<div class="title">
-				I actually really like health bars they're good
+        {{ mainstory.title }}
 			</div>
 			<div class="author">
-				BY SOMEONE HERE
+        {{ mainstory.author }}
 			</div>
 			<div class="description">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras et velit in lacus egestas porta vel vel dui. Phasellus euismod sapien nec condimentum iaculis. Cras eleifend egestas cursus. Vivamus ultricies turpis dui, vel sodales turpis aliquam sed. Praesent varius ante at blandit congue.
+        {{ mainstory.description }}
 			</div>
 		</div>
 

@@ -24,6 +24,14 @@ markdown_parser = markdown.Markdown(
 )
 
 
+@app.route('/')
+def show_index():
+  db = get_db()
+  keys = ['title', 'author', 'category', 'description', 'image']
+  mainstory = dict(zip(keys, db.hmget('an_uphill_battle', *keys)))
+  return flask.render_template('index.html', mainstory=mainstory)
+
+
 @app.route('/articles/<name>')
 def show_article(name):
     db = get_db()
@@ -73,7 +81,7 @@ def parse_article(filepath):
             warnings.warn('tags not yet supported', stacklevel=2)
             del data['tags']
 
-        keys = ['title', 'author', 'category', 'issue']
+        keys = ['title', 'author', 'category', 'issue'] # image, description
         assert all(key in data for key in keys), 'missing article metadata'
 
         return data

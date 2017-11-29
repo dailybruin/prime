@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="navbar-padding"></div>
+<div class="row show-for-medium">
+  {% include "partials/mainstory.html" %}
+</div>
+<div class="row show-for-medium">
+  {% include "partials/3col_container.html" %}
+</div>
+<div class="row show-for-small-only small-collapse">
+  {% include "partials/mobile_primary_stories.html" %}
+</div>
+<div class="row">
+  {% include "partials/latest_stories.html" %}
+</div>
+<!-- <div class="row">
+  {% include "partials/page_number.html" %}
+</div> -->
+{% endblock %}

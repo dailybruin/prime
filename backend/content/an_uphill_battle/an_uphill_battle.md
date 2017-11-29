@@ -1,9 +1,11 @@
-title: 'An Uphill Battle'
-author: 'Owen Emerson'
-category: 'Lifestyle'
-image: 'img/an_uphill_battle/picA.jpg'
-issue: 'Fall 2017'
+title: 'An Uphill Battle' author: 'Owen Emerson' category: 'Lifestyle'
+description: 'Nineteen thousand feet up, 1:30 a.m. darkness, sub-zero
+temperatures and biting winds. Benjamin van Aken emerged exhausted from the
+depths of his sleeping bag. Miserable and cold, he began the final stage of his
+climb.' image: 'img/an_uphill_battle/picA.jpg' issue: 'Fall 2017'
+
 ---
+
 Nineteen thousand feet up, 1:30 a.m. darkness, sub-zero temperatures and biting
 winds. Benjamin van Aken emerged exhausted from the depths of his sleeping bag.
 Miserable and cold, he began the final stage of his climb.
@@ -85,8 +87,8 @@ mind and body.
 Bouldering posed an even more difficult mental challenge for him and his
 self-esteem.
 
-“Ninety-nine percent of everything you’re doing is failing, and just that
-1 percent is getting it,” van Aken said. “I was biting off way more than I could
+“Ninety-nine percent of everything you’re doing is failing, and just that 1
+percent is getting it,” van Aken said. “I was biting off way more than I could
 chew.”
 
 He needed to overcome the physical challenges in his life to overcome his
@@ -119,15 +121,15 @@ Van Aken felt strong enough this year to take on Mount Whitney in California,
 the highest mountain in the contiguous United States. Van Aken and his friends
 were supposed to summit it together, but the weather changed their plans. One
 friend was unable to climb because of sun poisoning, while the other had a hard
-time breathing in the single-digit temperatures and wind chill. With
-a 1,600-foot slope and wind gusts pouring snow in front of him, van Aken decided
+time breathing in the single-digit temperatures and wind chill. With a
+1,600-foot slope and wind gusts pouring snow in front of him, van Aken decided
 to go on with two other, more experienced mountaineers.
 
 The final 400 feet were steep, and the next hour and a half felt like life and
 death, van Aken said. The ice climbing required focus and careful, precise
 placement of his ice axes and crampons. The movement was monotonous and easy,
-but he knew any small error would result in him falling to his death. With
-a rush of adrenaline fueling his mind and body, he climbed slowly and steadily.
+but he knew any small error would result in him falling to his death. With a
+rush of adrenaline fueling his mind and body, he climbed slowly and steadily.
 
 Van Aken conquered the ice wall and summited Whitney, a feat he’s now achieved
 four times.
