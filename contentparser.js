@@ -20,7 +20,7 @@ export default function parseContent() {
         renderer.image = function(href, title, text) {
           let info = text.split('|');
           return `<div class="article__inlineimg ${info[1]}">
-          <img src="/img${data[slug].path}${href}" />
+          <img src="/img${data[slug].path}/${href}" />
           <div class="article__block-imgbox-photo-credit-wrapper">
              <div class="article__block-imgbox-photo-credit-name">${
                info[0]
