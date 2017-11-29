@@ -1,15 +1,40 @@
 @import "3col";
 @import "latest-stories";
+@import "page-numbers";
 @import "footer";
 @import "colors";
-@import "allstories";
+@import "section";
 @import "tabs";
+@import "phonetab";
+@import "past_issues";
+@import "_utils";
+@import "about-prime";
 
 /* Standardize */
+.navbar-padding {
+  padding-top: 200px;
+
+  @media screen and (max-width: $small-only) {
+    & {
+      padding-top: 105px;
+    }
+  }
+}
+
+.footer-padding {
+  padding-bottom: 50px;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
+
+// @media screen and (max-width: $small-only) {
+//   html, body {
+//     overflow-x: hidden;
+//   }
+// }
 
 a {
   font-weight: bold;
