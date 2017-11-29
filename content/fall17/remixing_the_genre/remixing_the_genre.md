@@ -116,7 +116,7 @@ as engage with the stories they had to tell. The soundtrack has sold more than 1
 million copies, making it the sixth best-selling cast recording of all time, and
 the musical has sold a record-breaking number of tickets.
 
-![Daniel Leibowitz and Nicole Anisgard Parra|left](HamiltonMusical.Aphoto.jpg)
+![Photo by Daniel Leibowitz, Illustration by Nicole Anisgard Parra|left](HamiltonMusical.Aphoto.jpg)
 
 “You create this system that ends up representing and centering people like me,
 but it's being supported by the people who have all the power in the society,”

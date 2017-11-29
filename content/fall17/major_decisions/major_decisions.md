@@ -57,7 +57,7 @@ I spent the summer before my first year at UCLA poring over lists of pre-health
 organizations and volunteer opportunities, making spreadsheets that listed when
 I would become involved in each one.
 
-![Michael Zshornack|left](web.prime.kristie.south.photoB.jpg)
+![Hannah Burnett|left](web.prime.kristie.south.photoB.jpg)
 
 Among my friends, I was the resident pre-med expert, chiming in to answer
 anyone’s questions about the daunting requisites for admission to medical
@@ -220,7 +220,7 @@ father didn’t ride a dilapidated boat into the middle of the ocean in 1975 for
 me to become a journalist. But when I think about the future, I don’t see myself
 in a white coat.
 
-![Michael Zshornack|right](web.prime.krust.north.photoC.jpg)
+![Amy Dixon|right](web.prime.krust.north.photoC.jpg)
 
 I have called myself a perfectionist in many self-deprecating jokes told
 throughout the years, citing my fear of failure. I don’t think I have a fear of

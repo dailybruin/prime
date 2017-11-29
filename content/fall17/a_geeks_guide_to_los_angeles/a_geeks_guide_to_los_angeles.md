@@ -5,7 +5,7 @@ category: 'Lifestyle'
 issue: 'Fall 2017'
 cover:
   img: 'prime.nerdylaguide.mapgraphic.Aart.png'
-  author: 'Leann Woo'
+  author: 'LeAnn Woo'
 excerpt: 'I decided to check out a variety of geeky activities that spanned the city to introduce people to geek culture and new spots in this sprawling city we call home.'
 ---
 
@@ -24,7 +24,7 @@ and figuring out if they’re worth the commute has been a constant challenge fo
 me. I still have a sticky note that I wrote my first year of college, listing
 different spots I had read about, cataloging how many minutes away they were.
 
-![Illo|left](prime.nerdyladguide.Bphoto.jpg)
+![Rachel Lee|left](prime.nerdyladguide.Bphoto.jpg)
 
 I decided to check out a variety of geeky activities that spanned the city to
 introduce people to geek culture and new spots in this sprawling city we call
@@ -69,7 +69,7 @@ watching the Jeff Sessions testimony on C-SPAN.
 
 **919 S Grand Ave, Los Angeles, CA 90015**
 
-![Illo|right](prime.nerdylaguide.fidmillo.png)
+![Ceci Sheng|right](prime.nerdylaguide.fidmillo.png)
 
 I haven’t actually seen “The Handmaid’s Tale,” even though I love the book,
 which is why I was so surprised when I walked into the Fashion Institute of
@@ -147,7 +147,7 @@ Yesterday.”
 
 **2120 W Magnolia Blvd, Burbank, CA 91506**
 
-![Illo|right](prime.nerdyladguide.geekyteasillo.png)
+![Ceci Sheng|right](prime.nerdyladguide.geekyteasillo.png)
 
 Geeky Teas feels like the inside of a fangirl’s head.
 
@@ -236,7 +236,7 @@ Making sense of it all makes for a psychological and intellectual challenge.
 
 **1606 W Magnolia Blvd, Burbank, CA 91506**
 
-![Illo|left](prime.nerdlaguide.perkynerdillo.png)
+![Ceci Sheng|left](prime.nerdlaguide.perkynerdillo.png)
 
 I’m all too familiar with the pervasive negativity that characterizes the geek
 experience for many women. I have been subjected to rigorous questioning about

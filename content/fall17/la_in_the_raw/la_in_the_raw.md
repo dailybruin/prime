@@ -76,7 +76,7 @@ the best ceviche I’ve ever had.
 
 ## Best strip mall sushi
 
-![Michael Zshornack|right](web.rawseafood.sushi.ADX.picC.jpg)
+![Amy Dixon|right](web.rawseafood.sushi.ADX.picC.jpg)
 
 **Hamasaku**
 
@@ -132,7 +132,7 @@ blowtorches.
 
 ## Swankiest $1 oysters
 
-![Michael Zshornack|right](web.rawseafood.oysters.picD.KH.jpg)
+![Kristie-Valerie Hoang|right](web.rawseafood.oysters.picD.KH.jpg)
 
 **EMC Seafood & Raw Bar**
 
