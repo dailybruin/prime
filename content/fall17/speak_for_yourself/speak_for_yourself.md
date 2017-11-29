@@ -3,6 +3,10 @@ title: 'Speak For Yourself'
 author: 'Adrija Chakrabarty'
 category: 'Arts'
 issue: 'Fall 2017'
+cover:
+  img: 'web.prime.word.CZ.picA.jpg'
+  author: 'Adrija Chakrabarty'
+excerpt: 'The Word on Wednesday helps students build cultural awareness through listening to the experiences of their peers. Many regular attendees agree The Word provides students stuck in the UCLA bubble with a much-needed culture shock.'
 ---
 
 <!-- main art -->

@@ -3,6 +3,10 @@ title: 'An Uphill Battle'
 author: 'Owen Emerson'
 category: 'Lifestyle'
 issue: 'Fall 2017'
+cover:
+  img: 'web.owen.PicA.OE.jpg'
+  author: 'Owen Emerson'
+excerpt: 'Nineteen thousand feet up, 1:30 a.m. darkness, sub-zero temperatures and biting winds. Benjamin van Aken emerged exhausted from the depths of his sleeping bag. Miserable and cold, he began the final stage of his climb.'
 ---
 
 Nineteen thousand feet up, 1:30 a.m. darkness, sub-zero temperatures and biting

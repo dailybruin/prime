@@ -3,6 +3,10 @@ title: 'Recasting The Past'
 author: 'Ryan Leou'
 category: 'Arts'
 issue: 'Fall 2017'
+cover:
+  img: '11.12.17_a_musical_revolution.Aart.png'
+  author: 'Ryan Leou'
+excerpt: 'Rarely does a work span the arts, history, politics, culture and society, while also championing diversity and inclusion. “Hamilton: An American Musical” uses its groundbreaking musical style and casting to spark discussion about racial representation and history itself.'
 ---
 
 _How does a fast-paced musical about a secretary_

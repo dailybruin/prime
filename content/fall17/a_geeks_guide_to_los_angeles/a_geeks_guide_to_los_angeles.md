@@ -3,6 +3,10 @@ title: "A Geek's Guide To Los Angeles"
 author: 'Olivia Mazzucato'
 category: 'Lifestyle'
 issue: 'Fall 2017'
+cover:
+  img: 'prime.nerdylaguide.mapgraphic.Aart.png'
+  author: 'Olivia Mazzucato'
+excerpt: 'I decided to check out a variety of geeky activities that spanned the city to introduce people to geek culture and new spots in this sprawling city we call home.'
 ---
 
 “Nerd,” “geek” and “fangirl” have been insults thrown at me in the past. Now, I

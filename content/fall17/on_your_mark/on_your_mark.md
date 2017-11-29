@@ -5,7 +5,7 @@ category: 'Arts'
 issue: 'Fall 2017'
 cover: 
   img: 'web.tattooatheletes.Cover.Or.PicC.Ayeo.jpg'
-  author: Aubrey Yeo
+  author: 'Aubrey Yeo'
 excerpt: 'They flash across an arm reaching toward a football at the Rose Bowl, glisten through the water of Spieker Aquatics Center or glow under the lights of Pauley Pavilion. Whether small and understated or bold and prominent, each tattoo comes with a hidden story.'
 ---
 

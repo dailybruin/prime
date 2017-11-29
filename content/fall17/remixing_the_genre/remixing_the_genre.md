@@ -3,6 +3,10 @@ title: 'Remixing The Genre'
 author: 'Olivia Mazzucato'
 category: 'Arts'
 issue: 'Fall 2017'
+cover:
+  img: 'HamiltonMusical.Aphoto.jpg'
+  author: 'Olivia Mazzucato'
+excerpt: 'While many musicals only influence the theater community, “Hamilton” has burst into mainstream pop culture with an unparalleled momentum. It has impacted musical theater as a genre, as well as the lives of audience members and fans.'
 ---
 
 Pallavi Samodia felt overwhelmed walking under the neon marquee, through the
