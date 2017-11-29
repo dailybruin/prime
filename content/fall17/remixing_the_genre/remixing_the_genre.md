@@ -78,6 +78,8 @@ changed his mind. Sedey’s love of history and appreciation for the musical’s
 ability to connect with audiences of all ages and interests converted him into a
 “Hamilton” fan.
 
+![Daniel Leibowitz and Nicole Anisgard Parra|left](Hamiltonpolitical.Aphoto.jpg)
+
 “(The musical) exposed history to a mass audience and in some way, made it
 cool,” Sedey said. “I have younger cousins who are 12, 13, 14, who never would
 have known anything about it.”

@@ -55,6 +55,8 @@ two-pronged approach: casting more people of color in stories where race is
 unspecified and writing more stories about people of color and their
 experiences.
 
+![Claire Sun|left](Hamiltonpolitical.Bphoto.jpg)
+
 He has encountered few scripts that specify whether characters should be a
 particular race, and believes directors should cast the most talented performer
 regardless of race, unless a playwright makes race central to the story.
@@ -163,6 +165,8 @@ like a big barrier (is) broken.”
 
 If Stephen Aron had to guess which figure from early American history would star
 in a hit musical, Alexander Hamilton would not have been at the top of his list.
+
+![Claire Sun|right](Hamiltonpolitical.photoC.jpg)
 
 Aron, chair of the history department at UCLA, said the fervor around a show
 about Hamilton fascinates him from a historian’s perspective, given the

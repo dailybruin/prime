@@ -9,8 +9,6 @@ cover:
 excerpt: 'The Word on Wednesday helps students build cultural awareness through listening to the experiences of their peers. Many regular attendees agree The Word provides students stuck in the UCLA bubble with a much-needed culture shock.'
 ---
 
-<!-- main art -->
-
 Every week, Kerckhoff Art Gallery transforms from an often-overlooked study spot
 to an open mic space for The Word on Wednesday.
 
@@ -63,7 +61,7 @@ nature of the poems.
 
 ## Bianca Brown
 
-<!-- Photo B -->
+![Chelsea Zhang|left](web.prime.word.CZ.picB.jpg)
 
 **_My whole life is my love life._**
 
@@ -170,7 +168,7 @@ would have wanted to before.”
 
 ## Jabril Muhammad\**
 
-<!-- Photo C -->
+![Chelsea Zhang|right](web.prime.word.CZ.picC.jpg)
 
 **_Song: Who Shot Ya?_**
 
@@ -256,7 +254,7 @@ oppressor).”
 
 ## Karla Duarte
 
-<!-- Photo D -->
+![Chelsea Zhang|left](web.prime.word.CZ.picD.jpg)
 
 **_“Phantom”_**
 

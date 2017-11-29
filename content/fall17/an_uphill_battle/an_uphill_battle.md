@@ -29,6 +29,8 @@ His mom, Jenice Mortale, noticed him doing flips on the living room couch at age
 5 and signed him up for a gymnastics class. He sprung and vaulted his way into
 becoming a serious gymnast, actively competing for the next 13 years.
 
+![Owen Emerson|left](web.owen.PicB.OE.jpg)
+
 But two years after Mortale changed the course of her son’s life, a completely
 different force changed hers. Van Aken was 7 when his mom was diagnosed with
 breast cancer. She fought and beat it, then went into remission for several
@@ -70,6 +72,8 @@ what was going on inside of him.
 “It felt like there was something constantly wrong and I was not OK and I didn’t
 know why and it was super scary,” he said. “It was just super hard for me to get
 to campus and go to class.”
+
+![Owen Emerson|left](web.owen.PicC.OE.jpg)
 
 Van Aken turned to hiking, climbing and bouldering to find physical release for
 his emotions.

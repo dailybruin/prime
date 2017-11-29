@@ -40,7 +40,7 @@ to find a few places worth trying.
 
 ## Hottest ceviche
 
-<!-- photo b -->
+![Michael Zshornack|right](web.rawseafood.aguachiles.picB.MZ.jpg)
 
 **Coni’Seafood \****3544 W Imperial Hwy \***\*Inglewood, CA 90303**
 
@@ -72,7 +72,7 @@ the best ceviche I’ve ever had.
 
 ## Best strip mall sushi
 
-<!-- Photo C -->
+![Michael Zshornack|right](web.rawseafood.sushi.ADX.picC.jpg)
 
 **Hamasaku \****11043 California State Route 2 \***\*Los Angeles, CA 90025**
 
@@ -124,7 +124,7 @@ blowtorches.
 
 ## Swankiest $1 oysters
 
-<!-- Photo D -->
+![Michael Zshornack|right](web.rawseafood.oysters.picD.KH.jpg)
 
 **EMC Seafood & Raw Bar \****3500 W 6th St #101 \***\*Los Angeles, CA 90010**
 

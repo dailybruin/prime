@@ -57,6 +57,8 @@ I spent the summer before my first year at UCLA poring over lists of pre-health
 organizations and volunteer opportunities, making spreadsheets that listed when
 I would become involved in each one.
 
+![Michael Zshornack|left](web.prime.kristie.south.photoB.jpg)
+
 Among my friends, I was the resident pre-med expert, chiming in to answer
 anyone’s questions about the daunting requisites for admission to medical
 school. I became a UCLA Health volunteer during spring quarter of my first year.
@@ -178,6 +180,8 @@ This talk with her mother didn’t stop her from loving theater, although she se
 her acting dreams aside in high school. Le wasn’t involved in drama clubs and
 didn’t take any acting classes; instead she played basketball and volleyball and
 served on the student council.
+
+![Michael Zshornack|right](web.prime.krust.north.photoC.jpg)
 
 Yet Le applied to 18 colleges as a theater major.
 

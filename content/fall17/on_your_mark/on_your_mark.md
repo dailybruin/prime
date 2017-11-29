@@ -56,6 +56,8 @@ they had just scarfed down. Or perhaps it was the need, in one of the hardest
 weeks of White’s life, to remember something happier and commemorate their
 friendship.
 
+![Aubrey Yeo|left](web.tattooatheletes.PicB.Ayeo.jpg)
+
 Either way, the two friends found themselves strolling down a cobblestone path
 toward a tattoo parlor on a winter afternoon in Old Towne Orange.
 
@@ -143,6 +145,8 @@ She decided she wanted something that wouldn’t disappear so easily.
 from house to house, when I was old enough, it was just I (wanted) something
 permanent, and it's going to be with me, and it's never going to change.”
 
+![Aubrey Yeo|right](web.tattooatheletes.PicA.Ayeo.jpg)
+
 So into a tattoo parlor she went, with her friend by her side. For her first
 tattoo, she settled on a medallion on her wrist – one with a cloud and lightning
 bolt inspired by the Disney movie “Hercules.”
@@ -208,6 +212,8 @@ Each morning, McCullough reads the motivational quotes her dad texts, tweets or
 sends her way to start the day.
 
 Her favorite isn’t a Walt Disney quote.
+
+![Aubrey Yeo|right](web.tattooatheletes.Cover.Or.PicC.Ayeo.jpg)
 
 It’s her dad’s own message – a simple "good luck" encouraging her to conquer the
 day.
