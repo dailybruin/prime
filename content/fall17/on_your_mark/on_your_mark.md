@@ -273,17 +273,6 @@ He started with the snake tattoo, one that the mother and son share. It wraps
 around his little finger and around his mother’s calf – although she is,
 ironically, scared of snakes.
 
-During a birthday party for baby Nicolas Saveljic, someone hid a skull covered
-in snakes under Dijana Saveljic’s couch. It’s a story Saveljic is familiar with,
-but one he and the other people in the room didn’t quite understand.
-
-“There was a lot of things about that and about her and her enemies,” Nicolas
-Saveljic said. “Twenty years ago, it was weird.”
-
-Saveljic got the tattoo to match his mother’s without knowing the story, but for
-him it still holds the same meaning of warding off enemies, even if they can’t
-be seen.
-
 His mother was diagnosed with breast cancer five years ago when he was just 13
 years old, and Nicholas Saveljic, already juggling schoolwork and water polo
 training with the club and national teams, didn’t hesitate to become the support
