@@ -12,7 +12,7 @@
         <h2 class="latest-stories__textbox-pretitle">{{ data[story].category }}</h2>
         <a class="link__article" href="{{ data[story].path }}">
           <h2 class="latest-stories__textbox-title">{{ data[story].title }}</h2>
-          <h3 class="latest-stories__textbox-author">BY {{ data[story].author }}</h3>
+          <h3 class="latest-stories__textbox-author">By <span class="author-name">{{ data[story].author }}</span></h3>
           <p class="latest-stories__textbox-body">{{ data[story].excerpt }}</p>
         </a>
       </div>
@@ -31,7 +31,7 @@
       <a class="link__article" href="{{ data[story].path }}">
         <h2 class="latest-stories__textbox-pretitle-small">{{ data[story].category }}</h2>
         <h2 class="latest-stories__textbox-title-small">{{ data[story].title }}</h2>
-        <h3 class="latest-stories__textbox-author-small">BY {{ data[story].author }}</h3>
+        <h3 class="latest-stories__textbox-author-small">By <span class="author-name">{{ data[story].author }}</span></h3>
       </a>
     </div>
     <div class="small-4 column latest-stories__imgbox-small">
