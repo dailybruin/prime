@@ -123,8 +123,7 @@ gulp.task('html:dev', () =>
       d.this = d[category];
       nunjucks.configure('src/');
       let res = nunjucks.render('./section.njk', d);
-
-      fs.writeFile('dev/' + category + '.html', res, 'utf8', err => {
+      fs.outputFile('dev/' + category + '.html', res, 'utf8', err => {
         if (err) throw err;
         console.log('Compiled ' + 'dev/' + category + '.html');
       });
