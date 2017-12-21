@@ -164,15 +164,51 @@ gulp.task('html:dev', () =>
 );
 
 gulp.task('html:prod', () =>
-  gulp
-    .src('src/*.{njk,html}')
-    .pipe(
-      nunjucksRender({
-        path: ['src/'],
-      })
-    )
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('prod/'))
+  contentParser().then(d => {
+    d.categories.forEach(category => {
+      d.category = category;
+      d.this = d[category];
+      nunjucks.configure('src/');
+      let res = nunjucks.render('./section.njk', d);
+      fs.outputFile('docs/' + category + '.html', res, 'utf8', err => {
+        if (err) throw err;
+        console.log('Compiled ' + 'docs/' + category + '.html');
+      });
+    });
+
+    _.forEach(d.data, (article, slug) => {
+      nunjucks.configure('src/');
+      let res = '';
+      if (article.comic) {
+        res = nunjucks.render('./comic.njk', article);
+      } else {
+        res = nunjucks.render('./article.njk', article);
+      }
+      fs.outputFile(
+        'docs/' + article.iss + '/' + slug + '.html',
+        res,
+        'utf8',
+        err => {
+          if (err) throw err;
+          console.log(
+            'Compiled ' + 'docs/' + article.iss + '/' + slug + '.html'
+          );
+        }
+      );
+    });
+
+    //index, other statics
+    gulp
+      .src('src/*.{njk,html}')
+      .pipe(
+        nunjucksRender({
+          path: ['src/'],
+          data: d,
+        })
+      )
+      .pipe(htmlmin({ collapseWhitespace: true }))
+      .pipe(gulp.dest('docs/'));
+  })
 );
 
 gulp.task(
@@ -198,7 +234,7 @@ gulp.task(
 );
 
 gulp.task('production', [
-  'html:dev', //temporary
+  'html:prod', //temporary
   'styles:prod',
   'scripts:prod',
   'images:prod',
