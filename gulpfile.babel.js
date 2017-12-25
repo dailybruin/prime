@@ -36,7 +36,7 @@ gulp.task('contentimages:prod', () =>
   gulp
     .src('content/**/*.+(jpg|png|jpeg)')
     .pipe(imagemin())
-    .pipe(gulp.dest('prod/img'))
+    .pipe(gulp.dest('docs/img'))
 );
 
 gulp.task('images:dev', () => gulp.src('src/img/*').pipe(gulp.dest('dev/img')));
@@ -45,7 +45,7 @@ gulp.task('images:prod', () =>
   gulp
     .src('src/img/*')
     .pipe(imagemin())
-    .pipe(gulp.dest('prod/img'))
+    .pipe(gulp.dest('docs/img'))
 );
 
 gulp.task('styles:dev', () =>
@@ -73,7 +73,7 @@ gulp.task('styles:prod', () =>
     )
     .pipe(postcss([autoprefixer()]))
     .pipe(minifyCSS())
-    .pipe(gulp.dest('./prod/css'))
+    .pipe(gulp.dest('./docs/css'))
     .pipe(browserSync.stream())
 );
 
@@ -113,7 +113,7 @@ gulp.task('scripts:prod', () =>
         console.log(e);
       })
     )
-    .pipe(gulp.dest('prod/js'))
+    .pipe(gulp.dest('docs/js'))
 );
 
 gulp.task('html:dev', () =>
@@ -238,8 +238,9 @@ gulp.task('production', [
   'styles:prod',
   'scripts:prod',
   'images:prod',
+  'contentimages:prod',
 ]);
 
-gulp.task('clean', () => del(['dev/', 'prod/']));
+gulp.task('clean', () => del(['dev/', 'docs/']));
 gulp.task('default', ['development']);
 gulp.task('build', ['production']);
