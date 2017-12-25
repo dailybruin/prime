@@ -199,7 +199,6 @@ gulp.task('html:prod', () =>
           data: d,
         })
       )
-      .pipe(htmlmin({ collapseWhitespace: true }))
       .pipe(gulp.dest('docs/'));
   })
 );
