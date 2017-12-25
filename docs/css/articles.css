@@ -1,1 +1,132 @@
-.article__content{padding-left:95px;padding-right:95px;padding-top:50px}@media screen and (max-width:39.9375em){.article__content{padding-right:7px;padding-left:7px}}.article__category,.article__title{font-family:"Ropa Sans",sans-serif;font-size:24px;line-height:1}.article__title{font-size:48px;line-height:1.1;margin-bottom:38px}@media screen and (max-width:39.9375em){.article__title{font-size:35px;margin-bottom:16px}}#article__social-buttons{text-align:center}@media screen and (max-width:40em){#article__social-buttons{text-align:left;margin-bottom:16px}}.article__inlineimg{max-width:400px;width:auto}.article__inlineimg.left{float:left;margin:15px 30px 15px 0}.article__inlineimg.right{float:right;margin:15px 0 15px 30px}.article__inlineimg__credit{text-align:right}.article__block-imgbox-photo-credit-wrapper{float:right;color:gray;font-family:"Montserrat",sans-serif;font-size:.6em}.article__block-imgbox-photo-credit-name,.article__block-imgbox-photo-credit-title{display:inline}.article__block-imgbox-photo-credit-title{font-variant:small-caps}.article__author{font-family:"Montserrat",sans-serif;font-size:15pt;font-weight:700;line-height:1}@media screen and (max-width:39.9375em){.article__author{font-size:12px}}.article__issue{font-family:"Montserrat",sans-serif;font-size:15pt;font-weight:400}@media screen and (max-width:39.9375em){.article__issue{font-size:12px;margin-bottom:15px}}articleinfo{margin-top:140px}#main{margin-left:10px;margin-right:10px}#socialimage,.article__issue{margin-bottom:30px}article p:first-child:first-letter{float:left;font-size:75px;line-height:60px;padding-top:4px;padding-right:8px;padding-left:3px}article p{font-family:"PT Serif",serif;font-size:20px}
+.article__content {
+  padding-left: 95px;
+  padding-right: 95px;
+  padding-top: 50px;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .article__content {
+    padding-right: 7px;
+    padding-left: 7px;
+  }
+}
+
+.article__category {
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.article__title {
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 48px;
+  line-height: 1.1;
+  margin-bottom: 38px;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .article__title {
+    font-size: 35px;
+    margin-bottom: 16px;
+  }
+}
+
+#article__social-buttons {
+  text-align: center;
+}
+
+@media screen and (max-width: 40em) {
+  #article__social-buttons {
+    text-align: left;
+    margin-bottom: 16px;
+  }
+}
+
+.article__inlineimg {
+  max-width: 400px;
+  width: auto;
+}
+
+.article__inlineimg.left {
+  float: left;
+  margin: 15px 30px 15px 0px;
+}
+
+.article__inlineimg.right {
+  float: right;
+  margin: 15px 0px 15px 30px;
+}
+
+.article__inlineimg__credit {
+  text-align: right;
+}
+
+.article__block-imgbox-photo-credit-wrapper {
+  float: right;
+  color: gray;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.6em;
+}
+
+.article__block-imgbox-photo-credit-name,
+.article__block-imgbox-photo-credit-title {
+  display: inline;
+}
+
+.article__block-imgbox-photo-credit-title {
+  font-variant: small-caps;
+}
+
+.article__author {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15pt;
+  font-weight: 700;
+  line-height: 1;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .article__author {
+    font-size: 12px;
+  }
+}
+
+.article__issue {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15pt;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .article__issue {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+}
+
+articleinfo {
+  margin-top: 140px;
+}
+
+#main {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#socialimage {
+  margin-bottom: 30px;
+}
+
+article p:first-child:first-letter {
+  float: left;
+  font-size: 75px;
+  line-height: 60px;
+  padding-top: 4px;
+  padding-right: 8px;
+  padding-left: 3px;
+}
+
+article p {
+  font-family: "PT Serif", serif;
+  font-size: 20px;
+}

@@ -1,1 +1,84 @@
-#phonetab__wrapper{position:fixed;width:100vw;bottom:0}#phonetab__wrapper.hidden{display:none}#phonetab__wrapper .tab_background{background-color:#2c2c2c;height:12vh;padding-top:3%}#phonetab__wrapper ul{margin:0;padding:0}#phonetab__wrapper li{list-style-type:none}#phonetab__wrapper .bar_wrapper{margin:auto;background-color:#2c2c2c;display:table;table-layout:fixed;text-align:center;vertical-align:middle}#phonetab__wrapper .bar_wrapper li{display:table-cell;width:23%;padding-right:1px;height:auto;vertical-align:middle;text-align:center}#phonetab__wrapper .bar_wrapper li:not(:last-child){border-right:solid #fff 2px}#phonetab__wrapper .bar_wrapper .text a{display:block;min-height:100%;padding:4px 10px;color:#fff;text-align:center;font-size:1em;text-decoration:none}#phonetab__wrapper .bar_wrapper .text a:active,#phonetab__wrapper .bar_wrapper .text a:hover,#phonetab__wrapper .bar_wrapper .text a:link,#phonetab__wrapper .bar_wrapper .text a:visited{color:#fff;text-decoration:none}#footer-padder{height:12vh}#footer-padder.hidden{display:none}
+#phonetab__wrapper {
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+}
+
+#phonetab__wrapper.hidden {
+  display: none;
+}
+
+#phonetab__wrapper .tab_background {
+  background-color: #2c2c2c;
+  height: 12vh;
+  padding-top: 3%;
+}
+
+#phonetab__wrapper ul {
+  margin: 0;
+  padding: 0;
+}
+
+#phonetab__wrapper li {
+  list-style-type: none;
+}
+
+#phonetab__wrapper .bar_wrapper {
+  margin: auto;
+  background-color: #2c2c2c;
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#phonetab__wrapper .bar_wrapper li {
+  display: table-cell;
+  width: 23%;
+  padding-right: 1px;
+  height: auto;
+  vertical-align: middle;
+  text-align: center;
+}
+
+#phonetab__wrapper .bar_wrapper li:not(:last-child) {
+  border-right: solid white 2px;
+}
+
+#phonetab__wrapper .bar_wrapper .text a {
+  display: block;
+  min-height: 100%;
+  padding: 4px 10px;
+  color: white;
+  text-align: center;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+#phonetab__wrapper .bar_wrapper .text a:link {
+  color: white;
+  text-decoration: none;
+}
+
+#phonetab__wrapper .bar_wrapper .text a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+#phonetab__wrapper .bar_wrapper .text a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+#phonetab__wrapper .bar_wrapper .text a:active {
+  color: white;
+  text-decoration: none;
+}
+
+#footer-padder {
+  height: 12vh;
+}
+
+#footer-padder.hidden {
+  display: none;
+}

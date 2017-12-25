@@ -1,1 +1,9 @@
-.past_section h1{font-family:"Montserrat",sans-serif;font-size:4rem;font-weight:700}.col3__pdf-wrapper{padding-top:40px}
+.past_section h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.col3__pdf-wrapper {
+  padding-top: 40px;
+}

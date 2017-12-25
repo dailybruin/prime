@@ -33,19 +33,13 @@ gulp.task('contentimages:dev', () =>
 );
 
 gulp.task('contentimages:prod', () =>
-  gulp
-    .src('content/**/*.+(jpg|png|jpeg)')
-    .pipe(imagemin())
-    .pipe(gulp.dest('docs/img'))
+  gulp.src('content/**/*.+(jpg|png|jpeg)').pipe(gulp.dest('docs/img'))
 );
 
 gulp.task('images:dev', () => gulp.src('src/img/*').pipe(gulp.dest('dev/img')));
 
 gulp.task('images:prod', () =>
-  gulp
-    .src('src/img/*')
-    .pipe(imagemin())
-    .pipe(gulp.dest('docs/img'))
+  gulp.src('src/img/*').pipe(gulp.dest('docs/img'))
 );
 
 gulp.task('styles:dev', () =>
@@ -72,7 +66,6 @@ gulp.task('styles:prod', () =>
       }).on('error', sass.logError)
     )
     .pipe(postcss([autoprefixer()]))
-    .pipe(minifyCSS())
     .pipe(gulp.dest('./docs/css'))
     .pipe(browserSync.stream())
 );
