@@ -1,12 +1,21 @@
-<div class="columns small-12"> {# This is the main story #}
-  {% include "./mobile_primary_story_item.njk" %}
+<div class="m-primary-story-item">
+  <div class="mobile-photo">
+    <img src="img{{ data[all.top].path }}/{{ data[all.top].cover.img }}">
+  </div>
+  <div class="content">
+    <h3>{{ data[all.top].category }}</h3>
+    <a class="link__article" href="{{ data[all.top].path }}">
+      <h2>{{ data[all.top].title }}</h2>
+      <h4>BY <span class="author-name">{{ data[all.top].author }}</span></h4>
+      <p>{{ data[all.top].excerpt }}</p>
+    </a>
+  </div>
+  <hr class="m-primary-story-item__black-line">
 </div>
-<div class="columns small-12">
-  {% include "./mobile_primary_story_item.njk" %}
-</div>
-<div class="columns small-12">
-  {% include "./mobile_primary_story_item.njk" %}
-</div>
-<div class="columns small-12">
-  {% include "./mobile_primary_story_item.njk" %}
-</div>
+
+
+{% for story in all.featured %}
+  <div class="column small-12">
+    {% include "./mobile_primary_story_item.njk" %}
+  </div>
+{% endfor %}

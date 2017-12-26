@@ -1,8 +1,13 @@
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="prime | {{ title }}" />
+<meta property="og:description"        content="{{ excerpt }}" />
+<meta property="og:image"              content="http://prime.dailybruin.com/img{{ path }}/{{ cover.img }}" />
+
 <articleinfo>
-<p class="article__category">ARTS</p>
-<h1 class="article__title">I actually really like heath bars they're good 4 can go to the end</h1>
-<div class="article__author byline">BY SOMEONE HERE</div>
-<div class="article__issue">FALL 2017</div>
+<p class="article__category">{{ category }}</p>
+<h1 class="article__title">{{ title }}</h1>
+<div class="article__author byline">BY <span class="author-name">{{ author }}</span></div>
+<div class="article__issue">{{ issue }}</div>
 
 <div class="flex-container">
   <div class="row">
@@ -10,9 +15,11 @@
 
     <div class="column large-11" id="socialimage">
       <div id="image">
-      <img src="img/helix-nebula-1400x1400.jpg">
+        <img src="/img{{ path }}/{{ cover.img }}">
       </div>
-      
+
+      <div class="photo-credits-article" style="text-align: right;">{{ cover.author }}/DAILY BRUIN</div>
+
       {# <div class="columns small-12 medium-8"> #}
       <div class="article__content">
         {% include "../partials/fillercontent.njk" %}

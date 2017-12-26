@@ -1,0 +1,28 @@
+{
+  "issue": "fall17",
+  "categories": ["arts", "culture", "lifestyle"],
+  "all": {
+    "top": "on_your_mark",
+    "featured": [
+      "recasting_the_past",
+      "major_decisions",
+      "a_picture_of_independence"
+    ]
+  },
+  "arts": {
+    "top": "on_your_mark",
+    "featured": [
+      "recasting_the_past",
+      "remixing_the_genre",
+      "speak_for_yourself"
+    ]
+  },
+  "culture": {
+    "top": "major_decisions",
+    "featured": ["a_picture_of_independence"]
+  },
+  "lifestyle": {
+    "top": "a_geeks_guide_to_los_angeles",
+    "featured": ["an_uphill_battle", "la_in_the_raw"]
+  }
+}

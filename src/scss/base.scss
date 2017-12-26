@@ -40,3 +40,13 @@ a {
   font-weight: bold;
   text-decoration: none;
 }
+
+a.link__article {
+  color: black;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+.author-name {
+  text-transform: uppercase;
+}

@@ -1,39 +1,38 @@
 <div class="section">
-	<h1 class="hide-for-small-only">ARTS</h1>
-  <h1 class="show-for-small-only section_category">ARTS</h1>
-	<hr class="section_black-line">
+  <h1 class="hide-for-small-only">{{ category }}</h1>
+  <h1 class="show-for-small-only section_category">{{ category }}</h1>
+  <hr class="section_black-line">
     <hr class="section_black-line">
     <br>
     <div class="row">
-    	<div class="column medium-8">
-			<div class="photo">
-				<img src="img/helix-nebula-1400x1400.jpg" >
-				<div class="photo-credit-wrapper">
-					<div class="photo-credit-name">AMY DIXON /
-						<div class="photo-credit-title">assistant photo editor</div>
-					</div>
-				</div>
-			</div>
-			<div class="section_main-story">
-				<div class="section_title">I actually like health bars they're very very good 4 u</div>
-	    		<div class="section_author">BY SOMEONE HERE</div>
-	    		<div class="section_body">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text. Lorem Ipsum has been the industry's standard dummy text</div>
-	    	</div>
-    	</div>
+      <div class="column medium-8">
+      <div class="photo">
+        <a href="{{ data[this.top].path }}">
+          <img src="img{{ data[this.top].path }}/{{ data[this.top].cover.img }}" >
+        </a>
+        <div class="photo-credit-wrapper">
+          <div class="photo-credit-name">{{ data[this.top].cover.author }} /
+            <div class="photo-credit-title">daily bruin</div>
+          </div>
+        </div>
+      </div>
+      <div class="section_main-story">
+        <a class="link__article" href="{{ data[this.top].path }}">
+          <div class="section_title">{{ data[this.top].title }}</div>
+            <div class="section_author">BY <span class="author-name">{{ data[this.top].author }}</span></div>
+            <div class="section_body">{{ data[this.top].excerpt }}</div>
+          </div>
+        </a>
+      </div>
 
-    	<div class="column medium-4">
-    		<div class="row">
-		        {% include "./side_main_stories.njk" %}
-		    </div>
-		    <hr class="black-line">
-		    <div class="row">
-		        {% include "./side_main_stories.njk" %}
-		    </div>
-		    <hr class="black-line">
-		    <div class="row">
-		        {% include "./side_main_stories.njk" %}
-		  </div>
-    	</div>
+      <div class="column medium-4">
+        {% for featured in this.featured %}
+        <div class="row">
+            {% include "./side_main_stories.njk" %}
+        </div>
+        <hr class="black-line">
+        {% endfor %}
+      </div>
     </div>
   <div class="footer-padding"></div>
   <!-- <hr class="hide-for-small-only section_black-line">

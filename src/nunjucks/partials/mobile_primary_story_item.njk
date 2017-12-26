@@ -1,12 +1,14 @@
 <div class="m-primary-story-item">
   <div class="mobile-photo">
-    <img src="img/helix-nebula-1400x1400.jpg">
+    <img src="img{{ data[story].path }}/{{ data[story].cover.img }}">
   </div>
   <div class="content">
-    <h3>ARTS</h3>
-    <h2>Headline here i think n -m heath bars! now in mobilye headline please write</h2>
-    <h4>BY SOMEONE HERE</h4>
-    <p>Really, heath bars are something close to an ideal chocolate. I think 100 grands are close but heath bars ooo they really take the cake</p>
+    <h3>{{ data[story].category }}</h3>
+    <a class="link__article" href="{{ data[story].path }}">
+      <h2>{{ data[story].title }}</h2>
+      <h4>BY <span class="author-name">{{ data[story].author }}</span></h4>
+      <p>{{ data[story].excerpt }}</p>
+    </a>
   </div>
   <hr class="m-primary-story-item__black-line">
 </div>

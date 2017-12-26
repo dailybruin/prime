@@ -1,13 +1,24 @@
 <div class="col3__wrapper">
+  {% for featured in all.featured %}
   <div class="columns medium-4 main-block">
-    {% include "./allstories_box.njk" %}
+    <div class="col3__block">
+      <div class="col3__block-imgbox" style="background-image:url('img{{ data[featured].path }}/{{ data[featured].cover.img }}'); background-size: cover; background-position: 50% 50%; height: 225px;">
+        <div class="col3__block-imgbox-photo-credit-wrapper">
+          <div class="col3__block-imgbox-photo-credit-name">{{ data[featured].cover.author }} /</div>
+          <div class="col3__block-imgbox-photo-credit-title">daily bruin</div>
+        </div>
+      </div>
+      <div class="col3__block-textbox">
+        <h3 class="col3__block-textbox-pretitle">{{ data[featured].category }}</h3>
+        <a class="link__article" href="{{ data[featured].path }}">
+          <h2 class="col3__block-textbox-title">{{ data[featured].title }}</h2>
+          <h2 class="col3__block-textbox-author">BY <span class="author-name">{{ data[featured].author }}</span></h2>
+          <p class="col3__block-textbox-body">{{ data[featured].excerpt }}</p>
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="columns medium-4 main-block">
-    {% include "./allstories_box.njk" %}
-  </div>
-  <div class="columns medium-4 main-block">
-    {% include "./allstories_box.njk" %}
-  </div>
+  {% endfor %}
 </div>
 
 <hr class="col3__black-line-top">

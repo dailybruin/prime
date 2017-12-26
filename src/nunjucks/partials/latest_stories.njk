@@ -2,15 +2,14 @@
   <div class="latest-stories__container">
     <h1 class="latest-stories__title">LATEST STORIES</h1>
     <div class="row small-collapse">
-      <div class="column small-12">
-        {% include "./latest_stories_article.njk" %}
-      </div>
-      <div class="column small-12">
-        {% include "./latest_stories_article.njk" %}
-      </div>
-      <div class="column small-12">
-        {% include "./latest_stories_article.njk" %}
-      </div>
+      {% for story in allstories %}
+        {% if story not in all.featured and story not in all.top %} 
+        <!-- Checks to see that it isn't the main or featured story -->
+        <div class="column small-12">
+          {% include "./latest_stories_article.njk" %}
+        </div>
+        {% endif %}
+      {% endfor %}
     </div>
   <div class="footer-padding"></div>
   <!-- <hr class="hide-for-small-only latest-stories__black-line"> -->

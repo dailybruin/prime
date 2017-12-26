@@ -1,10 +1,10 @@
 <div class="row">
 	<div class="column large-8">
 		<div class="photo">
-			<img src="img/helix-nebula-1400x1400.jpg" >
+			<a href="{{data[all.top].path}}"><img src="img{{ data[all.top].path }}/{{ data[all.top].cover.img }}" ></a>
 			<div class="photo-credit-wrapper">
-				<div class="photo-credit-name">AMY DIXON /
-					<div class="photo-credit-title">assistant photo editor</div>
+				<div class="photo-credit-name">{{ data[all.top].cover.author }}
+					<div class="photo-credit-title">daily bruin</div>
 				</div>
 			</div>
 		</div>
@@ -13,17 +13,19 @@
 	<div class="column large-4">
 		<div class="main-story">
 			<div class="category">
-				CATEGORY
+				{{ data[all.top].category }}
 			</div>
-			<div class="title">
-				I actually really like health bars they're good
-			</div>
-			<div class="author">
-				BY SOMEONE HERE
-			</div>
-			<div class="description">
-				Really, heath bars are something close to an ideal chocolate. I think 100 grands are close but heath bars ooo they really take the cake hmm
-			</div>
+			<a class="link__article" href="{{data[all.top].path}}">
+        <div class="title">
+          {{ data[all.top].title }}
+        </div>
+        <div class="author">
+          BY <span class="author-name">{{ data[all.top].author }}</span>
+        </div>
+        <div class="description">
+          {{ data[all.top].excerpt }}
+        </div>
+      </a>
 		</div>
 
   </div>

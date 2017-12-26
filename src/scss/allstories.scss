@@ -32,7 +32,6 @@
     height: 470px;
     background: grey;
     margin-right: 44px;
-    padding-bottom: 5px;
     display: block;
     margin: auto;
   }
@@ -66,6 +65,7 @@
   font-weight: bold;
   padding-top: 26.8px;
   padding-bottom: 18.7px;
+  text-transform: uppercase;
 }
 
 .title {
@@ -73,7 +73,7 @@
   font-size: 48px;
   line-height: 54px;
   letter-spacing: -40;
-  padding-bottom: 41.1px;
+  padding-bottom: 30px;
 }
 
 .author {

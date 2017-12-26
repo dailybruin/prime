@@ -23,6 +23,7 @@
     font-weight: bold;
     padding-top: 1em;
     padding-bottom: 0.3em;
+    text-transform: uppercase;
   }
   .latest-stories__textbox-pretitle-small {
     font-family: "Montserrat", "sans-serif";
@@ -30,6 +31,7 @@
     font-size: 10px;
     font-weight: bold;
     margin-bottom: 5px;
+    text-transform: uppercase;
   }
   .latest-stories__imgbox-small {
     img {
@@ -88,9 +90,9 @@
     }
   }
 
-  .latest-stories__black-line {
-    border-bottom: 0.05em solid black;
-  }
+  // .latest-stories__black-line {
+  //   border-bottom: 0.05em solid black !important;
+  // }
 
   .latest-stories__separator-small {
     background-color: $spacing-grey;
@@ -107,6 +109,7 @@
   .latest-stories__imgbox {
     margin-top: 0.9em;
     .latest-stories__block-imgbox-photo-credit-wrapper {
+      margin-top: 250px;
       float: right;
       color: gray;
       font-family: "Montserrat", sans-serif;
