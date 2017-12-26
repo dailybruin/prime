@@ -3,8 +3,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title></title>
-  <meta name="description" content="">
+  <!-- Rendering for title and meta tags -->
+  {% if not title %}
+    {% set meta_title = "prime by Daily Bruin" %}
+  {% else %}
+    {% set meta_title = title + " | prime by Daily Bruin" %}
+  {% endif %}
+
+  {% if not excerpt %}
+    {% set excerpt = "The Daily Bruin’s quarterly arts, culture and lifestyle magazine, which strives to showcase students, faculty and other community members." %}
+  {% endif %}
+
+  {% if not cover.img %}
+    {% set image_url = "http://prime.dailybruin.com/img/primelogoblack.svg" %}
+  {% else %}
+    {% set image_url = "http://prime.dailybruin.com/img" + path + "/" + cover.img %}
+  {% endif %}
+
+  <title>{{ meta_title }}</title>
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="{{ meta_title }}" />
+  <meta property="og:description"        content="{{ excerpt }}" />
+  <meta property="og:image"              content="{{ image_url }}" />
 
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <!-- Place favicon.ico in the root directory -->

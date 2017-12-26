@@ -166,7 +166,7 @@ said. “But when you get there and listen to people perform and others who give
 support to the performers, you get an urge to share a part of yourself you never
 would have wanted to before.”
 
-## Jabril Muhammad\**
+## Jabril Muhammad
 
 ![Chelsea Zhang|right](web.prime.word.CZ.picC.jpg)
 
