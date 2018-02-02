@@ -21,8 +21,13 @@
       <div class="photo-credits-article" style="text-align: right;">{{ cover.author }}/DAILY BRUIN</div>
 
       {# <div class="columns small-12 medium-8"> #}
-      <div class="article__content">
-        {% include "../partials/fillercontent.njk" %}
+      <div class="row">
+          <div class="article__content column medium-9">
+            {% include "../partials/fillercontent.njk" %}
+          </div>
+          <div class="popular-stories column medium-3">
+           {% include "../partials/popular_stories.njk" %}
+          </div>
       </div>
       {# </div> #}
 
