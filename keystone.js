@@ -11,7 +11,7 @@ keystone.init({
 
 	'sass': 'public',
 	'static': 'public',
-	'favicon': 'public/favicon.ico',
+	'favicon': 'public/favicon.png',
 
 	// We use nunjucks as the templating engine.
 	'views': 'templates/views',
