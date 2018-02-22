@@ -1,9 +1,9 @@
-{% extends "./nunjucks/templates/base.njk" %}
+{% extends "./layouts/base.njk" %}
 
 {% block content %}
 <div class="navbar-padding"></div>
 <div class="row">
-  {% include "./nunjucks/partials/comic_article.njk" %}
+  {% include "./partials/comic_article.njk" %}
 </div>
-{% include "./nunjucks/partials/comic_photoswipe.njk" %}
+{% include "./partials/comic_photoswipe.njk" %}
 {% endblock %}
