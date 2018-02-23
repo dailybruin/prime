@@ -1,3 +1,44 @@
+.popular-stories {
+  margin-top: 365px;
+}
+
+.articles {
+  margin-bottom: 15px;
+}
+.popular-stories p {
+  margin-bottom: 0;
+}
+.header {
+  text-align: center;
+  border-bottom: 1px black solid;
+  font-family: "Lato", sans-serif;
+  font-size: 36px;
+}
+
 .article-number {
+  padding-top: 20px;
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 30px;
+}
+
+.article-type {
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 20px;
+}
+
+.article-title {
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 24px;
+}
+
+.article-author {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.article-photo img {
   padding-top: 10px;
+  width: 100%;
+  height: 130px;
 }

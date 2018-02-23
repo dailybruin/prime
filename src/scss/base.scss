@@ -9,7 +9,9 @@
 @import "past_issues";
 @import "_utils";
 @import "about-prime";
-@import "popular_stories" .navbar-padding {
+@import "popular_stories";
+
+.navbar-padding {
   padding-top: 200px;
 
   @media screen and (max-width: $small-only) {
