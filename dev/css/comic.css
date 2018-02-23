@@ -1,0 +1,22 @@
+.my-gallery {
+  width: 100%;
+  float: left;
+}
+
+.my-gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.my-gallery figure {
+  display: block;
+  float: left;
+  margin: 0 5px 5px 0;
+  width: 150px;
+}
+
+.my-gallery figcaption {
+  display: none;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImNvbWljLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxZQUFXO0VBQ1gsWUFBVztDQUNaOztBQUNEO0VBQ0UsWUFBVztFQUNYLGFBQVk7Q0FDYjs7QUFDRDtFQUNFLGVBQWM7RUFDZCxZQUFXO0VBQ1gsb0JBQW1CO0VBQ25CLGFBQVk7Q0FDYjs7QUFDRDtFQUNFLGNBQWE7Q0FDZCIsImZpbGUiOiJjb21pYy5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIubXktZ2FsbGVyeSB7XG4gIHdpZHRoOiAxMDAlO1xuICBmbG9hdDogbGVmdDtcbn1cbi5teS1nYWxsZXJ5IGltZyB7XG4gIHdpZHRoOiAxMDAlO1xuICBoZWlnaHQ6IGF1dG87XG59XG4ubXktZ2FsbGVyeSBmaWd1cmUge1xuICBkaXNwbGF5OiBibG9jaztcbiAgZmxvYXQ6IGxlZnQ7XG4gIG1hcmdpbjogMCA1cHggNXB4IDA7XG4gIHdpZHRoOiAxNTBweDtcbn1cbi5teS1nYWxsZXJ5IGZpZ2NhcHRpb24ge1xuICBkaXNwbGF5OiBub25lO1xufVxuIl19 */
