@@ -16,13 +16,12 @@ Article.add({
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	author: { type: Types.Relationship, ref: 'User', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-	coverimage: { type: Types.CloudinaryImage },
     article: {
         // TODO: Images can currently be pasted directly into the post; however,
         // there isn't currently a way to associate any metadata with the image
         // (specifically, alt-text and photo credit).
-		excerpt: { type: Types.Html, wysiwyg: true, height: 120 },
-		content: { type: Types.Html, wysiwyg: true, height: 800 },
+		excerpt: { type: Types.Markdown, height: 120 },
+		content: { type: Types.Markdown, height: 800 },
 	},
 	categories: {
         type: Types.Relationship, ref: 'ArticleCategory', many: true

@@ -32,7 +32,7 @@ keystone.init({
 
 keystone.import('models');
 
-// Setup ommon locals for the templates.
+// Setup common locals for the templates.
 keystone.set('locals', {
 	_: require('lodash'),
 	env: keystone.get('env'),
