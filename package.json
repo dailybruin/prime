@@ -48,7 +48,7 @@
     "gulp-csso": "^3.0.0",
     "gulp-htmlmin": "^3.0.0",
     "gulp-imagemin": "^4.0.0",
-    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-nunjucks-render": "^2.2.2",
     "gulp-postcss": "^7.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
@@ -60,5 +60,11 @@
     "stylelint": "^8.2.0",
     "webpack-stream": "^4.0.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "fs-extra": "^4.0.2",
+    "gray-matter": "^3.1.1",
+    "lodash": "^4.17.4",
+    "marked": "^0.3.6",
+    "mongo": "^0.1.0"
+  }
 }

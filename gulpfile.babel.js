@@ -1,5 +1,8 @@
 import gulp from 'gulp';
 import nunjucksRender from 'gulp-nunjucks-render';
+import nunjucks from 'nunjucks';
+import fs from 'fs-extra';
+import _ from 'lodash';
 
 // Images
 import imagemin from 'gulp-imagemin';
@@ -21,12 +24,22 @@ import sourcemaps from 'gulp-sourcemaps';
 import bs from 'browser-sync';
 import del from 'del';
 
+import contentParser from './contentparser';
+
 const browserSync = bs.create();
+
+gulp.task('contentimages:dev', () =>
+  gulp.src('content/**/*.+(jpg|png|jpeg)').pipe(gulp.dest('dev/img'))
+);
+
+gulp.task('contentimages:prod', () =>
+  gulp.src('content/**/*.+(jpg|png|jpeg)').pipe(gulp.dest('docs/img'))
+);
 
 gulp.task('images:dev', () => gulp.src('src/img/*').pipe(gulp.dest('dev/img')));
 
 gulp.task('images:prod', () =>
-  gulp.src('src/img/*').pipe(imagemin()).pipe(gulp.dest('prod/img'))
+  gulp.src('src/img/*').pipe(gulp.dest('docs/img'))
 );
 
 gulp.task('styles:dev', () =>
@@ -53,8 +66,7 @@ gulp.task('styles:prod', () =>
       }).on('error', sass.logError)
     )
     .pipe(postcss([autoprefixer()]))
-    .pipe(minifyCSS())
-    .pipe(gulp.dest('./prod/css'))
+    .pipe(gulp.dest('./docs/css'))
     .pipe(browserSync.stream())
 );
 
@@ -94,35 +106,106 @@ gulp.task('scripts:prod', () =>
         console.log(e);
       })
     )
-    .pipe(gulp.dest('prod/js'))
+    .pipe(gulp.dest('docs/js'))
 );
 
 gulp.task('html:dev', () =>
-  gulp
-    .src('src/*.{njk,html}')
-    .pipe(
-      nunjucksRender({
-        path: ['src/'],
-      })
-    )
-    .pipe(gulp.dest('dev/'))
+  contentParser().then(d => {
+    d.categories.forEach(category => {
+      d.category = category;
+      d.this = d[category];
+      nunjucks.configure('src/');
+      let res = nunjucks.render('./section.njk', d);
+      fs.outputFile('dev/' + category + '.html', res, 'utf8', err => {
+        if (err) throw err;
+        console.log('Compiled ' + 'dev/' + category + '.html');
+      });
+    });
+
+    _.forEach(d.data, (article, slug) => {
+      nunjucks.configure('src/');
+      let res = '';
+      if (article.comic) {
+        res = nunjucks.render('./comic.njk', article);
+      } else {
+        res = nunjucks.render('./article.njk', article);
+      }
+      fs.outputFile(
+        'dev/' + article.iss + '/' + slug + '.html',
+        res,
+        'utf8',
+        err => {
+          if (err) throw err;
+          console.log(
+            'Compiled ' + 'dev/' + article.iss + '/' + slug + '.html'
+          );
+        }
+      );
+    });
+
+    //index, other statics
+    gulp
+      .src('src/*.{njk,html}')
+      .pipe(
+        nunjucksRender({
+          path: ['src/'],
+          data: d,
+        })
+      )
+      .pipe(gulp.dest('dev/'));
+  })
 );
 
 gulp.task('html:prod', () =>
-  gulp
-    .src('src/*.{njk,html}')
-    .pipe(
-      nunjucksRender({
-        path: ['src/'],
-      })
-    )
-    .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest('prod/'))
+  contentParser().then(d => {
+    d.categories.forEach(category => {
+      d.category = category;
+      d.this = d[category];
+      nunjucks.configure('src/');
+      let res = nunjucks.render('./section.njk', d);
+      fs.outputFile('docs/' + category + '.html', res, 'utf8', err => {
+        if (err) throw err;
+        console.log('Compiled ' + 'docs/' + category + '.html');
+      });
+    });
+
+    _.forEach(d.data, (article, slug) => {
+      nunjucks.configure('src/');
+      let res = '';
+      if (article.comic) {
+        res = nunjucks.render('./comic.njk', article);
+      } else {
+        res = nunjucks.render('./article.njk', article);
+      }
+      fs.outputFile(
+        'docs/' + article.iss + '/' + slug + '.html',
+        res,
+        'utf8',
+        err => {
+          if (err) throw err;
+          console.log(
+            'Compiled ' + 'docs/' + article.iss + '/' + slug + '.html'
+          );
+        }
+      );
+    });
+
+    //index, other statics
+    gulp
+      .src('src/*.{njk,html}')
+      .pipe(
+        nunjucksRender({
+          path: ['src/'],
+          data: d,
+        })
+      )
+      .pipe(gulp.dest('docs/'));
+  })
 );
 
 gulp.task(
   'development',
-  ['html:dev', 'styles:dev', 'scripts:dev', 'images:dev'],
+  ['html:dev', 'styles:dev', 'scripts:dev', 'images:dev', 'contentimages:dev'],
   () => {
     browserSync.init({
       server: {
@@ -143,12 +226,13 @@ gulp.task(
 );
 
 gulp.task('production', [
-  'html:prod',
+  'html:prod', //temporary
   'styles:prod',
   'scripts:prod',
   'images:prod',
+  'contentimages:prod',
 ]);
 
-gulp.task('clean', () => del(['dev/', 'prod/']));
+gulp.task('clean', () => del(['dev/', 'docs/']));
 gulp.task('default', ['development']);
 gulp.task('build', ['production']);

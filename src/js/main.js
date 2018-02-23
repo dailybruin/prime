@@ -1,14 +1,22 @@
-export default function main() {
-  const $window = $(window);
-  let ratio = $window.height() / $window.width();
+import initComics from './comic';
 
+export default function main() {
   $(document).ready(() => {
+    const $window = $(window);
+    let ratio = $window.height() / $window.width();
+
     const $topbar = $('#top-bar');
     const $topBarLogoElem = $('#top-bar-logo');
     const $leftBarLogoElem = $('#left-bar-logo');
+    let scrollThres = ratio > 1.2 ? 150 : 800;
+
+    $(window).resize(() => {
+      ratio = $window.height() / $window.width();
+      scrollThres = ratio > 1.2 ? 150 : 800;
+    });
 
     $(window).scroll(() => {
-      if ($(window).scrollTop() >= 800) {
+      if ($(window).scrollTop() >= scrollThres) {
         if (!$topBarLogoElem.hasClass('logo-hidden')) {
           $topBarLogoElem.addClass('logo-hidden');
         }
@@ -30,5 +38,7 @@ export default function main() {
         }
       }
     });
+
+    initComics();
   });
 }
