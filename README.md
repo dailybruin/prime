@@ -1,11 +1,20 @@
-# Flatpage Template Generator
+# prime by The Daily Bruin
+
+The official website for prime, the Daily Bruin’s quarterly arts, culture and
+lifestyle magazine.
 
 ## Getting Started
-1. Install [Yarn](https://yarnpkg.com/lang/en/docs/install/) and [gulp-cli](https://www.npmjs.com/package/gulp-cli).
-2. Clone this repo (`git clone https://github.com/daily-bruin/flatpage-template.git`) and run yarn (`yarn`).
-3. You're ready to develop a flatpage! Run `gulp` to run in development mode and `gulp build` when you're ready for production. `gulp clean` cleans any generated files so you can start fresh. 
+
+1. Install [Yarn](https://yarnpkg.com/lang/en/docs/install/) and
+   [gulp-cli](https://www.npmjs.com/package/gulp-cli).
+2. Clone this repo (`git clone
+   https://github.com/daily-bruin/flatpage-template.git`) and run yarn (`yarn`).
+3. You're ready to develop a flatpage! Run `gulp` to run in development mode and
+   `gulp build` when you're ready for production. `gulp clean` cleans any
+   generated files so you can start fresh.
 
 ## Structure
+
 ```
 flatpage-template/
 ├── README.md           # This README!
@@ -24,13 +33,14 @@ flatpage-template/
 ```
 
 ## Techonologies Used
-- [Gulp](https://gulpjs.com)
-- [Autoprefixer](http://autoprefixer.github.io)
-- [Sass](http://sass-lang.com)
-- [Nunjucks](https://mozilla.github.io/nunjucks/)
-- [Browsersync](https://browsersync.io)
-- [Babel](https://babeljs.io)
-- [Webpack](https://webpack.js.org)
-- [Eslint](https://eslint.org)
-- [Stylelint](https://stylelint.io)
-- [Prettier](https://prettier.io)
+
+* [Gulp](https://gulpjs.com)
+* [Autoprefixer](http://autoprefixer.github.io)
+* [Sass](http://sass-lang.com)
+* [Nunjucks](https://mozilla.github.io/nunjucks/)
+* [Browsersync](https://browsersync.io)
+* [Babel](https://babeljs.io)
+* [Webpack](https://webpack.js.org)
+* [Eslint](https://eslint.org)
+* [Stylelint](https://stylelint.io)
+* [Prettier](https://prettier.io)
