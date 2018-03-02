@@ -8,5 +8,6 @@
     </div>
 {% endmacro %}
 <article>
-{{ rendered | safe }}
+{{ data.article.content.body.html | safe }}
+
 </article>
