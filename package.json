@@ -3,14 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "async": "2.1.4",
+    "commonmark": "^0.28.1",
+    "consolidate": "0.14.5",
+    "dotenv": "4.0.0",
+    "front-matter": "^2.3.0",
     "keystone": "4.0.0-beta.5",
     "lodash": "^4.13.1",
-    "consolidate": "0.14.5",
-    "nunjucks": "3.0.0",
+    "node-fetch": "^2.0.0",
     "node-sass": "4.5.0",
     "node-sass-middleware": "0.11.0",
-    "dotenv": "4.0.0",
-    "async": "2.1.4"
+    "nunjucks": "3.0.0"
   },
   "devDependencies": {
     "eslint": "3.15.0",

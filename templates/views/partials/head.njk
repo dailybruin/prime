@@ -16,10 +16,10 @@
     {% set excerpt = data.article.content.excerpt %}
   {% endif %}
 
-  {% if not data.article.cover.imageurl %}
+  {% if not data.article.cover.imgurl %}
     {% set image_url = "http://prime.dailybruin.com/img/primelogoblack.svg" %}
   {% else %}
-    {% set image_url = "http://prime.dailybruin.com/img" + data.article.slug + "/" + data.article.cover.imageurl %}
+    {% set image_url = data.article.cover.imageurl %}
   {% endif %}
 
   <title>{{ meta_title }}</title>

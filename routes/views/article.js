@@ -8,15 +8,15 @@ exports = module.exports = function (req, res) {
 	// Set locals.
 	locals.section = 'articles';
 	locals.filters = {
-		article: req.params.article.toLowerCase(),
-		issue: req.params.issue.toLowerCase()
+		article: req.params.article.toLowerCase(), // Article slug.
+		issue: req.params.issue.toLowerCase() // Issue slug.
 	};
 	locals.data = {
 		articles: [],
 	};
 
 	// Load the current article.
-	view.on('init', async function (next) {
+	view.on('init', async function (next) {		
 		keystone.list('ArticleIssue').model.findOne({slug: locals.filters.issue}).exec((err, issue) => {
 			if (err) {
 				next(err);
@@ -28,9 +28,9 @@ exports = module.exports = function (req, res) {
 				issue: issue._id, // kill me there must be a better way to do this
 				slug: locals.filters.article
 			})
-			.populate('author issue categories')
-			.exec((err, result) => {
-				locals.data.article = result;
+			.populate('issue')
+			.exec((err, article) => {
+				locals.data.article = article;
 				next(err);
 			});
 		});
