@@ -9,12 +9,35 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 
-	locals.data = {};
+	locals.data = {
+		config: null,
+		featured: null, // Site-wide featured articles as specified in config.
+		mainarticle: null, // Main Article as specified in config.
+		articles: null // All articles.
+	};
 
 	view.on('init', async function(next) {
 		// Load global config.
-		locals.data.config = await keystone.list('Configuration').model.findOne();
-	})
+		try {
+			locals.data.config = await keystone.list('Configuration').model.findOne();
+			
+			locals.data.mainarticle = await keystone.list('Article').model
+				.findOne({ slug: locals.data.config.mainarticle })
+				.populate('article issue');
+			
+			locals.data.featured = await keystone.list('Article').model
+				.find().where('slug').in(locals.data.config.featured)
+				.populate('article issue');
+			
+			locals.data.articles = await keystone.list('Article').model
+				.find().where('state', 'published')
+				.populate('article issue');
+		} catch (e) {
+			next(e);
+		}
+		
+		next();
+	});
 
 	// Render the view
 	view.render('index');

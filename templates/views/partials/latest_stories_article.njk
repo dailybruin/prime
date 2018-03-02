@@ -1,21 +1,21 @@
 <div class="latest-stories__block">
   <div class="hide-for-small-only latest-stories__wrapper">
     <hr class="latest-stories__black-line">
-      <a href="{{ data[story].path }}">
-        <div class="large-4 column latest-stories__imgbox" style="background-image: url('img{{ data[story].path }}/{{ data[story].cover.img }}'); background-size: cover; background-position: 50% 50%; height: 250px;">
-        {# <img src="img{{ data[story].path }}{{ data[story].cover.img }}" alt="test-img"> #}
+      <a href="{{story.issue.name}}/{{story.slug}}">
+        <div class="large-4 column latest-stories__imgbox" style="background-image: url('{{ story.cover.imgurl }}'); background-size: cover; background-position: 50% 50%; height: 250px;">
+        {# <img src="{{ story.cover.imgurl }}" alt="test-img"> #}
         <div class="latest-stories__block-imgbox-photo-credit-wrapper">
-          <div class="latest-stories__block-imgbox-photo-credit-name">{{ data[story].cover.author }} /</div>
+          <div class="latest-stories__block-imgbox-photo-credit-name">{{ story.cover.author }} /</div>
           <div class="latest-stories__block-imgbox-photo-credit-title">daily bruin</div>
         </div>
       </div>
     </a>
       <div class="large-8 column latest-stories__textbox">
-        <h2 class="latest-stories__textbox-pretitle">{{ data[story].category }}</h2>
-        <a class="link__article" href="{{ data[story].path }}">
-          <h2 class="latest-stories__textbox-title">{{ data[story].title }}</h2>
-          <h3 class="latest-stories__textbox-author">BY <span class="author-name">{{ data[story].author }}</span></h3>
-          <p class="latest-stories__textbox-body">{{ data[story].excerpt }}</p>
+        <h2 class="latest-stories__textbox-pretitle">{{ story.section }}</h2>
+        <a class="link__article" href="{{story.issue.name}}/{{story.slug}}">
+          <h2 class="latest-stories__textbox-title">{{ story.title }}</h2>
+          <h3 class="latest-stories__textbox-author">BY <span class="author-name">{{ story.author }}</span></h3>
+          <p class="latest-stories__textbox-body">{{ story.content.excerpt }}</p>
         </a>
       </div>
   </div>
@@ -30,18 +30,18 @@
       <img src="img/helix-nebula-1400x1400.jpg" alt="test-img">
     </div> #}
     <div class="small-8 column latest-stories__textbox-small">
-      <a class="link__article" href="{{ data[story].path }}">
-        <h2 class="latest-stories__textbox-pretitle-small">{{ data[story].category }}</h2>
-        <h2 class="latest-stories__textbox-title-small">{{ data[story].title }}</h2>
-        <h3 class="latest-stories__textbox-author-small">BY <span class="author-name">{{ data[story].author }}</span></h3>
+      <a class="link__article" href="{{story.issue.name}}/{{story.slug}}">
+        <h2 class="latest-stories__textbox-pretitle-small">{{ story.category }}</h2>
+        <h2 class="latest-stories__textbox-title-small">{{ story.title }}</h2>
+        <h3 class="latest-stories__textbox-author-small">BY <span class="author-name">{{ story.author }}</span></h3>
       </a>
     </div>
     <div class="small-4 column latest-stories__imgbox-small">
-      <img src="img{{ data[story].path }}/{{ data[story].cover.img }}" alt="test-img">
+      <img src="img{{ story.cover.imgurl }}" alt="test-img">
     </div>
     <div class="small-12 column latest-stories__textbox-body-small">
-      <a class="link__article" href="{{ data[story].path }}">
-        <p>{{ data[story].excerpt }}</p>
+      <a class="link__article" href="{{story.issue.name}}/{{story.slug}}">
+        <p>{{ story.content.excerpt }}</p>
       </a>
     </div>
     <div class="small-12 column latest-stories__separator-small">

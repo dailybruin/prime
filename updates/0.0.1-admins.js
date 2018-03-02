@@ -13,7 +13,7 @@ exports.create = {
 	],
 
 	Configuration: [
-		{ 'issue': 'Winter18', 'sections': ["arts", "culture", "lifestyle"]}
+		{ 'issue': 'Winter18', 'sections': ["arts", "culture", "lifestyle"], 'mainarticle': 'on_your_mark', 'featured': []}
 	]
 };
 

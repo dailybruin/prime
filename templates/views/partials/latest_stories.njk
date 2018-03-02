@@ -2,9 +2,9 @@
   <div class="latest-stories__container">
     <h1 class="latest-stories__title">LATEST STORIES</h1>
     <div class="row small-collapse">
-      {% for story in allstories %}
-        {% if story not in all.featured and story not in all.top %} 
+      {% for story in data.articles %}
         <!-- Checks to see that it isn't the main or featured story -->
+        {% if story.slug not in data.config.featured and story not in data.config.mainarticle %} 
         <div class="column small-12">
           {% include "./latest_stories_article.njk" %}
         </div>

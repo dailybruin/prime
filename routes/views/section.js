@@ -11,7 +11,7 @@ exports = module.exports = function (req, res) {
 	};
 	locals.data = {
         section: req.params.section,
-        featuredarticles: null,
+        featured: null,
         mainarticle: null // The "top" article of the section.
 	};
 
@@ -21,7 +21,7 @@ exports = module.exports = function (req, res) {
         try {
             locals.data.config = await keystone.list('Configuration').model.findOne();
     
-            locals.data.featuredarticles = await keystone.list('Article').model
+            locals.data.featured = await keystone.list('Article').model
                 .find({ section: locals.filters.section })
                 .where('featured').in(['featured'])
                 .populate('article issue');
@@ -33,7 +33,7 @@ exports = module.exports = function (req, res) {
         } catch (e) {
             next(e);
         }
-        if (!locals.data.featuredarticles || !locals.data.mainarticle) {
+        if (!locals.data.featured || !locals.data.mainarticle) {
             res.status(404).send('Section does not exist.');
             return;
         }

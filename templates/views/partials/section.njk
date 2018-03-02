@@ -1,3 +1,5 @@
+{% set mainarticlepath = data.mainarticle.issue.name + '/' + data.mainarticle.slug %}
+
 <div class="section">
   <h1 class="hide-for-small-only">{{ data.section }}</h1>
   <h1 class="show-for-small-only section_category">{{ data.section }}</h1>
@@ -7,7 +9,7 @@
     <div class="row">
       <div class="column medium-8">
       <div class="photo">
-        <a href="{{ data.mainarticle.issue.name }}/{{ data.mainarticle.slug }}">
+        <a href="{{ mainarticlepath }}">
           <img src="{{ data.mainarticle.cover.imgurl }}" >
         </a>
         <div class="photo-credit-wrapper">
@@ -17,7 +19,7 @@
         </div>
       </div>
       <div class="section_main-story">
-        <a class="link__article" href="{{ data.mainarticle.issue.name }}/{{ data.mainarticle.slug }}">
+        <a class="link__article" href="{{ mainarticlepath }}">
           <div class="section_title">{{ data.mainarticle.title }}</div>
             <div class="section_author">BY <span class="author-name">{{ data.mainarticle.author }}</span></div>
             <div class="section_body">{{ data.mainarticle.content.excerpt }}</div>
@@ -26,7 +28,7 @@
       </div>
 
       <div class="column medium-4">
-        {% for article in data.featuredarticles %}
+        {% for article in data.featured %}
         <div class="row">
             {% include "./side_main_stories.njk" %}
         </div>
