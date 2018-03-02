@@ -11,6 +11,10 @@ exports.create = {
 	User: [
 		{ 'name.first': 'Admin', 'name.last': 'User', 'email': 'admin@dailybruin.com', 'password': 'admin', 'isAdmin': true },
 	],
+
+	Configuration: [
+		{ 'issue': 'Winter18', 'sections': ["arts", "culture", "lifestyle"]}
+	]
 };
 
 /*

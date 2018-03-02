@@ -13,10 +13,14 @@ exports = module.exports = function (req, res) {
 	};
 	locals.data = {
 		articles: [],
+		config: {}
 	};
 
 	// Load the current article.
 	view.on('init', async function (next) {		
+		// Load global config.
+		locals.data.config = await keystone.list('Configuration').model.findOne();
+	
 		keystone.list('ArticleIssue').model.findOne({slug: locals.filters.issue}).exec((err, issue) => {
 			if (err) {
 				next(err);

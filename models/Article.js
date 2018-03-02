@@ -17,6 +17,8 @@ var Article = new keystone.List('Article', {
 
 Article.add({
 	endpoint: { type: String },
+	featured: {type: Types.Select, options: 'no, featured, main feature', default: 'no', note: "Is this a featured article in its section?"},
+	section: {noedit: true, type: String },
 	issue: { type: Types.Relationship, ref: 'ArticleIssue', many: false },
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
@@ -24,7 +26,6 @@ Article.add({
 	// author: { hidden: true, type: Types.Relationship, ref: 'User', index: true },
 	author: { noedit: true, type: String },
 	// categories: { type: Types.Relationship, ref: 'ArticleCategory', many: true },
-	category: {noedit: true, type: String },
 	cover: {
 		imgurl: {noedit: true, label: "Cover Image URL", type: String},
 		author: {noedit: true, label: "Cover Image Author", type: String}
@@ -33,7 +34,7 @@ Article.add({
 		body: { noedit: true, type: Types.Markdown, height: 800 },
 		excerpt: { noedit:true, type: Types.Textarea, height: 80 },
 	}
-    // TODO: Tags? Important for search. Should be simple.
+	// TODO: Tags? Important for search. Should be simple.
 });
 
 Article.schema.virtual('content.full').get(function () {
@@ -58,6 +59,7 @@ Article.schema.pre('save', function (next) {
 			// Set metadata.
 			this.content.excerpt = metadata.excerpt;
 			this.author = metadata.author;
+			this.section = metadata.category.toLowerCase();
 			this.cover.imgurl = metadata.cover? metadata.cover.img : "";
 			this.cover.author = metadata.cover? metadata.cover.author : "";
 			this.title = metadata.title;

@@ -7,6 +7,8 @@ var keystone = require('keystone');
 
 var ArticleIssue = new keystone.List('ArticleIssue', {
 	autokey: { path: 'slug', from: 'name', unique: true },
+	label: 'Issues',
+	path: 'issues'
 });
 
 ArticleIssue.add({

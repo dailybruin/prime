@@ -9,6 +9,13 @@ exports = module.exports = function (req, res) {
 	// item in the header navigation.
 	locals.section = 'home';
 
+	locals.data = {};
+
+	view.on('init', async function(next) {
+		// Load global config.
+		locals.data.config = await keystone.list('Configuration').model.findOne();
+	})
+
 	// Render the view
 	view.render('index');
 };
