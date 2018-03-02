@@ -4,20 +4,22 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <!-- Rendering for title and meta tags -->
-  {% if not title %}
+  {% if not data.article.title %}
     {% set meta_title = "prime by Daily Bruin" %}
   {% else %}
-    {% set meta_title = title + " | prime by Daily Bruin" %}
+    {% set meta_title = data.article.title + " | prime by Daily Bruin" %}
   {% endif %}
 
-  {% if not excerpt %}
+  {% if not data.article.content.excerpt %}
     {% set excerpt = "The Daily Bruin’s quarterly arts, culture and lifestyle magazine, which strives to showcase students, faculty and other community members." %}
+  {% else %}
+    {% set excerpt = data.article.content.excerpt %}
   {% endif %}
 
-  {% if not cover.img %}
+  {% if not data.article.cover.imageurl %}
     {% set image_url = "http://prime.dailybruin.com/img/primelogoblack.svg" %}
   {% else %}
-    {% set image_url = "http://prime.dailybruin.com/img" + path + "/" + cover.img %}
+    {% set image_url = "http://prime.dailybruin.com/img" + data.article.slug + "/" + data.article.cover.imageurl %}
   {% endif %}
 
   <title>{{ meta_title }}</title>

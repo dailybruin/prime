@@ -28,7 +28,7 @@ exports = module.exports = function (req, res) {
 				issue: issue._id, // kill me there must be a better way to do this
 				slug: locals.filters.article
 			})
-			.populate('author categories')
+			.populate('author issue categories')
 			.exec((err, result) => {
 				locals.data.article = result;
 				next(err);

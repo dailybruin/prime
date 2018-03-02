@@ -13,21 +13,25 @@ var Article = new keystone.List('Article', {
 
 Article.add({
 	title: { type: String, required: true },
+	author: { type: Types.Relationship, ref: 'User', index: true },
+	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
+	categories: {
+		type: Types.Relationship, ref: 'ArticleCategory', many: true
+	},
 	issue: {
 		type: Types.Relationship, ref: 'ArticleIssue', many: false //, required: true
 	},
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
-	author: { type: Types.Relationship, ref: 'User', index: true },
-	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
+	cover: {
+		imageurl: {label: "Cover Image URL", type: String},
+		author: {label: "Cover Image Author", type: String}
+	},
     content: {
         // TODO: Images can currently be pasted directly into the post; however,
         // there isn't currently a way to associate any metadata with the image
         // (specifically, alt-text and photo credit).
-		excerpt: { type: Types.Markdown, height: 120 },
 		body: { type: Types.Markdown, height: 800 },
-	},
-	categories: {
-        type: Types.Relationship, ref: 'ArticleCategory', many: true
+		excerpt: { type: Types.Textarea, height: 80 },
 	}
     // TODO: Tags? Important for search. Should be simple.
 });
