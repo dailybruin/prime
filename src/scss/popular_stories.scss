@@ -39,6 +39,15 @@
 
 .article-photo img {
   padding-top: 10px;
-  width: 100%;
+  width: 92px;
   height: 130px;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .popular-stories {
+    margin-top: 0;
+  }
+  .article-number {
+    display: none;
+  }
 }

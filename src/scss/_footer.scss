@@ -1,6 +1,12 @@
 @import "colors";
 @import "utils";
 
+@media screen and (max-width: 39.9375em) {
+  #footer-padder {
+    display: none;
+  }
+}
+
 footer {
   &.hidden {
     display: none;
