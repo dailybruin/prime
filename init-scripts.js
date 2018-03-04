@@ -23,6 +23,7 @@ function createArticle(articlejson, endpoint, currentissue) {
 	article.cover.imgurl = metadata.cover? articlejson.images.s3[metadata.cover.img].url : "";
 	article.cover.author = metadata.cover? metadata.cover.author : "";
 	article.title = metadata.title;
+	article.prettyIssue = metadata.issue;
 	article.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
 	article.state = 'published';
 	if (article.issue == currentissue) {
