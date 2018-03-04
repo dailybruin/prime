@@ -21,22 +21,30 @@ exports = module.exports = function (req, res) {
         try {
             locals.data.config = await keystone.list('Configuration').model.findOne();
     
+            if (!locals.data.config.sections.includes(locals.data.section)) {
+                res.status(404).send('Section does not exist.');
+                return;                
+            }
+
             locals.data.featured = await keystone.list('Article').model
-                .find({ section: locals.filters.section })
-                .where('featured').in(['featured'])
+                .find({ 
+                    featured: 'featured',
+                    section: locals.filters.section
+                 })
                 .populate('article');
      
             locals.data.mainarticle = await keystone.list('Article').model
                 .findOne({ section: locals.filters.section })
                 .where('featured').in(['main feature'])
                 .populate('article');
+
         } catch (e) {
             next(e);
         }
-        if (!locals.data.featured || !locals.data.mainarticle) {
-            res.status(404).send('Section does not exist.');
-            return;
-        }
+        // if ( !locals.data.featured || !locals.data.mainarticle) {
+        //     res.status(404).send('Section does not exist.');
+        //     return;
+        // }
         next();
 	});
 

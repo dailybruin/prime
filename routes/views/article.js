@@ -34,7 +34,6 @@ exports = module.exports = function (req, res) {
 			})
 			// .populate('issue')
 			.exec((err, article) => {
-				console.log(article);
 				locals.data.article = article;
 				next(err);
 			});

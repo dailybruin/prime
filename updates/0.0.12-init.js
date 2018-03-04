@@ -8,7 +8,7 @@ let admins = [
 	{ 'name.first': 'Admin', 'name.last': 'User', 'email': 'admin@dailybruin.com', 'password': 'admin', 'isAdmin': true },	
 ];
 let config = [
-	{ 'issue': 'Winter18', 'sections': ["arts", "culture", "lifestyle"], 'mainarticle': 'on_your_mark', 'featured': []}
+	{ 'issue': 'winter2018', 'sections': ["arts", "culture", "lifestyle"], 'mainarticle': 'a-league-of-our-own', 'featured': []}
 ];
 
 function createAdmin (admin, done) {

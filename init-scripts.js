@@ -3,7 +3,7 @@ var cm = require('commonmark');
 var fetch = require('node-fetch');
 var Article;
 
-function createArticle(articlejson, endpoint) {
+function createArticle(articlejson, endpoint, currentissue) {
 	let article = new Article.model();
 
 	let articledata = fm(articlejson.cached_article_preview);
@@ -25,6 +25,11 @@ function createArticle(articlejson, endpoint) {
 	article.title = metadata.title;
 	article.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
 	article.state = 'published';
+	if (article.issue == currentissue) {
+		article.featured = 'featured';
+	} else {
+		article.featured = 'no';
+	}
 
 	article.save(function (err) {
 		if (err) {
@@ -48,42 +53,45 @@ function createArticle(articlejson, endpoint) {
 
 let loadArticles = function(keystone) {
 	Article = keystone.list('Article');
-	//Fetch each individual article and load into database.
-	fetch('https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true').then(endpointsresponse => {
-		endpointsresponse.json().then(endpoints => {
-			endpoints.data.forEach(endpoint => {
-				Article.model.find({
-					modelSlug: endpoint.slug,
-				})
-				.exec()
-				.then((res) => {
-					if (res.length !== 0) {
-						console.log(res[0].modelSlug + " exists! Skipping.")
-					} else {
-						let link = 'https://kerckhoff.dailybruin.com' + endpoint.endpoint;
-						fetch(link).then(response => {
-							response.json().then(articlejson => {
-								try {
-									createArticle(articlejson, link);
-								} catch (err) {
-									console.error('Error saving article ' + endpoint.slug + ' to the database.');
-									console.error(err);
-									//done(err);
-								}
+	Config = keystone.list('Configuration');
+	Config.model.findOne().exec().then(config => {
+		//Fetch each individual article and load into database.
+		fetch('https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true').then(endpointsresponse => {
+			endpointsresponse.json().then(endpoints => {
+				endpoints.data.forEach(endpoint => {
+					Article.model.find({
+						modelSlug: endpoint.slug,
+					})
+					.exec()
+					.then((res) => {
+						if (res.length !== 0) {
+							console.log(res[0].modelSlug + " exists! Skipping.")
+						} else {
+							let link = 'https://kerckhoff.dailybruin.com' + endpoint.endpoint;
+							fetch(link).then(response => {
+								response.json().then(articlejson => {
+									try {
+										createArticle(articlejson, link, config.issue);
+									} catch (err) {
+										console.error('Error saving article ' + endpoint.slug + ' to the database.');
+										console.error(err);
+										//done(err);
+									}
+								});
+							}).catch(err => {
+								console.error('Error saving article ' + endpoint.slug + ' to the database.');
+								console.error(err);
+								//done(err);
 							});
-						}).catch(err => {
-							console.error('Error saving article ' + endpoint.slug + ' to the database.');
-							console.error(err);
-							//done(err);
-						});
-					}
+						}
+					});
 				});
 			});
+			//done();
+		}).catch(err => {
+			console.error('Error retrieving list of endpoints from https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true');
+			//done(err);
 		});
-		//done();
-	}).catch(err => {
-		console.error('Error retrieving list of endpoints from https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true');
-		//done(err);
 	});
 }
 

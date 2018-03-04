@@ -63,7 +63,7 @@ Article.schema.pre('save', function (next) {
 			this.content.excerpt = metadata.excerpt;
 			this.author = metadata.author;
 			this.section = metadata.category.toLowerCase();
-			this.cover.imgurl = metadata.cover? metadata.cover.img : "";
+			this.cover.imgurl = metadata.cover? json.images.s3[metadata.cover.img].url : "";
 			this.cover.author = metadata.cover? metadata.cover.author : "";
 			this.title = metadata.title;
 			this.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
