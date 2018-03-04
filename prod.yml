@@ -1,0 +1,21 @@
+version: "2"
+services:
+  app:
+    image: prime-cms
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/prime
+  mongo:
+    image: mongo
+    volumes:
+      - mongo_data:/data/db
+
+volumes:
+  mongo_data:
+    #driver: rancher-nfs

@@ -17,6 +17,7 @@ var Article = new keystone.List('Article', {
 
 Article.add({
 	endpoint: { type: String },
+	modelSlug: { type: String, noedit: true },
 	featured: {type: Types.Select, options: 'no, featured, main feature', default: 'no', note: "Is this a featured article in its section?"},
 	section: {noedit: true, type: String },
 	issue: {type: String},
