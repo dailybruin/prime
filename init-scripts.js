@@ -3,7 +3,7 @@ var cm = require('commonmark');
 var fetch = require('node-fetch');
 var Article;
 
-function createArticle(articlejson) {
+function createArticle(articlejson, endpoint) {
 	let article = new Article.model();
 
 	let articledata = fm(articlejson.cached_article_preview);
@@ -16,6 +16,7 @@ function createArticle(articlejson) {
 
 	// Set metadata.
 	article.modelSlug = articlejson.slug;
+	article.endpoint = endpoint;
 	article.content.excerpt = metadata.excerpt;
 	article.author = metadata.author;
 	article.section = metadata.category.toLowerCase();
@@ -59,10 +60,11 @@ let loadArticles = function(keystone) {
 					if (res.length !== 0) {
 						console.log(res[0].modelSlug + " exists! Skipping.")
 					} else {
-						fetch('https://kerckhoff.dailybruin.com' + endpoint.endpoint).then(response => {
+						let link = 'https://kerckhoff.dailybruin.com' + endpoint.endpoint;
+						fetch(link).then(response => {
 							response.json().then(articlejson => {
 								try {
-									createArticle(articlejson);
+									createArticle(articlejson, link);
 								} catch (err) {
 									console.error('Error saving article ' + endpoint.slug + ' to the database.');
 									console.error(err);
