@@ -17,4 +17,4 @@ ArticleIssue.add({
 
 ArticleIssue.relationship({ ref: 'Article', path: 'articles', refPath: 'issue' });
 
-ArticleIssue.register();
+// ArticleIssue.register(); // Not used right now.

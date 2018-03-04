@@ -24,12 +24,12 @@ exports = module.exports = function (req, res) {
             locals.data.featured = await keystone.list('Article').model
                 .find({ section: locals.filters.section })
                 .where('featured').in(['featured'])
-                .populate('article issue');
+                .populate('article');
      
             locals.data.mainarticle = await keystone.list('Article').model
                 .findOne({ section: locals.filters.section })
                 .where('featured').in(['main feature'])
-                .populate('article issue');
+                .populate('article');
         } catch (e) {
             next(e);
         }

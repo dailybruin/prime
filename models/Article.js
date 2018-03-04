@@ -19,7 +19,8 @@ Article.add({
 	endpoint: { type: String },
 	featured: {type: Types.Select, options: 'no, featured, main feature', default: 'no', note: "Is this a featured article in its section?"},
 	section: {noedit: true, type: String },
-	issue: { type: Types.Relationship, ref: 'ArticleIssue', many: false },
+	issue: {type: String},
+	//issue: { type: Types.Relationship, ref: 'ArticleIssue', many: false },
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
 	title: { type: String, required: true },
@@ -63,6 +64,7 @@ Article.schema.pre('save', function (next) {
 			this.cover.imgurl = metadata.cover? metadata.cover.img : "";
 			this.cover.author = metadata.cover? metadata.cover.author : "";
 			this.title = metadata.title;
+			this.issue = metadata.issue;
 
 			next();
 		}).catch((err) => {

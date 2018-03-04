@@ -1,7 +1,7 @@
 <div class="latest-stories__block">
   <div class="hide-for-small-only latest-stories__wrapper">
     <hr class="latest-stories__black-line">
-      <a href="{{story.issue.name}}/{{story.slug}}">
+      <a href="{{story.issue}}/{{story.slug}}">
         <div class="large-4 column latest-stories__imgbox" style="background-image: url('{{ story.cover.imgurl }}'); background-size: cover; background-position: 50% 50%; height: 250px;">
         {# <img src="{{ story.cover.imgurl }}" alt="test-img"> #}
         <div class="latest-stories__block-imgbox-photo-credit-wrapper">
@@ -12,7 +12,7 @@
     </a>
       <div class="large-8 column latest-stories__textbox">
         <h2 class="latest-stories__textbox-pretitle">{{ story.section }}</h2>
-        <a class="link__article" href="{{story.issue.name}}/{{story.slug}}">
+        <a class="link__article" href="{{story.issue}}/{{story.slug}}">
           <h2 class="latest-stories__textbox-title">{{ story.title }}</h2>
           <h3 class="latest-stories__textbox-author">BY <span class="author-name">{{ story.author }}</span></h3>
           <p class="latest-stories__textbox-body">{{ story.content.excerpt }}</p>
@@ -30,7 +30,7 @@
       <img src="img/helix-nebula-1400x1400.jpg" alt="test-img">
     </div> #}
     <div class="small-8 column latest-stories__textbox-small">
-      <a class="link__article" href="{{story.issue.name}}/{{story.slug}}">
+      <a class="link__article" href="{{story.issue}}/{{story.slug}}">
         <h2 class="latest-stories__textbox-pretitle-small">{{ story.category }}</h2>
         <h2 class="latest-stories__textbox-title-small">{{ story.title }}</h2>
         <h3 class="latest-stories__textbox-author-small">BY <span class="author-name">{{ story.author }}</span></h3>
@@ -40,7 +40,7 @@
       <img src="img{{ story.cover.imgurl }}" alt="test-img">
     </div>
     <div class="small-12 column latest-stories__textbox-body-small">
-      <a class="link__article" href="{{story.issue.name}}/{{story.slug}}">
+      <a class="link__article" href="{{story.issue}}/{{story.slug}}">
         <p>{{ story.content.excerpt }}</p>
       </a>
     </div>

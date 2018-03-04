@@ -23,15 +23,15 @@ exports = module.exports = function (req, res) {
 			
 			locals.data.mainarticle = await keystone.list('Article').model
 				.findOne({ slug: locals.data.config.mainarticle })
-				.populate('article issue');
+				.populate('article' /*issue'*/);
 			
 			locals.data.featured = await keystone.list('Article').model
 				.find().where('slug').in(locals.data.config.featured)
-				.populate('article issue');
+				.populate('article' /*issue'*/);
 			
 			locals.data.articles = await keystone.list('Article').model
 				.find().where('state', 'published')
-				.populate('article issue');
+				.populate('article' /*issue'*/);
 		} catch (e) {
 			next(e);
 		}
