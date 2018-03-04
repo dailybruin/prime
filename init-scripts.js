@@ -11,7 +11,7 @@ function createArticle(articlejson) {
 	let markdown = articledata.body;
 	
 	// Parse article markdown.
-	article.content.body.html = (new cm.HtmlRenderer()).render((new cm.Parser()).parse(markdown)); 
+	article.content.body.html = (new cm.HtmlRenderer()).render((new cm.Parser()).parse(markdown));
 	article.content.body.md = markdown;
 
 	// Set metadata.
@@ -22,16 +22,26 @@ function createArticle(articlejson) {
 	article.cover.imgurl = metadata.cover? articlejson.images.s3[metadata.cover.img].url : "";
 	article.cover.author = metadata.cover? metadata.cover.author : "";
 	article.title = metadata.title;
-	article.issue = metadata.issue;
+	article.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
 	article.state = 'published';
 
 	article.save(function (err) {
 		if (err) {
 			console.error('Error saving article ' + article.title + ' to the database.');
 			console.error(err);
-		} else {
-			console.log('Added article ' + article.title + ' to the database.');
+			return;
 		}
+
+		// Need to save the path as well. Note that article.slug is automatically generated when the article is saved by keystone.
+		article.path = article.issue + '/' + article.slug;
+		article.save(err => {
+			if (err) {
+				console.error('Error saving article ' + article.title + ' to the database.');
+				console.error(err);
+			} else {
+				console.log('Added article ' + article.title + ' to the database.');
+			}
+		});
 	});
 }
 

@@ -35,7 +35,8 @@ Article.add({
     content: {
 		body: { noedit: true, type: Types.Markdown, height: 800 },
 		excerpt: { noedit:true, type: Types.Textarea, height: 80 },
-	}
+	},
+	path: { type: String, hidden: true}
 	// TODO: Tags? Important for search. Should be simple.
 });
 
@@ -65,7 +66,9 @@ Article.schema.pre('save', function (next) {
 			this.cover.imgurl = metadata.cover? metadata.cover.img : "";
 			this.cover.author = metadata.cover? metadata.cover.author : "";
 			this.title = metadata.title;
-			this.issue = metadata.issue;
+			this.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
+
+			this.path = this.issue + '/' + this.slug;
 
 			next();
 		}).catch((err) => {

@@ -9,7 +9,7 @@ exports = module.exports = function (req, res) {
 	locals.section = 'articles';
 	locals.filters = {
 		article: req.params.article.toLowerCase(), // Article slug.
-		issue: req.params.issue.toLowerCase().trim() // Issue.
+		issue: req.params.issue.toLowerCase().replace(/\s+/g, '') // Issue.
 	};
 	locals.data = {
 		articles: [],
@@ -17,16 +17,16 @@ exports = module.exports = function (req, res) {
 	};
 
 	// Load the current article.
-	view.on('init', async function (next) {		
+	view.on('init', async function (next) {
 		// Load global config.
 		locals.data.config = await keystone.list('Configuration').model.findOne();
 	
 		// keystone.list('ArticleIssue').model.findOne({slug: locals.filters.issue}).exec((err, issue) => {
-			if (err) {
-				next(err);
-				return;
-			}
-			keystone.list('Article').model
+			// if (err) {
+			// 	next(err);
+			// 	return;
+			// }
+		keystone.list('Article').model
 			.findOne({
 				state: 'published',
 				issue: locals.filters.issue,
@@ -34,6 +34,7 @@ exports = module.exports = function (req, res) {
 			})
 			// .populate('issue')
 			.exec((err, article) => {
+				console.log(article);
 				locals.data.article = article;
 				next(err);
 			});

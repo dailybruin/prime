@@ -1,5 +1,3 @@
-{% set mainarticlepath = data.mainarticle.issue + '/' + data.mainarticle.slug %}
-
 <div class="section">
   <h1 class="hide-for-small-only">{{ data.section }}</h1>
   <h1 class="show-for-small-only section_category">{{ data.section }}</h1>
@@ -9,7 +7,7 @@
     <div class="row">
       <div class="column medium-8">
       <div class="photo">
-        <a href="{{ mainarticlepath }}">
+        <a href="{{ data.mainarticle.path }}">
           <img src="{{ data.mainarticle.cover.imgurl }}" >
         </a>
         <div class="photo-credit-wrapper">
@@ -19,7 +17,7 @@
         </div>
       </div>
       <div class="section_main-story">
-        <a class="link__article" href="{{ mainarticlepath }}">
+        <a class="link__article" href="{{ data.mainarticle.path }}">
           <div class="section_title">{{ data.mainarticle.title }}</div>
             <div class="section_author">BY <span class="author-name">{{ data.mainarticle.author }}</span></div>
             <div class="section_body">{{ data.mainarticle.content.excerpt }}</div>
