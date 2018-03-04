@@ -1,10 +1,7 @@
 version: "2"
 services:
   app:
-    image: prime-cms
-    build: .
-    ports:
-      - "3000:3000"
+    image: dailybruin/prime
     depends_on:
       - mongo
     links:
@@ -18,4 +15,4 @@ services:
 
 volumes:
   mongo_data:
-    #driver: rancher-nfs
+    driver: rancher-nfs
