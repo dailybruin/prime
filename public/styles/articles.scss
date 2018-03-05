@@ -2,8 +2,8 @@
 @import "_utils";
 
 .article__content {
-  padding-left: 95px;
-  padding-right: 95px;
+  padding-left: 30px;
+  padding-right: 35px;
   padding-top: 50px;
   @media screen and (max-width: $small-only) {
     padding-right: 7px;

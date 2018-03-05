@@ -36,6 +36,9 @@ exports = module.exports = function (req, res) {
 			.populate('article')
 			.exec((err, article) => {
 				if (!article) res.status(404).send('Article not found.');
+				// not performant, but whatevs
+				article.hitCount += 1;
+				article.save();
 				locals.data.article = article;
 				next(err);
 			});
@@ -48,10 +51,11 @@ exports = module.exports = function (req, res) {
 			.find()
 			.where('state', 'published')
 			.sort('-publishedDate')
-			.populate('author').limit('4');
+			.sort('-hitCount')
+			.limit(4);
 
 		q.exec(function (err, results) {
-			locals.data.articles = results;
+			if(!err) locals.data.articles = results;
 			next(err);
 		});
 	});
@@ -63,7 +67,10 @@ exports = module.exports = function (req, res) {
 		issue: locals.filters.issue,
 		slug: locals.filters.article
 	}).exec((err, article) => {
-		if (!article) res.status(404).send('Article not found.');
+		if (!article) {
+			res.status(404).send('Article not found.');
+			return;
+		}
 		view.render(article.template? article.template : 'article');
 	});
 };

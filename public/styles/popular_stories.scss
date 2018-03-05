@@ -1,5 +1,7 @@
 .popular-stories {
-  margin-top: 365px;
+	margin-top: 365px;
+	position: sticky;
+	top: 90px;
 }
 
 .articles {
@@ -27,20 +29,28 @@
 }
 
 .article-title {
-  font-family: "Ropa Sans", sans-serif;
+	font-family: "Ropa Sans", sans-serif;
+	line-height: 1;
   font-size: 24px;
 }
 
 .article-author {
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
-  font-weight: 700;
+	font-weight: 700;
+	line-height: 1;
+	margin-top: 0.3rem;
+}
+
+.article-photo {
+	height: 100px;
+	background-size: cover;
+	background-position: 50% 30%;
 }
 
 .article-photo img {
   padding-top: 10px;
-  width: 92px;
-  height: 130px;
+  width: 100%;
 }
 
 @media screen and (max-width: 39.9375em) {

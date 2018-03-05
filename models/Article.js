@@ -2,7 +2,7 @@ var keystone = require('keystone');
 var fm = require('front-matter');
 var cm = require('commonmark');
 var fetch = require('node-fetch');
-
+var marked = require('marked');
 var Types = keystone.Field.Types;
 
 /**
@@ -39,7 +39,8 @@ Article.add({
 	},
 	path: { type: String, hidden: true},
 	prettyIssue: { type: String, hidden: true},
-	gallery: { type: Types.TextArray, hidden: true }
+	gallery: { type: Types.TextArray, hidden: true },
+	hitCount: { type: Number, default: 0 }
 	// TODO: Tags? Important for search. Should be simple.
 });
 
@@ -59,9 +60,6 @@ Article.schema.pre('save', function (next) {
 			let metadata = article.attributes;
 			let markdown = article.body;
 			
-			// Parse article markdown.
-			this.content.body.html = (new cm.HtmlRenderer()).render((new cm.Parser()).parse(markdown)); 
-			this.content.body.md = markdown;
 			// Set metadata.
 			this.content.excerpt = metadata.excerpt;
 			this.author = metadata.author;
@@ -73,8 +71,26 @@ Article.schema.pre('save', function (next) {
 			this.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
 			this.template = metadata.template? metadata.template.toLowerCase() : (this.template? this.template : "article"); // "article" is the default template.
 			this.gallery = (metadata.gallery)? (metadata.gallery.map(image => json.images.s3[image].url)) : [];
-
 			this.path = this.issue + '/' + this.slug;
+
+			let renderer = new marked.Renderer();
+			renderer.image = (href, title, text) => {
+			  let info = text.split('|');
+			  return `<div class="article__inlineimg ${info[1]}">
+			  <img src="${href}" />
+			  <div class="article__block-imgbox-photo-credit-wrapper">
+				 <div class="article__block-imgbox-photo-credit-name">${
+				   info[0]
+				 }</div>
+				 <div class="article__block-imgbox-photo-credit-title">/ daily bruin</div>
+			  </div>
+			 </div>`;
+			};
+		
+			// Parse article markdown.
+			//this.content.body.html = (new cm.HtmlRenderer()).render((new cm.Parser()).parse(markdown)); 
+			this.content.body.html = marked(markdown, { renderer: renderer });
+			this.content.body.md = markdown;
 
 			next();
 		}).catch((err) => {

@@ -1,5 +1,6 @@
 var fm = require('front-matter');
 var cm = require('commonmark');
+let marked = require('marked');
 var fetch = require('node-fetch');
 var Article;
 
