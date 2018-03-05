@@ -1,6 +1,6 @@
 var fm = require('front-matter');
 var cm = require('commonmark');
-let marked = require('marked');
+var marked = require('marked');
 var fetch = require('node-fetch');
 var Article;
 
@@ -11,8 +11,23 @@ function createArticle(articlejson, endpoint, currentissue) {
 	let metadata = articledata.attributes;
 	let markdown = articledata.body;
 	
+	let renderer = new marked.Renderer();
+	renderer.image = function(href, title, text) {
+	  let info = text.split('|');
+	  return `<div class="article__inlineimg ${info[1]}">
+	  <img src="/img${data[slug].path}/${href}" />
+	  <div class="article__block-imgbox-photo-credit-wrapper">
+		 <div class="article__block-imgbox-photo-credit-name">${
+		   info[0]
+		 }</div>
+		 <div class="article__block-imgbox-photo-credit-title">/ daily bruin</div>
+	  </div>
+	 </div>`;
+	};
+
 	// Parse article markdown.
-	article.content.body.html = (new cm.HtmlRenderer()).render((new cm.Parser()).parse(markdown));
+	article.content.body.html = marked(markdown, { renderer: renderer });
+	//(new cm.HtmlRenderer()).render((new cm.Parser()).parse(markdown));
 	article.content.body.md = markdown;
 
 	// Set metadata.

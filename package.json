@@ -24,6 +24,7 @@
   "scripts": {
     "lint": "eslint .",
     "start": "node keystone.js",
-    "build-frontend": "parcel build public/js/index.js --out-dir public/"
+    "build-frontend": "parcel build public/js/index.js --out-dir public/",
+    "dev-frontend": "parcel watch public/js/index.js --out-dir public/"
   }
 }

@@ -1,7 +1,319 @@
-require=function(r,e,n){function t(n,o){function i(r){return t(i.resolve(r))}function f(e){return r[n][1][e]||e}if(!e[n]){if(!r[n]){var c="function"==typeof require&&require;if(!o&&c)return c(n,!0);if(u)return u(n,!0);var l=new Error("Cannot find module '"+n+"'");throw l.code="MODULE_NOT_FOUND",l}i.resolve=f;var s=e[n]=new t.Module(n);r[n][0].call(s.exports,i,s,s.exports)}return e[n].exports}function o(r){this.id=r,this.bundle=t,this.exports={}}var u="function"==typeof require&&require;t.isParcelRequire=!0,t.Module=o,t.modules=r,t.cache=e,t.parent=u;for(var i=0;i<n.length;i++)t(n[i]);return t}({3:[function(require,module,exports) {
-"use strict";function e(){var e=$(".pswp")[0],t=[];$(".picture").each(function(){var i=$(this),n=function(){var e=[];return i.find("a").each(function(){var t=$(this).attr("href"),i=$(this).data("size").split("x"),n={src:t,w:i[0],h:i[1]};e.push(n)}),e}();$.each(n,function(e,i){t[e]=new Image,t[e].src=i.src}),i.on("click","figure",function(t){t.preventDefault();var i=$(this).index();new PhotoSwipe(e,PhotoSwipeUI_Default,n,{index:i,bgOpacity:.7,showHideOpacity:!0}).init()})})}Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=e;
-},{}],2:[function(require,module,exports) {
-"use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=s;var d=require("./comic"),o=e(d);function e(d){return d&&d.__esModule?d:{default:d}}function s(){$(document).ready(function(){var d=$(window),e=d.height()/d.width(),s=$("#top-bar"),l=$("#top-bar-logo"),a=$("#left-bar-logo"),i=e>1.2?150:800;$(window).resize(function(){e=d.height()/d.width(),i=e>1.2?150:800}),$(window).scroll(function(){$(window).scrollTop()>=i?(l.hasClass("logo-hidden")||l.addClass("logo-hidden"),a.hasClass("logo-hidden")&&a.removeClass("logo-hidden"),s.hasClass("hidden")&&s.removeClass("hidden")):(l.hasClass("logo-hidden")&&l.removeClass("logo-hidden"),a.hasClass("logo-hidden")||a.addClass("logo-hidden"),s.hasClass("hidden")||s.addClass("hidden"))}),(0,o.default)()})}
-},{"./comic":3}],1:[function(require,module,exports) {
-"use strict";var e=require("./main"),u=r(e);function r(e){return e&&e.__esModule?e:{default:e}}(0,u.default)();
-},{"./main":2}]},{},[1])
+// modules are defined as an array
+// [ module function, map of requires ]
+//
+// map of requires is short require name -> numeric require
+//
+// anything defined in a previous bundle is accessed via the
+// orig method which is the require for previous bundles
+
+// eslint-disable-next-line no-global-assign
+require = (function (modules, cache, entry) {
+  // Save the require from previous bundle to this closure if any
+  var previousRequire = typeof require === "function" && require;
+
+  function newRequire(name, jumped) {
+    if (!cache[name]) {
+      if (!modules[name]) {
+        // if we cannot find the module within our internal map or
+        // cache jump to the current global require ie. the last bundle
+        // that was added to the page.
+        var currentRequire = typeof require === "function" && require;
+        if (!jumped && currentRequire) {
+          return currentRequire(name, true);
+        }
+
+        // If there are other bundles on this page the require from the
+        // previous one is saved to 'previousRequire'. Repeat this as
+        // many times as there are bundles until the module is found or
+        // we exhaust the require chain.
+        if (previousRequire) {
+          return previousRequire(name, true);
+        }
+
+        var err = new Error('Cannot find module \'' + name + '\'');
+        err.code = 'MODULE_NOT_FOUND';
+        throw err;
+      }
+
+      localRequire.resolve = resolve;
+
+      var module = cache[name] = new newRequire.Module(name);
+
+      modules[name][0].call(module.exports, localRequire, module, module.exports);
+    }
+
+    return cache[name].exports;
+
+    function localRequire(x){
+      return newRequire(localRequire.resolve(x));
+    }
+
+    function resolve(x){
+      return modules[name][1][x] || x;
+    }
+  }
+
+  function Module(moduleName) {
+    this.id = moduleName;
+    this.bundle = newRequire;
+    this.exports = {};
+  }
+
+  newRequire.isParcelRequire = true;
+  newRequire.Module = Module;
+  newRequire.modules = modules;
+  newRequire.cache = cache;
+  newRequire.parent = previousRequire;
+
+  for (var i = 0; i < entry.length; i++) {
+    newRequire(entry[i]);
+  }
+
+  // Override the current require with this new one
+  return newRequire;
+})({5:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+		value: true
+});
+exports.default = initComics;
+function initComics() {
+		var $pswp = $('.pswp')[0];
+		var image = [];
+
+		$('.picture').each(function () {
+				var $pic = $(this),
+				    getItems = function getItems() {
+						var items = [];
+						$pic.find('a').each(function () {
+								var $href = $(this).data('img'),
+								    $size = $(this).data('size').split('x'),
+								    $width = $size[0],
+								    $height = $size[1];
+
+								var item = {
+										src: $href,
+										w: $(this).find('img')[0].naturalWidth,
+										h: $(this).find('img')[0].naturalHeight,
+										img: $(this)
+								};
+
+								items.push(item);
+						});
+						return items;
+				};
+
+				var items = getItems();
+
+				$.each(items, function (index, value) {
+						image[index] = new Image();
+						image[index].src = value['src'];
+				});
+
+				$.each(items, function (index, val) {
+						$(val.img).parent().on('click', function (event) {
+								event.preventDefault();
+								var options = {
+										index: index,
+										bgOpacity: 0.7,
+										showHideOpacity: true
+								};
+
+								var lightBox = new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options);
+								lightBox.init();
+						});
+				});
+		});
+}
+},{}],3:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = main;
+
+var _comic = require('./comic');
+
+var _comic2 = _interopRequireDefault(_comic);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function main() {
+  $(document).ready(function () {
+    var $window = $(window);
+    var ratio = $window.height() / $window.width();
+
+    var $topbar = $('#top-bar');
+    var $topBarLogoElem = $('#top-bar-logo');
+    var $leftBarLogoElem = $('#left-bar-logo');
+    var scrollThres = ratio > 1.2 ? 150 : 800;
+
+    $(window).resize(function () {
+      ratio = $window.height() / $window.width();
+      scrollThres = ratio > 1.2 ? 150 : 800;
+    });
+
+    $(window).scroll(function () {
+      if ($(window).scrollTop() >= scrollThres) {
+        if (!$topBarLogoElem.hasClass('logo-hidden')) {
+          $topBarLogoElem.addClass('logo-hidden');
+        }
+        if ($leftBarLogoElem.hasClass('logo-hidden')) {
+          $leftBarLogoElem.removeClass('logo-hidden');
+        }
+        if ($topbar.hasClass('hidden')) {
+          $topbar.removeClass('hidden');
+        }
+      } else {
+        if ($topBarLogoElem.hasClass('logo-hidden')) {
+          $topBarLogoElem.removeClass('logo-hidden');
+        }
+        if (!$leftBarLogoElem.hasClass('logo-hidden')) {
+          $leftBarLogoElem.addClass('logo-hidden');
+        }
+        if (!$topbar.hasClass('hidden')) {
+          $topbar.addClass('hidden');
+        }
+      }
+    });
+
+    (0, _comic2.default)();
+  });
+}
+},{"./comic":5}],1:[function(require,module,exports) {
+'use strict';
+
+var _main = require('./main');
+
+var _main2 = _interopRequireDefault(_main);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _main2.default)();
+},{"./main":3}],11:[function(require,module,exports) {
+
+var global = (1, eval)('this');
+var OldModule = module.bundle.Module;
+function Module(moduleName) {
+  OldModule.call(this, moduleName);
+  this.hot = {
+    accept: function (fn) {
+      this._acceptCallback = fn || function () {};
+    },
+    dispose: function (fn) {
+      this._disposeCallback = fn;
+    }
+  };
+}
+
+module.bundle.Module = Module;
+
+var parent = module.bundle.parent;
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+  var hostname = '' || location.hostname;
+  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61627' + '/');
+  ws.onmessage = function (event) {
+    var data = JSON.parse(event.data);
+
+    if (data.type === 'update') {
+      data.assets.forEach(function (asset) {
+        hmrApply(global.require, asset);
+      });
+
+      data.assets.forEach(function (asset) {
+        if (!asset.isNew) {
+          hmrAccept(global.require, asset.id);
+        }
+      });
+    }
+
+    if (data.type === 'reload') {
+      ws.close();
+      ws.onclose = function () {
+        location.reload();
+      };
+    }
+
+    if (data.type === 'error-resolved') {
+      console.log('[parcel] ✨ Error resolved');
+    }
+
+    if (data.type === 'error') {
+      console.error('[parcel] 🚨  ' + data.error.message + '\n' + 'data.error.stack');
+    }
+  };
+}
+
+function getParents(bundle, id) {
+  var modules = bundle.modules;
+  if (!modules) {
+    return [];
+  }
+
+  var parents = [];
+  var k, d, dep;
+
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
+      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
+        parents.push(+k);
+      }
+    }
+  }
+
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
+
+  return parents;
+}
+
+function hmrApply(bundle, asset) {
+  var modules = bundle.modules;
+  if (!modules) {
+    return;
+  }
+
+  if (modules[asset.id] || !bundle.parent) {
+    var fn = new Function('require', 'module', 'exports', asset.generated.js);
+    asset.isNew = !modules[asset.id];
+    modules[asset.id] = [fn, asset.deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
+
+function hmrAccept(bundle, id) {
+  var modules = bundle.modules;
+  if (!modules) {
+    return;
+  }
+
+  if (!modules[id] && bundle.parent) {
+    return hmrAccept(bundle.parent, id);
+  }
+
+  var cached = bundle.cache[id];
+  if (cached && cached.hot._disposeCallback) {
+    cached.hot._disposeCallback();
+  }
+
+  delete bundle.cache[id];
+  bundle(id);
+
+  cached = bundle.cache[id];
+  if (cached && cached.hot && cached.hot._acceptCallback) {
+    cached.hot._acceptCallback();
+    return true;
+  }
+
+  return getParents(global.require, id).some(function (id) {
+    return hmrAccept(global.require, id);
+  });
+}
+},{}]},{},[11,1])
+//# sourceMappingURL=/public/index.map

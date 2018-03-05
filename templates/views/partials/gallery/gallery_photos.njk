@@ -4,7 +4,7 @@
     {% for j in range(i*3, (i*3)+3) %}
       <div class="photo-gallery column large-4">
         <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-          <a href="{{ data.article.gallery[j] }}" itemprop="contentUrl" data-size="1700x2200">
+          <a data-img="{{ data.article.gallery[j] }}" itemprop="contentUrl" data-size="1700x2200">
               <img src="{{ data.article.gallery[j] }}" itemprop="thumbnail" alt="Image description" />
           </a>
         </figure>
