@@ -19,7 +19,7 @@ keystone.init({
 	'view engine': '.njk',
 	'custom engine': cons.nunjucks,
 
-	'cookie secret': process.env.SECRET_KEY,
+	'cookie secret': process.env.COOKIE_SECRET,
 
 	// Enables pasting/dragdrop of images into wysiwyg text fields.
 	'wysiwyg additional plugins': 'paste',

@@ -71,6 +71,7 @@ Article.schema.pre('save', function (next) {
 			this.prettyIssue = metadata.issue;
 			this.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
 			this.template = metadata.template? metadata.template.toLowerCase() : (this.template? this.template : "article"); // "article" is the default template.
+			this.gallery = (metadata.gallery)? (metadata.gallery.map(image => json.images.s3[image].url)) : [];
 
 			this.path = this.issue + '/' + this.slug;
 

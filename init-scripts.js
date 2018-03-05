@@ -27,6 +27,8 @@ function createArticle(articlejson, endpoint, currentissue) {
 	article.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
 	article.state = 'published';
 	article.template = metadata.template? metadata.template.toLowerCase() : "article"; // "article" is default template.
+	article.gallery = metadata.gallery? (metadata.gallery.map(image => articlejson.images.s3[image].url)) : [];
+
 	if (article.issue == currentissue) {
 		article.featured = 'featured';
 	} else {
