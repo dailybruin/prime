@@ -17,6 +17,7 @@ var Article = new keystone.List('Article', {
 
 Article.add({
 	endpoint: { type: String },
+	template: { label: "Article Template", type: String, default: "article" },
 	modelSlug: { type: String, noedit: true },
 	featured: {type: Types.Select, options: 'no, featured, main feature', default: 'no', note: "Is this a featured article in its section?"},
 	section: {noedit: true, type: String },
@@ -69,6 +70,7 @@ Article.schema.pre('save', function (next) {
 			this.title = metadata.title;
 			this.prettyIssue = metadata.issue;
 			this.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
+			this.template = metadata.template? metadata.template.toLowerCase() : (this.template? this.template : "article"); // "article" is the default template.
 
 			this.path = this.issue + '/' + this.slug;
 
@@ -81,5 +83,5 @@ Article.schema.pre('save', function (next) {
 	});
 });
 
-Article.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';
+Article.defaultColumns = 'title, issue|20%, section|20%, template|20%';
 Article.register();

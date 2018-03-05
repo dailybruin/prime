@@ -30,8 +30,10 @@ exports = module.exports = function (req, res) {
 				.populate('article' /*issue'*/);
 			
 			locals.data.articles = await keystone.list('Article').model
-				.find().where('state', 'published')
-				.populate('article' /*issue'*/);
+				.find({
+					state: 'published',
+					issue: locals.data.config.issue // Only load articles from the ucrrent issue into the index.
+				}).populate('article' /*issue'*/);
 		} catch (e) {
 			next(e);
 		}

@@ -26,6 +26,7 @@ function createArticle(articlejson, endpoint, currentissue) {
 	article.prettyIssue = metadata.issue;
 	article.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
 	article.state = 'published';
+	article.template = metadata.template? metadata.template.toLowerCase() : "article"; // "article" is default template.
 	if (article.issue == currentissue) {
 		article.featured = 'featured';
 	} else {
@@ -72,7 +73,7 @@ let loadArticles = function(keystone) {
 							fetch(link).then(response => {
 								response.json().then(articlejson => {
 									try {
-										createArticle(articlejson, link, config.issue);
+										createArticle(articlejson, link, config? config.issue : "");
 									} catch (err) {
 										console.error('Error saving article ' + endpoint.slug + ' to the database.');
 										console.error(err);

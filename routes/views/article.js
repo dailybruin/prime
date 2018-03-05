@@ -12,6 +12,7 @@ exports = module.exports = function (req, res) {
 		issue: req.params.issue.toLowerCase().replace(/\s+/g, '') // Issue.
 	};
 	locals.data = {
+		article: {},
 		articles: [],
 		config: {}
 	};
@@ -34,6 +35,7 @@ exports = module.exports = function (req, res) {
 			})
 			// .populate('issue')
 			.exec((err, article) => {
+				if (!article) res.status(404).send('Article not found.');
 				locals.data.article = article;
 				next(err);
 			});
@@ -55,5 +57,13 @@ exports = module.exports = function (req, res) {
 	});
 
 	// Render the view.
-	view.render('article');
+	keystone.list('Article').model
+	.findOne({
+		state: 'published',
+		issue: locals.filters.issue,
+		slug: locals.filters.article
+	}).exec((err, article) => {
+		if (!article) res.status(404).send('Article not found.');
+		view.render(article.template? article.template : 'article');
+	});
 };
