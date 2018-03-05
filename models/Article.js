@@ -38,7 +38,8 @@ Article.add({
 		excerpt: { noedit:true, type: Types.Textarea, height: 80 },
 	},
 	path: { type: String, hidden: true},
-	prettyIssue: { type: String, hidden: true}
+	prettyIssue: { type: String, hidden: true},
+	gallery: { type: Types.TextArray, hidden: true }
 	// TODO: Tags? Important for search. Should be simple.
 });
 

@@ -33,7 +33,7 @@ exports = module.exports = function (req, res) {
 				issue: locals.filters.issue,
 				slug: locals.filters.article
 			})
-			// .populate('issue')
+			.populate('article')
 			.exec((err, article) => {
 				if (!article) res.status(404).send('Article not found.');
 				locals.data.article = article;
