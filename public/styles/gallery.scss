@@ -10,8 +10,12 @@
   display: block;
   float: left;
   margin: 0 5px 5px 0;
-  width: 150px;
+  width: auto;
 }
 .my-gallery figcaption {
   display: none;
+}
+.photo-gallery img {
+	height: 250px;
+	width: 300px;
 }
