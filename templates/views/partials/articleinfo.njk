@@ -4,8 +4,8 @@
 <meta property="og:image"              content="http://prime.dailybruin.com/img{{ path }}/{{ cover.img }}" />
 
 <articleinfo>
-<p class="article__category">{{ category }}</p>
-<h1 class="article__title">{{ title }}</h1>
+<p class="article__category">{{ data.article.section | capitalize }}</p>
+<h1 class="article__title">{{ data.article.title }}</h1>
 <div class="article__author byline">BY <span class="author-name">{{ data.article.author }}</span></div>
 <div class="article__issue">{{ data.article.prettyIssue }}</div>
 <div class="flex-container">
