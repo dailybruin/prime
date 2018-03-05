@@ -2,16 +2,18 @@
     <h3 class="header">POPULAR STORIES</h3>
 	{% for article in data.articles %}
 	<div class="row articles">
-        <div class="column medium-1">
-            <div class="article-number">{{ loop.index }}.</div> 
-        </div>
-        <div class="column medium-6">
-            <p class="article-type">{{ article.section | capitalize }}</p>
-            <p class="article-title">{{ article.title }}</p>
-            <p class="article-author">{{ article.author }}</p>
-        </div>
-        <div class="column medium-5 article-photo" style='background-image: url("{{article.cover.imgurl}}");'>
-        </div>
+		<a class="popular-link" href="/{{ article.path }}">
+			<div class="column medium-1">
+				<div class="article-number">{{ loop.index }}.</div> 
+			</div>
+			<div class="column medium-6">
+				<p class="article-type">{{ article.section | capitalize }}</p>
+				<p class="article-title">{{ article.title }}</p>
+				<p class="article-author">{{ article.author }}</p>
+			</div>
+			<div class="column medium-5 article-photo" style='background-image: url("{{article.cover.imgurl}}");'>
+			</div>
+		</a>
     </div>
 	{% endfor %}
 </div>
