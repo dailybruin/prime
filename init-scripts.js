@@ -12,10 +12,10 @@ function createArticle(articlejson, endpoint, currentissue) {
 	let markdown = articledata.body;
 	
 	let renderer = new marked.Renderer();
-	renderer.image = function(href, title, text) {
+	renderer.image = (href, title, text) => {
 	  let info = text.split('|');
 	  return `<div class="article__inlineimg ${info[1]}">
-	  <img src="/img${data[slug].path}/${href}" />
+	  <img src="${href}" />
 	  <div class="article__block-imgbox-photo-credit-wrapper">
 		 <div class="article__block-imgbox-photo-credit-name">${
 		   info[0]
