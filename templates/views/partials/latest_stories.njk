@@ -1,0 +1,17 @@
+<div class="column medium-10 medium-centered">
+  <div class="latest-stories__container">
+    <h1 class="latest-stories__title">LATEST STORIES</h1>
+    <div class="row small-collapse">
+      {% for story in data.articles %}
+        <!-- Checks to see that it isn't the main or featured story -->
+        {% if story.slug not in data.config.featured and story not in data.config.mainarticle %} 
+        <div class="column small-12">
+          {% include "./latest_stories_article.njk" %}
+        </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  <div class="footer-padding"></div>
+  <!-- <hr class="hide-for-small-only latest-stories__black-line"> -->
+  </div>
+</div>

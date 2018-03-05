@@ -1,0 +1,37 @@
+{% set mainarticlepath = data.mainarticle.issue + '/' + data.mainarticle.slug %}
+
+<div class="row">
+	<div class="column large-8">
+		<div class="photo">
+			<a href="{{mainarticlepath}}"><img src="{{ data.mainarticle.cover.imgurl }}" ></a>
+			<div class="photo-credit-wrapper">
+				<div class="photo-credit-name">{{ data.mainarticle.cover.author }}
+					<div class="photo-credit-title">daily bruin</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="column large-4">
+		<div class="main-story">
+			<div class="category">
+				{{ data.mainarticle.section }}
+			</div>
+			<a class="link__article" href="{{mainarticlepath}}">
+        <div class="title">
+          {{ data.mainarticle.title }}
+        </div>
+        <div class="author">
+          BY <span class="author-name">{{ data.mainarticle.author }}</span>
+        </div>
+        <div class="description">
+          {{ data.mainarticle.content.excerpt }}
+        </div>
+      </a>
+		</div>
+
+  </div>
+  <hr class="main-story__black-line">
+  <hr class="main-story__black-line">
+  <div class="main-story__space"></div>
+</div>
