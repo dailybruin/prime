@@ -15,4 +15,4 @@ ArticleCategory.add({
 
 ArticleCategory.relationship({ ref: 'Article', path: 'articles', refPath: 'categories' });
 
-ArticleCategory.register();
+// ArticleCategory.register(); Not currently being used.

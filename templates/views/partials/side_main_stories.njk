@@ -1,17 +1,17 @@
 <div class="section_block">
   <div class="row">
     <div class="medium-7 column">
-      <a class="link__article" href="{{ data[featured].path }}"><div class="section_block-title">{{ data[featured].title }}</div></a>
+      <a class="link__article" href="{{ article.path }}"><div class="section_block-title">{{ article.title }}</div></a>
     </div>
     <div class="medium-5 column imgbox">
-      <a href="{{ data[featured].path }}"><img src="img{{ data[featured].path }}/{{ data[featured].cover.img }}" alt="test-img"></a>
+      <a href="{{ article.path }}"><img src="{{ article.cover.imgurl }}" alt="{{ article.title }} cover image"></a>
     </div>
   </div>
   <div class="row">
     <div class="medium-12 column">
-      <a class="link__article" href="{{ data[featured].path }}">
-        <div class="section_block-author">BY <span class="author-name">{{ data[featured].author }}</span></div>
-        <div class="section_block-body">{{ data[featured].excerpt }}</div>
+      <a class="link__article" href="{{ article.path }}">
+        <div class="section_block-author">BY <span class="author-name">{{ article.author }}</span></div>
+        <div class="section_block-body">{{ article.content.excerpt }}</div>
       </a>
     </div>
   </div>

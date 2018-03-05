@@ -1,9 +1,11 @@
+{% set mainarticlepath = data.mainarticle.path %}
+
 <div class="row">
 	<div class="column large-8">
 		<div class="photo">
-			<a href="{{data[all.top].path}}"><img src="img{{ data[all.top].path }}/{{ data[all.top].cover.img }}" ></a>
+			<a href="{{mainarticlepath}}"><img src="{{ data.mainarticle.cover.imgurl }}" ></a>
 			<div class="photo-credit-wrapper">
-				<div class="photo-credit-name">{{ data[all.top].cover.author }}
+				<div class="photo-credit-name">{{ data.mainarticle.cover.author }}
 					<div class="photo-credit-title">daily bruin</div>
 				</div>
 			</div>
@@ -13,17 +15,17 @@
 	<div class="column large-4">
 		<div class="main-story">
 			<div class="category">
-				{{ data[all.top].category }}
+				{{ data.mainarticle.section }}
 			</div>
-			<a class="link__article" href="{{data[all.top].path}}">
+			<a class="link__article" href="{{mainarticlepath}}">
         <div class="title">
-          {{ data[all.top].title }}
+          {{ data.mainarticle.title }}
         </div>
         <div class="author">
-          BY <span class="author-name">{{ data[all.top].author }}</span>
+          BY <span class="author-name">{{ data.mainarticle.author }}</span>
         </div>
         <div class="description">
-          {{ data[all.top].excerpt }}
+          {{ data.mainarticle.content.excerpt }}
         </div>
       </a>
 		</div>

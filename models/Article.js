@@ -1,4 +1,8 @@
 var keystone = require('keystone');
+var fm = require('front-matter');
+var cm = require('commonmark');
+var fetch = require('node-fetch');
+
 var Types = keystone.Field.Types;
 
 /**
@@ -12,26 +16,69 @@ var Article = new keystone.List('Article', {
 });
 
 Article.add({
-	title: { type: String, required: true },
+	endpoint: { type: String },
+	modelSlug: { type: String, noedit: true },
+	featured: {type: Types.Select, options: 'no, featured, main feature', default: 'no', note: "Is this a featured article in its section?"},
+	section: {noedit: true, type: String },
+	issue: {type: String},
+	//issue: { type: Types.Relationship, ref: 'ArticleIssue', many: false },
 	state: { type: Types.Select, options: 'draft, published, archived', default: 'draft', index: true },
-	author: { type: Types.Relationship, ref: 'User', index: true },
 	publishedDate: { type: Types.Date, index: true, dependsOn: { state: 'published' } },
-    article: {
-        // TODO: Images can currently be pasted directly into the post; however,
-        // there isn't currently a way to associate any metadata with the image
-        // (specifically, alt-text and photo credit).
-		excerpt: { type: Types.Markdown, height: 120 },
-		content: { type: Types.Markdown, height: 800 },
+	title: { type: String, required: true },
+	// author: { hidden: true, type: Types.Relationship, ref: 'User', index: true },
+	author: { noedit: true, type: String },
+	// categories: { type: Types.Relationship, ref: 'ArticleCategory', many: true },
+	cover: {
+		imgurl: {noedit: true, label: "Cover Image URL", type: String},
+		author: {noedit: true, label: "Cover Image Author", type: String}
 	},
-	categories: {
-        type: Types.Relationship, ref: 'ArticleCategory', many: true
-    },
-    // TODO: Quarter? This would likely go into categories.
-    // TODO: Tags? Important for search. Should be simple.
+    content: {
+		body: { noedit: true, type: Types.Markdown, height: 800 },
+		excerpt: { noedit:true, type: Types.Textarea, height: 80 },
+	},
+	path: { type: String, hidden: true},
+	prettyIssue: { type: String, hidden: true}
+	// TODO: Tags? Important for search. Should be simple.
 });
 
 Article.schema.virtual('content.full').get(function () {
-	return this.content.extended || this.content.brief;
+	return this.content.body || this.content.excerpt;
+});
+
+Article.schema.pre('save', function (next) {
+	if (!this.endpoint) {
+		next();
+	}
+	// Fetch article from API endpoint.
+	let doc = this;
+	fetch(this.endpoint).then(response => {
+		response.json().then(json => {
+			let article = fm(json.cached_article_preview);
+			let metadata = article.attributes;
+			let markdown = article.body;
+			
+			// Parse article markdown.
+			this.content.body.html = (new cm.HtmlRenderer()).render((new cm.Parser()).parse(markdown)); 
+			this.content.body.md = markdown;
+			// Set metadata.
+			this.content.excerpt = metadata.excerpt;
+			this.author = metadata.author;
+			this.section = metadata.category.toLowerCase();
+			this.cover.imgurl = metadata.cover? json.images.s3[metadata.cover.img].url : "";
+			this.cover.author = metadata.cover? metadata.cover.author : "";
+			this.title = metadata.title;
+			this.prettyIssue = metadata.issue;
+			this.issue = metadata.issue.toLowerCase().replace(/\s+/g, '');
+
+			this.path = this.issue + '/' + this.slug;
+
+			next();
+		}).catch((err) => {
+			next(err); // Error.
+		});
+	}).catch((err) => {
+		next(err); // Error.
+	});
 });
 
 Article.defaultColumns = 'title, state|20%, author|20%, publishedDate|20%';

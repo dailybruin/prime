@@ -1,32 +1,32 @@
 <div class="section">
-  <h1 class="hide-for-small-only">{{ category }}</h1>
-  <h1 class="show-for-small-only section_category">{{ category }}</h1>
+  <h1 class="hide-for-small-only">{{ data.section }}</h1>
+  <h1 class="show-for-small-only section_category">{{ data.section }}</h1>
   <hr class="section_black-line">
     <hr class="section_black-line">
     <br>
     <div class="row">
       <div class="column medium-8">
       <div class="photo">
-        <a href="{{ data[this.top].path }}">
-          <img src="img{{ data[this.top].path }}/{{ data[this.top].cover.img }}" >
+        <a href="{{ data.mainarticle.path }}">
+          <img src="{{ data.mainarticle.cover.imgurl }}" >
         </a>
         <div class="photo-credit-wrapper">
-          <div class="photo-credit-name">{{ data[this.top].cover.author }} /
+          <div class="photo-credit-name">{{ data.mainarticle.cover.author }} /
             <div class="photo-credit-title">daily bruin</div>
           </div>
         </div>
       </div>
       <div class="section_main-story">
-        <a class="link__article" href="{{ data[this.top].path }}">
-          <div class="section_title">{{ data[this.top].title }}</div>
-            <div class="section_author">BY <span class="author-name">{{ data[this.top].author }}</span></div>
-            <div class="section_body">{{ data[this.top].excerpt }}</div>
+        <a class="link__article" href="{{ data.mainarticle.path }}">
+          <div class="section_title">{{ data.mainarticle.title }}</div>
+            <div class="section_author">BY <span class="author-name">{{ data.mainarticle.author }}</span></div>
+            <div class="section_body">{{ data.mainarticle.content.excerpt }}</div>
           </div>
         </a>
       </div>
 
       <div class="column medium-4">
-        {% for featured in this.featured %}
+        {% for article in data.featured %}
         <div class="row">
             {% include "./side_main_stories.njk" %}
         </div>

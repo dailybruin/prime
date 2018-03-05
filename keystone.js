@@ -4,6 +4,7 @@ require('dotenv').config();
 var keystone = require('keystone');
 var cons = require('consolidate');
 var nunjucks = require('nunjucks');
+var createArticle = require('./init-scripts');
 
 keystone.init({
 	'name': 'prime',
@@ -42,12 +43,16 @@ keystone.set('locals', {
 	editable: keystone.content.editable,
 });
 
+keystone.set('mongo', process.env.MONGO_URI || "mongodb://localhost/db")
+
 keystone.set('routes', require('./routes'));
 
 // Configure the navigation bar in Keystone's Admin UI.
 keystone.set('nav', {
-	articles: ['articles', 'article-categories'],
-	users: 'users',
+	configuration: 'configuration',
+	articles: 'articles',
+	users: 'users'
 });
 
 keystone.start();
+createArticle(keystone);
