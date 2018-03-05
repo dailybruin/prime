@@ -1,7 +1,7 @@
 <meta property="og:type"               content="article" />
 <meta property="og:title"              content="prime | {{ data.article.title }}" />
 <meta property="og:description"        content="{{ data.article.content.excerpt.html }}" />
-<meta property="og:image"              content="http://prime.dailybruin.com/img{{ path }}/{{ cover.img }}" />
+<meta property="og:image"              content="{{ data.article.cover.imgurl }}" />
 
 <articleinfo>
 <p class="article__category">{{ data.article.section | capitalize }}</p>
