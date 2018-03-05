@@ -246,6 +246,10 @@
       padding: 0.2em;
       text-align: center; }
 
+@media screen and (max-width: 39.9375em) {
+  #footer-padder {
+    display: none; } }
+
 footer {
   padding-top: 1em;
   width: 100%;
@@ -476,7 +480,50 @@ footer {
   .about-prime__container .about-prime__footer-padding {
     padding: 1em; }
 
-/* Standardize */
+.popular-stories {
+  margin-top: 365px; }
+
+.articles {
+  margin-bottom: 15px; }
+
+.popular-stories p {
+  margin-bottom: 0; }
+
+.header {
+  text-align: center;
+  border-bottom: 1px black solid;
+  font-family: "Lato", sans-serif;
+  font-size: 36px; }
+
+.article-number {
+  padding-top: 20px;
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 30px; }
+
+.article-type {
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 20px; }
+
+.article-title {
+  font-family: "Ropa Sans", sans-serif;
+  font-size: 24px; }
+
+.article-author {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700; }
+
+.article-photo img {
+  padding-top: 10px;
+  width: 92px;
+  height: 130px; }
+
+@media screen and (max-width: 39.9375em) {
+  .popular-stories {
+    margin-top: 0; }
+  .article-number {
+    display: none; } }
+
 .navbar-padding {
   padding-top: 200px; }
   @media screen and (max-width: 39.9375em) {

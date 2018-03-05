@@ -1,9 +1,9 @@
-{% extends "./nunjucks/templates/base.njk" %}
+{% extends "./layouts/base.njk" %}
 
 {% block content %}
 <div class="navbar-padding"></div>
 <div class="row">
-  {% include "./nunjucks/partials/gallery/gallery_article.njk" %}
+  {% include "./partials/gallery/gallery_article.njk" %}
 </div>
-{% include "./nunjucks/partials/gallery/gallery_photoswipe.njk" %}
+{% include "./partials/gallery/gallery_photoswipe.njk" %}
 {% endblock %}
