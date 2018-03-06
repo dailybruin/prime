@@ -6,8 +6,8 @@
   padding-right: 35px;
   padding-top: 50px;
   @media screen and (max-width: $small-only) {
-    padding-right: 7px;
-    padding-left: 7px;
+    padding-right: 12px;
+    padding-left: 12px;
   }
 }
 
@@ -44,12 +44,20 @@
 
 .article__inlineimg.left {
   float: left;
-  margin: 15px 30px 15px 0px;
+	margin: 15px 30px 15px 0px;
+	
+	@media screen and (max-width: $small-only) {
+		margin: 0;
+  }
 }
 
 .article__inlineimg.right {
   float: right;
-  margin: 15px 0px 15px 30px;
+	margin: 15px 0px 15px 30px;
+	
+	@media screen and (max-width: $small-only) {
+		margin: 0;
+  }
 }
 
 .article__inlineimg__credit {

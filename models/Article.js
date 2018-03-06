@@ -56,11 +56,11 @@ Article.schema.pre('save', function (next) {
 	let doc = this;
 	fetch(this.endpoint).then(response => {
 		response.json().then(json => {
+
 			let article = fm(json.cached_article_preview);
 			let metadata = article.attributes;
 			let markdown = article.body;
 			
-			// Set metadata.
 			this.content.excerpt = metadata.excerpt;
 			this.author = metadata.author;
 			this.section = metadata.category.toLowerCase();
@@ -91,8 +91,9 @@ Article.schema.pre('save', function (next) {
 			//this.content.body.html = (new cm.HtmlRenderer()).render((new cm.Parser()).parse(markdown)); 
 			this.content.body.html = marked(markdown, { renderer: renderer });
 			this.content.body.md = markdown;
+			
+			Article.model.update({ _id: this._id }, { $set: this }, next);
 
-			next();
 		}).catch((err) => {
 			next(err); // Error.
 		});
