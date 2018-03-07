@@ -32,3 +32,6 @@ node_modules
 
 # Parcel cache
 .cache
+
+public/styles/*.css
+public/*.map
