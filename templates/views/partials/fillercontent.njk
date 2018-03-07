@@ -1,0 +1,14 @@
+{# Is this macro used anywhere? #}
+{% macro inlineimg(src, name='Staff', db_position='Daily Bruin', float_pos='left', alt='') %}
+    <div class="article__inlineimg {{ float_pos }}">
+     <img src="{{src}}" alt={{alt}} />
+     <div class="article__block-imgbox-photo-credit-wrapper">
+        <div class="article__block-imgbox-photo-credit-name">{{ name }}</div>
+        <div class="article__block-imgbox-photo-credit-title">/{{db_position }}</div>
+     </div>
+    </div>
+{% endmacro %}
+
+<article>
+{{ data.article.content.body.html | safe }}
+</article>

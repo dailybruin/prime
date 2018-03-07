@@ -1,0 +1,54 @@
+@import "3col";
+@import "latest-stories";
+@import "page-numbers";
+@import "footer";
+@import "colors";
+@import "section";
+@import "tabs";
+@import "phonetab";
+@import "past_issues";
+@import "_utils";
+@import "about-prime";
+@import "popular_stories";
+@import "gallery";
+@import "comic";
+
+.navbar-padding {
+  padding-top: 200px;
+
+  @media screen and (max-width: $small-only) {
+    & {
+      padding-top: 105px;
+    }
+  }
+}
+
+.footer-padding {
+  padding-bottom: 50px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+// @media screen and (max-width: $small-only) {
+//   html, body {
+//     overflow-x: hidden;
+//   }
+// }
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.link__article {
+  color: black;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+.author-name {
+  text-transform: uppercase;
+}

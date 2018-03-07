@@ -1,0 +1,66 @@
+<div class="latest-stories__block">
+  <div class="hide-for-small-only latest-stories__wrapper">
+    <hr class="latest-stories__black-line">
+      <a href="{{story.path}}">
+        <div class="large-4 column latest-stories__imgbox" style="background-image: url('{{ story.cover.imgurl }}'); background-size: cover; background-position: 50% 50%; height: 250px;">
+        {# <img src="{{ story.cover.imgurl }}" alt="test-img"> #}
+        <div class="latest-stories__block-imgbox-photo-credit-wrapper">
+          <div class="latest-stories__block-imgbox-photo-credit-name">{{ story.cover.author }} /</div>
+          <div class="latest-stories__block-imgbox-photo-credit-title">daily bruin</div>
+        </div>
+      </div>
+    </a>
+      <div class="large-8 column latest-stories__textbox">
+        <h2 class="latest-stories__textbox-pretitle">{{ story.section }}</h2>
+        <a class="link__article" href="{{ story.path }}">
+          <h2 class="latest-stories__textbox-title">{{ story.title }}</h2>
+          <h3 class="latest-stories__textbox-author">BY <span class="author-name">{{ story.author }}</span></h3>
+          <p class="latest-stories__textbox-body">{{ story.content.excerpt }}</p>
+        </a>
+      </div>
+  </div>
+
+  <div class="show-for-small-only latest-stories__wrapper-small">
+    {# <div class="small-6 small-push-1 left column latest-stories__textbox-small">
+      <h2 class="latest-stories__textbox-pretitle-small">CULTURE</h2>
+      <h2 class="latest-stories__textbox-title-small">Headline here i think n -m heath bars! now in mobilye headline please writeu</h2>
+      <h3 class="latest-stories__textbox-author-small">BY SOMEONE HERE</h3>
+    </div>
+    <div class="small-4 small-pull-1 right column latest-stories__imgbox-small">
+      <img src="img/helix-nebula-1400x1400.jpg" alt="test-img">
+    </div> #}
+    <div class="small-8 column latest-stories__textbox-small">
+      <a class="link__article" href="{{ story.path }}">
+        <h2 class="latest-stories__textbox-pretitle-small">{{ story.category }}</h2>
+        <h2 class="latest-stories__textbox-title-small">{{ story.title }}</h2>
+        <h3 class="latest-stories__textbox-author-small">BY <span class="author-name">{{ story.author }}</span></h3>
+      </a>
+    </div>
+    <div class="small-4 column latest-stories__imgbox-small">
+      <img src="{{ story.cover.imgurl }}" alt="test-img">
+    </div>
+    <div class="small-12 column latest-stories__textbox-body-small">
+      <a class="link__article" href="{{ story.path }}">
+        <p>{{ story.content.excerpt }}</p>
+      </a>
+    </div>
+    <div class="small-12 column latest-stories__separator-small">
+    </div>
+
+    {# <div class="row">
+      <div class="small-6 small-push-1 left column latest-stories__textbox-small">
+        <h2 class="latest-stories__textbox-pretitle-small">CULTURE</h2>
+        <h2 class="latest-stories__textbox-title-small">Headline here i think n -m heath bars! now in mobilye headline please writeu</h2>
+        <h3 class="latest-stories__textbox-author-small">BY SOMEONE HERE</h3>
+      </div>
+      <div class="small-4 small-pull-1 right column latest-stories__imgbox-small">
+        <img src="img/helix-nebula-1400x1400.jpg" alt="test-img">
+      </div>
+    </div> #}
+    {# <div class="row">
+      <div class="small-12 small-push-1 column">
+        <p class="latest-stories__textbox-body-small">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+      </div>
+    </div> #}
+  </div>
+</div>

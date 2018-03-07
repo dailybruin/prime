@@ -1,0 +1,37 @@
+<meta property="og:type"               content="article" />
+<meta property="og:title"              content="prime | {{ data.article.title }}" />
+<meta property="og:description"        content="{{ data.article.content.excerpt.html }}" />
+<meta property="og:image"              content="{{ data.article.cover.imgurl }}" />
+
+<articleinfo>
+<p class="article__category">{{ data.article.section | capitalize }}</p>
+<h1 class="article__title">{{ data.article.title }}</h1>
+<div class="article__author byline">BY <span class="author-name">{{ data.article.author }}</span></div>
+<div class="article__issue">{{ data.article.prettyIssue }}</div>
+<div class="flex-container">
+  <div class="row">
+    <div class="column large-1" id="article__social-buttons"></div>
+
+    <div class="column large-11" id="socialimage">
+      <div id="image">
+        <img src="{{ data.article.cover.imgurl }}">
+      </div>
+
+      <div class="photo-credits-article" style="text-align: right;">{{ data.article.cover.author }}/DAILY BRUIN</div>
+
+      {# <div class="columns small-12 medium-8"> #}
+      <div class="row">
+          <div class="article__content column medium-12">
+          	<article>
+            	{{ data.article.content.body.html | safe }}
+        	</article>
+          </div> 
+      </div>
+      {# </div> #}
+
+    </div>
+  </div>
+</div>
+</articleinfo>
+
+{% include "../socials.njk" %}

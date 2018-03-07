@@ -1,0 +1,62 @@
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-28181852-24"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-28181852-24');
+  </script>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Rendering for title and meta tags -->
+  {% if not data.article.title %}
+    {% set meta_title = "prime by Daily Bruin" %}
+  {% else %}
+    {% set meta_title = data.article.title + " | prime by Daily Bruin" %}
+  {% endif %}
+
+  {% if not data.article.content.excerpt %}
+    {% set excerpt = "The Daily Bruin’s quarterly arts, culture and lifestyle magazine, which strives to showcase students, faculty and other community members." %}
+  {% else %}
+    {% set excerpt = data.article.content.excerpt %}
+  {% endif %}
+
+  {% if not data.article.cover.imgurl %}
+    {% set image_url = "http://prime.dailybruin.com/img/primelogoblack.svg" %}
+  {% else %}
+    {% set image_url = data.article.cover.imageurl %}
+  {% endif %}
+
+  <title>{{ meta_title }}</title>
+  <meta property="og:type"               content="article" />
+  <meta property="og:title"              content="{{ meta_title }}" />
+  <meta property="og:description"        content="{{ excerpt }}" />
+  <meta property="og:image"              content="{{ image_url }}" />
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  
+  <link rel="icon" type="image/png" href="../../img/favicon.png" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Arimo|Oswald|Ropa+Sans|Montserrat:400,700|PT+Serif|Lato" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css">
+  <link rel="stylesheet" href="/styles/base.css">
+  <link rel="stylesheet" href="/styles/allstories.css">
+  <link rel="stylesheet" href="/styles/articles.css">
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+</head>
