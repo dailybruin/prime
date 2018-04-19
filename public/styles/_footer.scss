@@ -14,11 +14,12 @@ footer {
 
 	@media screen and (max-width: $small-only) {
 		height: auto;
+		padding-bottom: 14px;
 	}
 
 	@media screen and (min-width: $small-only) {
 		height: auto;
-		padding-bottom: 12px;
+		padding-bottom: 16px;
 	}
 
 	// height: 74.5px;
