@@ -8,7 +8,7 @@
 	height: 100px;
 	overflow: hidden;
 	border-radius: 50%;
-	margin-left: -2em;
+	margin-left: 16em;
 	img {
 		width: 100px;
 		height: 100px;
@@ -21,17 +21,21 @@
 	font-style: italic;
 	font-family: "Montserrat", sans-serif;
 	font-weight: lighter;
-	margin-right: 1em;
+	margin-right: 7em;
 }
 
 .article__author-bio-black-line {
-	margin-left: 12em;
-	margin-right: 12em;
+	margin-right: 5em;
 }
 
 .show-for-small-only {
+	.article__author-bio-icon {
+		margin-right: 16em;
+		margin-bottom: 1em;
+		margin-left: 14em;
+	}
 	.article__author-bio-black-line {
-		margin-left: 1em;
-		margin-right: 5em;
+		padding-left: 2em;
+		padding-right: 3em;
 	}
 }
