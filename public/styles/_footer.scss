@@ -88,8 +88,13 @@ footer {
 		color: $white;
 	}
 
-	.maillink:hover {
-		text-decoration: underline;
+	.maillink {
+		font-size: 0.7rem;
+		font-weight: 400;
+		color: white;
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 
