@@ -2,6 +2,9 @@
   <div class="navbar-padding"></div>
   <div>
     {% include "../partials/articleinfo.njk" %}
-		{% include "../partials/author-bio.njk" %}
+
+		<div class="hide-for-small-only articles__wrapper-small">
+			{% include "../partials/author-bio.njk" %}	
+		</div>
   </div>
 </div>
