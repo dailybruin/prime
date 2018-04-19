@@ -1,85 +1,133 @@
 .page-number__container {
-  font-family: "Oswald", "sans-serif";
-  font-size: 1em;
-  margin-right: 2em;
-  //float: right;
-  text-align: right;
+	font-family: "Oswald", "sans-serif";
+	font-size: 1em;
+	margin-right: 2em;
+	//float: right;
+	text-align: right;
 
-  .page-number__number-wrapper {
-    $break-small: 320px;
-    $break-large: 636px;
-    @media screen and (min-width: $break-large) {
-      margin-right: 6em;
-    }
-  }
+	.page-number__number-wrapper {
+		$break-small: 320px;
+		$break-large: 636px;
+		@media screen and (min-width: $break-large) {
+			margin-right: 6em;
+		}
+	}
 
-  .page-number__word-wrapper {
-    display: block;
-    $break-small: 320px;
-    $break-large: 636px;
-    @media screen and (min-width: $break-large) {
-      margin-right: 5em;
-    }
-  }
+	.page-number__word-wrapper {
+		display: block;
+		$break-small: 320px;
+		$break-large: 636px;
+		@media screen and (min-width: $break-large) {
+			margin-right: 5em;
+		}
+	}
 
-  .page-number__number {
-    display: inline-block;
-    margin-right: 0.5em;
-    margin-bottom: 1em;
-    margin-top: 0.5em;
-    a.page-number__number-link:link,
-    a.page-number__number-link:visited {
-      border: 1px solid black;
-      border-radius: 50%;
-      height: 2em;
-      width: 2em;
-      padding: 0.1em;
-      text-align: center;
-      color: black;
-      display: block;
-    }
-    a.page-number__number-link:hover,
-    a.page-number__number-link:active {
-      background-color: black;
-      color: white;
-      border-radius: 50%;
-      height: 2em;
-      width: 2em;
-      padding: 0.1em;
-      text-align: center;
-    }
-  }
-  .page-number__dots {
-    display: inline-block;
-    text-align: center;
-    margin-right: -1em;
-    margin-bottom: 1em;
-    margin-top: 0.5em;
-  }
-  .page-number__word {
-    display: inline-block;
-    margin-right: 0.5em;
-    // margin-right: 0.5em;
-    margin-bottom: 1em;
-    // margin-top: 0.5em;
-    a.page-number__word-link:link,
-    a.page-number__word-link:visited {
-      border: 1px solid black;
-      height: 2em;
-      width: 3em;
-      padding: 0.2em;
-      text-align: center;
-      color: black;
-      display: block;
-    }
-    a.page-number__word-link:hover,
-    a.page-number__word-link:active {
-      background-color: black;
-      color: white;
-      height: 2em;
-      width: 3em;
-      padding: 0.2em;
-      text-align: center;
-    }
-  }
+	.page-number__number {
+		display: inline-block;
+		margin-right: 0.5em;
+		margin-bottom: 1em;
+		margin-top: 0.5em;
+		a.page-number__number-link {
+			&:link,
+			&:visited {
+				border: 1px solid black;
+				border-radius: 50%;
+				height: 2em;
+				width: 2em;
+				padding: 0.1em;
+				text-align: center;
+				color: black;
+				display: block;
+			}
+			&:hover,
+			&:active {
+				background-color: black;
+				color: white;
+				border-radius: 50%;
+				height: 2em;
+				width: 2em;
+				padding: 0.1em;
+				text-align: center;
+			}
+
+			&--current {
+				background-color: black;
+				border: 1px solid black;
+				border-radius: 50%;
+				height: 2em;
+				width: 2em;
+				padding: 0.1em;
+				text-align: center;
+				color: white;
+				display: block;
+				&:hover,
+				&:active,
+				&:link,
+				&:visited {
+					background-color: black;
+					color: white;
+				}
+			}
+		}
+		//a.page-number__number-link:link,
+		//a.page-number__number-link:visited {
+		//  border: 1px solid black;
+		//  border-radius: 50%;
+		//  height: 2em;
+		//  width: 2em;
+		//  padding: 0.1em;
+		//  text-align: center;
+		//  color: black;
+		//  display: block;
+		//}
+		//a.page-number__number-link:hover,
+		//a.page-number__number-link:active {
+		//  background-color: black;
+		//  color: white;
+		//  border-radius: 50%;
+		//  height: 2em;
+		//  width: 2em;
+		//  padding: 0.1em;
+		//  text-align: center;
+		//}
+
+		a.page-number__number-link--current {
+			background-color: black;
+			color: white;
+		}
+	}
+	.page-number__dots {
+		display: inline-block;
+		text-align: center;
+		margin-left: 0.5em;
+		margin-right: 0.5em;
+		margin-bottom: 1em;
+		margin-top: 0.5em;
+	}
+	.page-number__word {
+		display: inline-block;
+		margin-right: 0.5em;
+		// margin-right: 0.5em;
+		margin-bottom: 1em;
+		// margin-top: 0.5em;
+		a.page-number__word-link:link,
+		a.page-number__word-link:visited {
+			border: 1px solid black;
+			height: 2em;
+			width: 3em;
+			padding: 0.2em;
+			text-align: center;
+			color: black;
+			display: block;
+		}
+		a.page-number__word-link:hover,
+		a.page-number__word-link:active {
+			background-color: black;
+			color: white;
+			height: 2em;
+			width: 3em;
+			padding: 0.2em;
+			text-align: center;
+		}
+	}
 }
