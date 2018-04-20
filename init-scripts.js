@@ -1,8 +1,15 @@
 var fm = require("front-matter");
-var cm = require("commonmark");
 var marked = require("marked");
 var fetch = require("node-fetch");
 var Article;
+
+function runPromiseInSequense(arr) {
+	return arr.reduce((promiseChain, currentPromise) => {
+		return promiseChain.then(chainedResult => {
+			return currentPromise(chainedResult).then(res => res);
+		});
+	}, Promise.resolve());
+}
 
 function createArticle(articlejson, endpoint, currentissue) {
 	let article = new Article.model();
@@ -89,111 +96,227 @@ function createArticle(articlejson, endpoint, currentissue) {
 	});
 }
 
+// // Alternative Original Async version of the code below
+// let loadArticles = function(keystone) {
+// 	Article = keystone.list("Article");
+// 	Config = keystone.list("Configuration");
+// 	Config.model
+// 		.findOne()
+// 		.exec()
+// 		.then(config => {
+// 			// Fetch each individual article and load into database.
+// 			fetch(
+// 				"https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true"
+// 			)
+// 				.then(endpointsresponse => {
+// 					endpointsresponse.json().then(endpoints => {
+// 						endpoints.data.forEach(endpoint => {
+// 							Article.model
+// 								.find({
+// 									modelSlug: endpoint.slug
+// 								})
+// 								.exec()
+// 								.then(res => {
+// 									if (res.length !== 0) {
+// 										console.log(res[0].modelSlug + " exists! Skipping.");
+// 									} else {
+// 										console.log(endpoint.endpoint);
+// 										let link =
+// 											"https://kerckhoff.dailybruin.com" + endpoint.endpoint;
+// 										fetch(link)
+// 											.then(response => {
+// 												response.json().then(articlejson => {
+// 													try {
+// 														createArticle(
+// 															articlejson,
+// 															link,
+// 															config ? config.issue : ""
+// 														);
+// 													} catch (err) {
+// 														console.error(
+// 															"Error saving article " +
+// 																endpoint.slug +
+// 																" to the database."
+// 														);
+// 														console.error(err);
+// 													}
+// 												});
+// 											})
+// 											.catch(err => {
+// 												console.error(
+// 													"Error saving article " +
+// 														endpoint.slug +
+// 														" to the database."
+// 												);
+// 												console.error(err);
+// 											});
+// 									}
+// 								});
+// 						});
+// 					});
+// 				})
+// 				.then(() => {
+// 					fetch(
+// 						"https://kerckhoff.dailybruin.com/api/packages/prime-old?endpoints=true"
+// 					).then(endpointsresponse => {
+// 						endpointsresponse.json().then(endpoints => {
+// 							endpoints.data.forEach(endpoint => {
+// 								Article.model
+// 									.find({
+// 										modelSlug: endpoint.slug
+// 									})
+// 									.exec()
+// 									.then(res => {
+// 										if (res.length !== 0) {
+// 											console.log(res[0].modelSlug + " exists! Skipping.");
+// 										} else {
+// 											console.log(endpoint.endpoint);
+// 											let link =
+// 												"https://kerckhoff.dailybruin.com" + endpoint.endpoint;
+// 											fetch(link)
+// 												.then(response => response.json())
+// 												.then(articlejson => {
+// 													return createArticle(
+// 														articlejson,
+// 														link,
+// 														config ? config.issue : ""
+// 													);
+// 												})
+// 												.catch(err => {
+// 													console.error(
+// 														"Error saving article " +
+// 															endpoint.slug +
+// 															" to the database."
+// 													);
+// 													console.error(err);
+// 												});
+// 										}
+// 									})
+// 									.catch(() => {});
+// 							});
+// 						});
+// 					});
+// 				})
+// 				.catch(err => {
+// 					console.log(
+// 						`Error retrieving list of endpoints from https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true: ${err}`
+// 					);
+// 				});
+// 		});
+// };
+
+// Enforce strict sequential fetch, make usage of Promise clearer
 let loadArticles = function(keystone) {
 	Article = keystone.list("Article");
 	Config = keystone.list("Configuration");
+	let config = null;
+	let link = null;
 	Config.model
 		.findOne()
 		.exec()
-		.then(config => {
+		.then(cfg => {
+			config = cfg;
 			// Fetch each individual article and load into database.
-			fetch(
+			return fetch(
 				"https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true"
-			)
-				.then(endpointsresponse => {
-					endpointsresponse.json().then(endpoints => {
-						endpoints.data.forEach(endpoint => {
-							Article.model
-								.find({
-									modelSlug: endpoint.slug
-								})
-								.exec()
-								.then(res => {
-									if (res.length !== 0) {
-										console.log(res[0].modelSlug + " exists! Skipping.");
-									} else {
-										console.log(endpoint.endpoint);
-										let link =
-											"https://kerckhoff.dailybruin.com" + endpoint.endpoint;
-										fetch(link)
-											.then(response => {
-												response.json().then(articlejson => {
-													try {
-														createArticle(
-															articlejson,
-															link,
-															config ? config.issue : ""
-														);
-													} catch (err) {
-														console.error(
-															"Error saving article " +
-																endpoint.slug +
-																" to the database."
-														);
-														console.error(err);
-													}
-												});
-											})
-											.catch(err => {
-												console.error(
-													"Error saving article " +
-														endpoint.slug +
-														" to the database."
-												);
-												console.error(err);
-											});
-									}
-								});
+			);
+		})
+		.then(endpointsresponse => {
+			return endpointsresponse.json();
+		})
+		.then(endpoints => {
+			let waterfall = endpoints.data.map(endpoint => {
+				return () =>
+					Article.model
+						.find({
+							modelSlug: endpoint.slug
+						})
+						.exec()
+						.then(res => {
+							if (res.length !== 0) {
+								console.log(res[0].modelSlug + " exists! Skipping.");
+								return null;
+							} else {
+								link = "https://kerckhoff.dailybruin.com" + endpoint.endpoint;
+								return fetch(link);
+							}
+						})
+						.then(response => {
+							if (!response) {
+								return null; // fetched, skip
+							}
+							return response.json();
+						})
+						.then(articlejson => {
+							if (!articlejson) {
+								return null; // fetched, skip
+							}
+							try {
+								createArticle(articlejson, link, config ? config.issue : "");
+							} catch (err) {
+								console.error(
+									"Error saving article " + endpoint.slug + " to the database."
+								);
+								console.error(err);
+							}
 						});
-					});
-				})
-				.then(() => {
-					fetch(
-						"https://kerckhoff.dailybruin.com/api/packages/prime-old?endpoints=true"
-					).then(endpointsresponse => {
-						endpointsresponse.json().then(endpoints => {
-							endpoints.data.forEach(endpoint => {
-								Article.model
-									.find({
-										modelSlug: endpoint.slug
-									})
-									.exec()
-									.then(res => {
-										if (res.length !== 0) {
-											console.log(res[0].modelSlug + " exists! Skipping.");
-										} else {
-											console.log(endpoint.endpoint);
-											let link =
-												"https://kerckhoff.dailybruin.com" + endpoint.endpoint;
-											fetch(link)
-												.then(response => response.json())
-												.then(articlejson => {
-													return createArticle(
-														articlejson,
-														link,
-														config ? config.issue : ""
-													);
-												})
-												.catch(err => {
-													console.error(
-														"Error saving article " +
-															endpoint.slug +
-															" to the database."
-													);
-													console.error(err);
-												});
-										}
-									})
-									.catch(() => {});
-							});
+			});
+
+			return runPromiseInSequense(waterfall);
+		})
+		.then(() => {
+			// Fetch each individual article and load into database.
+			return fetch(
+				"https://kerckhoff.dailybruin.com/api/packages/prime-old?endpoints=true"
+			);
+		})
+		.then(oldendpointsresponse => {
+			return oldendpointsresponse.json();
+		})
+		.then(endpoints => {
+			let waterfall = endpoints.data.map(endpoint => {
+				return () =>
+					Article.model
+						.find({
+							modelSlug: endpoint.slug
+						})
+						.exec()
+						.then(res => {
+							if (res.length !== 0) {
+								console.log(res[0].modelSlug + " exists! Skipping.");
+								return null;
+							} else {
+								link = "https://kerckhoff.dailybruin.com" + endpoint.endpoint;
+								return fetch(link);
+							}
+						})
+						.then(response => {
+							if (!response) {
+								return null; // fetched, skip
+							}
+							return response.json();
+						})
+						.then(articlejson => {
+							if (!articlejson) {
+								return null; // fetched, skip
+							}
+							try {
+								createArticle(articlejson, link, config ? config.issue : "");
+							} catch (err) {
+								console.error(
+									"Error saving article " + endpoint.slug + " to the database."
+								);
+								console.error(err);
+							}
 						});
-					});
-				})
-				.catch(err => {
-					console.log(
-						`Error retrieving list of endpoints from https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true: ${err}`
-					);
-				});
+			});
+
+			return runPromiseInSequense(waterfall);
+		})
+		.catch(err => {
+			console.log(
+				`Error retrieving list of endpoints from https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true: ${err}`
+			);
 		});
 };
 

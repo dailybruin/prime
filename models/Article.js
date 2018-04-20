@@ -1,6 +1,5 @@
 var keystone = require("keystone");
 var fm = require("front-matter");
-var cm = require("commonmark");
 var fetch = require("node-fetch");
 var marked = require("marked");
 var Types = keystone.Field.Types;
@@ -118,7 +117,8 @@ Article.schema.pre("save", function(next) {
 					let renderer = new marked.Renderer();
 					renderer.image = (href, title, text) => {
 						let info = text.split("|");
-						return `<div class="article__inlineimg ${info[1]}">
+						return `
+<div class="article__inlineimg ${info[1]}">
 			  <img src="${href}" />
 			  <div class="article__block-imgbox-photo-credit-wrapper">
 				 <div class="article__block-imgbox-photo-credit-name">${info[0]}</div>
