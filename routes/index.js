@@ -38,7 +38,7 @@ exports = module.exports = function(app) {
 	app.get("/:issue/:article", routes.views.article);
 	app.get("/past_issues", routes.views.past_issues);
 	app.get("/about-prime", routes.views.about_prime);
-	app.get("/latest_stories", routes.views.latest_stories);
+	app.get("/all-stories", routes.views.all_stories);
 	app.get("/:section", routes.views.section);
 	// app.get('/:category?', routes.views.section);
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:

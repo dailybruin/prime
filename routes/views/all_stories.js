@@ -84,5 +84,5 @@ exports = module.exports = function(req, res) {
 	});
 
 	// Render the view.
-	view.render("latest_stories_standalone");
+	view.render("all_stories");
 };
