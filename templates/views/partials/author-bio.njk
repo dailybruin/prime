@@ -1,8 +1,3 @@
-{# <meta property="og:type"               content="author-bio" />
-<meta property="og:title"              content="prime | {{ data.article.title }}" />
-<meta property="og:description"        content="{{ data.article.content.excerpt.html }}" />
-<meta property="og:image"              content="{{ data.article.cover.imgurl }}" /> #}
-
 <author-bio>
 <div class="hide-for-small-only flex-container">
 	<div class="article__author-bio-black-line-wrapper row">
@@ -10,15 +5,10 @@
 	</div>
 	<div class="row">	
 		<div class="article__author-bio-icon column medium-2">
-			<img src="{{ data.article.cover.imgurl }}">
+			<img src="{{ data.article.authorimgurl }}">
 		</div>
 		<div class="article__author-bio column medium-7">
-			Writer bio goes here. Really, heath bars are something 
-			close to an ideal chocolate. I think 100 grands are close 
-			but heath bars ooo they really take the cake hmm i’ve ran 
-			out of things to say but i need this here please thanks 
-			Love ya v much will be. Writer bio goes here. Really, heath bars 
-			are something close to an ideal chocolate.
+			{{ data.article.authorbio }}
 		</div>
 	</div>
 	<div class="article__author-bio-black-line-wrapper row">
@@ -31,23 +21,12 @@
 		<hr class="article__author-bio-black-line column small-7">
 	</div>
 	<div class="row">	
-		{# <div class="article__author-bio-space column small-2">
-		 	a
-		</div> #}
 		<div class="article__author-bio-icon column small-2">
-			<img src="{{ data.article.cover.imgurl }}">
+			<img src="{{ data.article.authorimgurl }}">
 		</div>
 		<div class="article__author-bio column small-7">
-			Writer bio goes here. Really, heath bars are something 
-			close to an ideal chocolate. I think 100 grands are close 
-			but heath bars ooo they really take the cake hmm i’ve ran 
-			out of things to say but i need this here please thanks 
-			Love ya v much will be. Writer bio goes here. Really, heath bars 
-			are something close to an ideal chocolate.
+			{{ data.article.authorbio }}
 		</div>
-		{# <div class="article__author-bio-space column small-1">
-			a
-		</div> #}
 	</div>
 	<div class="row">
 		<hr class="article__author-bio-black-line column small-7">
