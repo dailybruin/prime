@@ -43,7 +43,7 @@ Article.add({
 	// author: { hidden: true, type: Types.Relationship, ref: 'User', index: true },
 	author: { noedit: true, type: String },
 	authorimgurl: { noedit: true, label: "Author Image URL", type: String },
-	authorbio: { noedit: true, label: "Author Image ", type: String },
+	authorbio: { noedit: true, label: "Author Bio ", type: String },
 	// categories: { type: Types.Relationship, ref: 'ArticleCategory', many: true },
 	cover: {
 		imgurl: { noedit: true, label: "Cover Image URL", type: String },
@@ -81,7 +81,7 @@ Article.schema.pre("save", function(next) {
 
 					this.content.excerpt = metadata.excerpt;
 					this.author = metadata.author;
-					this.authorimgurl = metadata.authorimg; // json.images.s3[metadata.author.img].url;
+					this.authorimgurl = json.images.s3[metadata.authorimg].url;
 					this.authorbio = metadata.authorbio;
 					this.section = metadata.category.toLowerCase();
 					this.cover.imgurl = metadata.cover
