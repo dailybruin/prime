@@ -28,9 +28,9 @@
 {% macro page_number_button(number, alternative) %}
 	<div class="page-number__number">
 		{% if alternative %}
-			<a class="page-number__number-link" href="/latest_stories?page={{ number }}">{{ alternative }}</a>
+			<a class="page-number__number-link" href="/all-stories?page={{ number }}">{{ alternative }}</a>
 		{% else %}
-			<a class="page-number__number-link" href="/latest_stories?page={{ number }}">{{ number }}</a>
+			<a class="page-number__number-link" href="/all-stories?page={{ number }}">{{ number }}</a>
 		{% endif %}
 	</div>
 {% endmacro %}
@@ -38,9 +38,9 @@
 {% macro page_number_button_current(number, alternative) %}
 	<div class="page-number__number">
 		{% if alternative %}
-			<a class="page-number__number-link--current" href="/latest_stories?page={{ number }}">{{ alternative }}</a>
+			<a class="page-number__number-link--current" href="/all-stories?page={{ number }}">{{ alternative }}</a>
 		{% else %}
-			<a class="page-number__number-link--current" href="/latest_stories?page={{ number }}">{{ number }}</a>
+			<a class="page-number__number-link--current" href="/all-stories?page={{ number }}">{{ number }}</a>
 		{% endif %}
 	</div>
 {% endmacro %}
@@ -76,12 +76,12 @@
 			{#<div class="page-number__word-wrapper">#}
 				{#{% if shouldHaveFirst %}#}
 					{#<div class="page-number__word">#}
-						{#<a class="page-number__word-link" href="/latest_stories?page=1">FIRST</a>#}
+						{#<a class="page-number__word-link" href="/all-stories?page=1">FIRST</a>#}
 					{#</div>#}
 				{#{% endif %}#}
 				{#{% if shouldHaveLast %}#}
 					{#<div class="page-number__word">#}
-						{#<a class="page-number__word-link" href="/latest_stories?page={{ maxPageNumber }}">LAST</a>#}
+						{#<a class="page-number__word-link" href="/all-stories?page={{ maxPageNumber }}">LAST</a>#}
 					{#</div>#}
 				{#{% endif %}#}
 			{#</div>#}
