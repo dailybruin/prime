@@ -144,3 +144,11 @@
 	padding-right: 0;
 	margin: 3em 0;
 }
+
+.latest-stories__more {
+	color: black;
+
+	&:hover {
+		color: gray;
+	}
+}
