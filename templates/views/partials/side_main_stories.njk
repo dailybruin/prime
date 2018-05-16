@@ -1,10 +1,12 @@
 <div class="section_block">
   <div class="row">
-    <div class="medium-7 column">
+    <div class="medium-12 large-7 column">
       <a class="link__article" href="{{ article.path }}"><div class="section_block-title">{{ article.title }}</div></a>
     </div>
-    <div class="medium-5 column imgbox">
-      <a href="{{ article.path }}"><img src="{{ article.cover.imgurl }}" alt="{{ article.title }} cover image"></a>
+    <div class="medium-12 large-5 column imgbox">
+			<div class="row">
+      	<a href="{{ article.path }}"><img class="sidephoto" src="{{ article.cover.imgurl }}" alt="{{ article.title }} cover image"></a>
+			</div>
     </div>
   </div>
   <div class="row">
