@@ -1,4 +1,12 @@
-<form method ="GET" action="/search">
-	<input type="text" name="query">
-	<input type="submit" value="search">
-</form>
+{% extends "./layouts/base.njk" %}
+
+{% block content %}
+<div class="navbar-padding"></div>
+<div class="column medium-12 medium-centered">
+	<form method ="GET" action="/search">
+		<input type="text" name="query">
+		<input type="submit" value="search">
+	</form>
+</div>
+<div class="footer-padding"></div>
+{% endblock %}
