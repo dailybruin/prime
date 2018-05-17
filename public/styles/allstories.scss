@@ -1,5 +1,6 @@
 @import "_fonts";
 @import "_colors";
+@import "utils";
 /* mainstory.njk */
 #arimo {
 	font-family: "Arimo", sans-serif;
@@ -25,19 +26,16 @@
 	margin-bottom: 38.464pt;
 
 	img {
+		max-height: 470px;
 		display: block;
 		overflow: hidden;
-		max-width: 788px;
-		width: auto;
-		height: 470px;
-		background: grey;
 		margin-right: 44px;
-		display: block;
+		width: auto;
 		margin: auto;
+		background: grey;
 	}
 	.photo-credit-wrapper {
 		float: right;
-		//text-align: right;
 	}
 	.photo-credit-name,
 	.photo-credit-title {
@@ -57,6 +55,22 @@
 		height: 10%;
 		font-variant: small-caps;
 		text-align: left;
+	}
+}
+
+@media screen and (max-width: $small-only) {
+	.sidephoto {
+		height: auto;
+	}
+}
+
+@media screen and (min-width: $small-only) {
+	.sidephoto {
+		object-fit: cover;
+		display: block;
+		margin-left: 5%;
+		height: 100px;
+		width: 155px;
 	}
 }
 

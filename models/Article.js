@@ -1,6 +1,9 @@
 var keystone = require("keystone");
 var fm = require("front-matter");
+<<<<<<< HEAD
 var cm = require("commonmark");
+=======
+>>>>>>> beced6f07179e316b393a362ca6cc9c1b691c013
 var fetch = require("node-fetch");
 var marked = require("marked");
 var Types = keystone.Field.Types;
@@ -81,23 +84,40 @@ Article.schema.pre("save", function(next) {
 
 					this.content.excerpt = metadata.excerpt;
 					this.author = metadata.author;
-					this.authorimgurl = metadata.authorimg
-						? json.images.s3[metadata.authorimg].url
-						: "";
-					this.authorbio = metadata.authorbio ? metadata.authorbio : "";
 					this.section = metadata.category.toLowerCase();
-					this.cover.imgurl = metadata.cover
-						? json.images.s3[metadata.cover.img].url
-						: "";
+					this.authorimgurl = metadata.authorimg
+					? json.images.s3[metadata.authorimg].url
+					: "";
+					this.authorbio = metadata.authorbio ? metadata.authorbio : "";
+					// this.cover.imgurl = metadata.cover && json.images.s3[metadata.cover.img] ? json.images.s3[metadata.cover.img].url : "";
+					// THIS IS BAD! temporary ugly fix due to inconsistent formats
+					if (metadata.cover && metadata.cover.img) {
+						// some paths have format: prime/spring-2017/article/IMG_7274.JPG
+						// should be: IMG_7274.JPG
+						// THUS: substring from the last index of '/', -1 when not found
+						let fixedImagePath = metadata.cover.img.substring(
+							metadata.cover.img.lastIndexOf("/") + 1
+						);
+						let s3ImageObject = json.images.s3[fixedImagePath] || {};
+						this.cover.imgurl = s3ImageObject.url || "";
+						if (!this.cover.imgurl) {
+							console.log(
+								`WARNING: ${metadata.title} has bad cover image: ${
+									metadata.cover.img
+								}, which is not a key found in images.s3`
+							);
+						}
+					} else {
+						this.cover.imgurl = "";
+					}
+
 					this.cover.author = metadata.cover ? metadata.cover.author : "";
 					this.title = metadata.title;
 					this.prettyIssue = metadata.issue;
 					this.issue = metadata.issue.toLowerCase().replace(/\s+/g, "");
 					this.template = metadata.template
 						? metadata.template.toLowerCase()
-						: this.template
-							? this.template
-							: "article"; // "article" is the default template.
+						: this.template ? this.template : "article"; // "article" is the default template.
 					this.gallery = metadata.gallery
 						? metadata.gallery.map(image => json.images.s3[image].url)
 						: [];
@@ -106,7 +126,8 @@ Article.schema.pre("save", function(next) {
 					let renderer = new marked.Renderer();
 					renderer.image = (href, title, text) => {
 						let info = text.split("|");
-						return `<div class="article__inlineimg ${info[1]}">
+						return `
+<div class="article__inlineimg ${info[1]}">
 			  <img src="${href}" />
 			  <div class="article__block-imgbox-photo-credit-wrapper">
 				 <div class="article__block-imgbox-photo-credit-name">${info[0]}</div>

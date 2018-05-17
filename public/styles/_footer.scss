@@ -2,85 +2,101 @@
 @import "utils";
 
 @media screen and (max-width: 39.9375em) {
-  #footer-padder {
-    display: none;
-  }
+	#footer-padder {
+		display: none;
+	}
 }
 
 footer {
-  &.hidden {
-    display: none;
-  }
+	&.hidden {
+		display: none;
+	}
 
-  @media screen and (max-width: $small-only) {
-    height: 110px;
-  }
+	@media screen and (max-width: $small-only) {
+		height: auto;
+		padding-bottom: 14px;
+	}
 
-  @media screen and (min-width: $small-only) {
-    height: 74.5px;
-  }
+	@media screen and (min-width: $small-only) {
+		height: auto;
+		padding-bottom: 16px;
+	}
 
-  // height: 74.5px;
-  padding-top: 1em;
-  width: 100%;
-  background-color: $header-footer-black;
-  color: $white;
+	// height: 74.5px;
+	padding-top: 1em;
+	width: 100%;
+	background-color: $header-footer-black;
+	color: $white;
 
-  .logo-col {
-    text-align: center;
+	.logo-col {
+		text-align: center;
 
-    .db-logo {
-      height: 40px;
-    }
-  }
+		.db-logo {
+			height: 40px;
+		}
+	}
 
-  .text-left {
-    margin-top: 0.5rem;
-  }
+	.text-left {
+		margin-top: 0.5rem;
+	}
 
-  .social-right {
-    margin-top: 0.5rem;
+	.social-right {
+		margin-top: 0.5rem;
 
-    ul {
-      float: right;
+		ul {
+			float: right;
 
-      li {
-        font-size: 20px;
-        display: inline-block;
-        margin-right: 10px;
+			li {
+				font-size: 20px;
+				display: inline-block;
+				margin-right: 10px;
 
-        a {
-          color: $white;
-        }
+				a {
+					color: $white;
+				}
 
-        .fa-facebook-square:hover {
-          color: $facebook-blue;
-        }
+				.fa-facebook-square:hover {
+					color: $facebook-blue;
+				}
 
-        .fa-twitter-square:hover {
-          color: $twitter-blue;
-        }
+				.fa-twitter-square:hover {
+					color: $twitter-blue;
+				}
 
-        .fa-instagram:hover {
-          color: $instagram-pink;
-        }
-      }
-    }
-  }
+				.fa-instagram:hover {
+					color: $instagram-pink;
+				}
+			}
+		}
+	}
 
-  .about {
-    font-size: 1.1rem;
-    color: $white;
+	.about {
+		font-size: 1.1rem;
+		color: $white;
 
-    &:hover {
-      border-bottom: 1px solid;
-      color: $white;
-    }
-  }
+		&:hover {
+			border-bottom: 1px solid;
+			color: $white;
+		}
+	}
 
-  .footer-padder {
-    height: 56px;
-  }
+	.footer-padder {
+		height: 56px;
+	}
+
+	.desc {
+		font-size: 0.7rem;
+		color: $white;
+	}
+
+	.maillink {
+		font-size: 0.7rem;
+		font-weight: 400;
+		color: white;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }
 
 // .about-prime {
