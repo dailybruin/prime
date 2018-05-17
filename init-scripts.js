@@ -40,7 +40,14 @@ function createArticle(articlejson, endpoint, currentissue) {
 	article.endpoint = endpoint;
 	article.content.excerpt = metadata.excerpt;
 	article.author = metadata.author;
+	article.authorimgurl = metadata.author
+		? articlejson.images.s3[metadata.authorimg].url
+		: "";
+	article.authorbio = metadata.author ? metadata.authorbio : "";
 	article.section = metadata.category.toLowerCase();
+	article.cover.imgurl = metadata.cover
+		? articlejson.images.s3[metadata.cover.img].url
+		: "";
 	// article.cover.imgurl = metadata.cover && articlejson.images.s3[ metadata.cover.img ] ? articlejson.images.s3[ metadata.cover.img ].url : ""; // fix undefined issue
 	if (metadata.cover && metadata.cover.img) {
 		// some paths have format: prime/spring-2017/article/IMG_7274.JPG

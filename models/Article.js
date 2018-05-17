@@ -1,5 +1,9 @@
 var keystone = require("keystone");
 var fm = require("front-matter");
+<<<<<<< HEAD
+var cm = require("commonmark");
+=======
+>>>>>>> beced6f07179e316b393a362ca6cc9c1b691c013
 var fetch = require("node-fetch");
 var marked = require("marked");
 var Types = keystone.Field.Types;
@@ -41,6 +45,8 @@ Article.add({
 	title: { type: String, required: true },
 	// author: { hidden: true, type: Types.Relationship, ref: 'User', index: true },
 	author: { noedit: true, type: String },
+	authorimgurl: { noedit: true, label: "Author Image URL", type: String },
+	authorbio: { noedit: true, label: "Author Bio ", type: String },
 	// categories: { type: Types.Relationship, ref: 'ArticleCategory', many: true },
 	cover: {
 		imgurl: { noedit: true, label: "Cover Image URL", type: String },
@@ -79,7 +85,10 @@ Article.schema.pre("save", function(next) {
 					this.content.excerpt = metadata.excerpt;
 					this.author = metadata.author;
 					this.section = metadata.category.toLowerCase();
-
+					this.authorimgurl = metadata.authorimg
+					? json.images.s3[metadata.authorimg].url
+					: "";
+					this.authorbio = metadata.authorbio ? metadata.authorbio : "";
 					// this.cover.imgurl = metadata.cover && json.images.s3[metadata.cover.img] ? json.images.s3[metadata.cover.img].url : "";
 					// THIS IS BAD! temporary ugly fix due to inconsistent formats
 					if (metadata.cover && metadata.cover.img) {
