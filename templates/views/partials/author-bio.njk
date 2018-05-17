@@ -1,3 +1,4 @@
+{% if (data.article.authorbio | dump != '""') and (data.article.authorimgurl | dump != '""') %}
 <author-bio>
 <div class="hide-for-small-only flex-container">
 	<div class="article__author-bio-black-line-wrapper row">
@@ -33,3 +34,4 @@
 	</div>
 </div>
 </author-bio>
+{% endif %}
