@@ -36,4 +36,4 @@ node_modules
 public/styles/*.css
 public/*.map
 
-# Ignore .idea stuff
+.idea/
