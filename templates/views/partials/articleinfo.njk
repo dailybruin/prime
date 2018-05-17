@@ -4,7 +4,9 @@
 <meta property="og:image"              content="{{ data.article.cover.imgurl }}" />
 
 <articleinfo>
-<p class="article__category">{{ data.article.section | capitalize }}</p>
+<p class="article__category">
+  <a href="/{{ data.article.section}}" > {{ data.article.section | capitalize }} </a>
+</p>
 <h1 class="article__title">{{ data.article.title }}</h1>
 <div class="article__author byline">BY <span class="author-name">{{ data.article.author }}</span></div>
 <div class="article__issue">{{ data.article.prettyIssue }}</div>
