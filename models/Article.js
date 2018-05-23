@@ -7,7 +7,8 @@ let Schema = mongoose.Schema;
 let ArticleSchema = new Schema({
 	endpoint: { type: String },
 	template: { type: String, default: "article" },
-	modelSlug: { type: String },
+	slug: { type: String },
+	modelSlug: { type: String }, // NOT the same as slug - this is the slug as it is stored in Kerchoff.
 	featured: {
 		type: String,
 		default: "no",

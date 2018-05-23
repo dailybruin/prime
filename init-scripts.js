@@ -42,16 +42,20 @@ function createArticle(articlejson, endpoint) {
 			metadata.cover.img.lastIndexOf("/") + 1
 		);
 		let s3ImageObject = articlejson.images.s3[fixedImagePath] || {};
-		article.cover.imgurl = s3ImageObject.url || "";
+		imgurl = s3ImageObject.url || "";
 	}
+
+	let issueslug = metadata.issue.toLowerCase().replace(/\s+/g, "");
+	let titleslug = slug(metadata.title).toLowerCase();
 
 	article = new Article({
 		endpoint: endpoint,
 		template: metadata.template ? metadata.template.toLowerCase() : "article",
 		modelSlug: articlejson.slug,
+		slug: titleslug,
 		featured: article.issue == currentissue ? "featured" : "no",
 		section: metadata.category.toLowerCase(),
-		issue: metadata.issue.toLowerCase().replace(/\s+/g, ""),
+		issue: issueslug,
 		state: "published",
 		title: metadata.title,
 		author: metadata.author,
@@ -66,7 +70,7 @@ function createArticle(articlejson, endpoint) {
 			},
 			excerpt: metadata.excerpt
 		},
-		path: metadata.issue + "/" + slug(metadata.title, { lowercase: false }),
+		path: issueslug + "/" + titleslug,
 		prettyIssue: metadata.issue,
 		gallery: metadata.gallery
 			? metadata.gallery.map(image => articlejson.images.s3[image].url)
