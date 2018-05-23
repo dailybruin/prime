@@ -41,6 +41,8 @@ Article.add({
 	title: { type: String, required: true },
 	// author: { hidden: true, type: Types.Relationship, ref: 'User', index: true },
 	author: { noedit: true, type: String },
+	authorbio: { type: String },
+	authorimgurl: { type: String },
 	// categories: { type: Types.Relationship, ref: 'ArticleCategory', many: true },
 	cover: {
 		imgurl: { noedit: true, label: "Cover Image URL", type: String },
@@ -78,6 +80,10 @@ Article.schema.pre("save", function(next) {
 
 					this.content.excerpt = metadata.excerpt;
 					this.author = metadata.author;
+					this.authorbio = metadata.authorbio ? metadata.authorbio : "";
+					this.authorimgurl = metadata.authorimgurl
+						? json.images.s3[metadata.authorimgurl].url
+						: "";
 					this.section = metadata.category.toLowerCase();
 
 					// this.cover.imgurl = metadata.cover && json.images.s3[metadata.cover.img] ? json.images.s3[metadata.cover.img].url : "";

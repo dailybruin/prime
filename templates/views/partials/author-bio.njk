@@ -1,0 +1,37 @@
+{% if (data.article.authorbio | dump != '""') and (data.article.authorimgurl | dump != '""') %}
+<author-bio>
+<div class="hide-for-small-only flex-container">
+	<div class="article__author-bio-black-line-wrapper row">
+		<hr class="article__author-bio-black-line column medium-9">
+	</div>
+	<div class="row">	
+		<div class="article__author-bio-icon column medium-2">
+			<img src="{{ data.article.authorimgurl }}">
+		</div>
+		<div class="article__author-bio column medium-7">
+			{{ data.article.authorbio }}
+		</div>
+	</div>
+	<div class="article__author-bio-black-line-wrapper row">
+		<hr class="article__author-bio-black-line column medium-9">
+	</div>
+</div>
+
+<div class="show-for-small-only flex-container">
+	<div class="row">
+		<hr class="article__author-bio-black-line column small-7">
+	</div>
+	<div class="row">	
+		<div class="article__author-bio-icon column small-2">
+			<img src="{{ data.article.authorimgurl }}">
+		</div>
+		<div class="article__author-bio column small-7">
+			{{ data.article.authorbio }}
+		</div>
+	</div>
+	<div class="row">
+		<hr class="article__author-bio-black-line column small-7">
+	</div>
+</div>
+</author-bio>
+{% endif %}
