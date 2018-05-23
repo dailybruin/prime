@@ -81,8 +81,8 @@ Article.schema.pre("save", function(next) {
 					this.content.excerpt = metadata.excerpt;
 					this.author = metadata.author;
 					this.authorbio = metadata.authorbio ? metadata.authorbio : "";
-					this.authorimgurl = metadata.authorimgurl
-						? json.images.s3[metadata.authorimgurl].url
+					this.authorimgurl = metadata.authorimg
+						? json.images.s3[metadata.authorimg].url
 						: "";
 					this.section = metadata.category.toLowerCase();
 
