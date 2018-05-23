@@ -13,26 +13,32 @@
     "commonmark": "^0.28.1",
     "consolidate": "0.14.5",
     "dotenv": "4.0.0",
+    "express": "^4.16.3",
     "front-matter": "^2.3.0",
-    "keystone": "4.0.0-beta.5",
+    "http-errors": "^1.6.3",
     "lodash": "^4.13.1",
+    "marked": "^0.4.0",
+    "mongodb": "^3.0.7",
+    "mongoose": "^5.1.2",
     "node-fetch": "^2.0.0",
     "node-sass": "4.5.0",
     "node-sass-middleware": "0.11.0",
-    "nunjucks": "3.0.0"
+    "nunjucks": "^3.0.0",
+    "path": "^0.12.7",
+    "slug": "^0.9.1"
   },
   "devDependencies": {
     "eslint": "3.15.0",
-    "eslint-config-keystone": "3.0.0",
     "eslint-plugin-react": "^5.1.1",
     "husky": "^0.15.0-rc.8",
     "parcel-bundler": "^1.6.2",
     "prettier": "^1.11.1",
-    "pretty-quick": "^1.4.1"
+    "pretty-quick": "^1.4.1",
+    "nodemon": "^1.17.3"
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "node keystone.js",
+    "start": "nodemon server.js",
     "build-frontend": "parcel build public/js/index.js --out-dir public/",
     "dev-frontend": "parcel watch public/js/index.js --out-dir public/"
   }

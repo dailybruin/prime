@@ -10,4 +10,4 @@ RUN npm install --production --silent && \
 
 EXPOSE 3000
 ADD . /prime
-CMD node keystone.js
+CMD node server.js

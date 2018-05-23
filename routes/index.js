@@ -1,46 +1,39 @@
-/**
- * This file is where you define your application routes and controllers.
- *
- * Start by including the middleware you want to run for every request;
- * you can attach middleware to the pre('routes') and pre('render') events.
- *
- * For simplicity, the default setup for route controllers is for each to be
- * in its own file, and we import all the files in the /routes/views directory.
- *
- * Each of these files is a route controller, and is responsible for all the
- * processing that needs to happen for the route (e.g. loading data, handling
- * form submissions, rendering the view template, etc).
- *
- * Bind each route pattern your application should respond to in the function
- * that is exported from this module, following the examples below.
- *
- * See the Express application routing documentation for more information:
- * http://expressjs.com/api.html#app.VERB
- */
+let db = require("../db.js");
+let sortByIssueReversed = require("../utils.js").sortByIssueReversed;
 
-var keystone = require("keystone");
-var middleware = require("./middleware");
-var importRoutes = keystone.importer(__dirname);
+module.exports = async function(req, res, next) {
+	// res.locals.section is used to set the currently selected
+	// item in the header navigation.
+	res.locals.section = "home";
+	res.locals.data = {
+		config: res.locals.config,
+		featured: null, // Site-wide featured articles as specified in config.
+		mainarticle: null, // Main Article as specified in config.
+		articles: null // All articles.
+	};
 
-// Common Middleware
-keystone.pre("routes", middleware.initLocals);
-keystone.pre("render", middleware.flashMessages);
+	try {
+		res.locals.data.mainarticle = await db.Article.findOne({
+			slug: res.locals.data.config.mainarticle
+		}).exec();
 
-// Import Route Controllers
-var routes = {
-	views: importRoutes("./views")
-};
+		let allResults = await db.Article.find({
+			state: "published",
+			slug: {
+				$nin: res.locals.data.config.featured.concat([
+					res.locals.data.config.mainarticle
+				])
+			}
+		}).exec();
 
-// Setup Route Bindings
-exports = module.exports = function(app) {
-	// Views
-	app.get("/", routes.views.index);
-	app.get("/:issue/:article", routes.views.article);
-	app.get("/past_issues", routes.views.past_issues);
-	app.get("/about-prime", routes.views.about_prime);
-	app.get("/all-stories", routes.views.all_stories);
-	app.get("/:section", routes.views.section);
-	// app.get('/:category?', routes.views.section);
-	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
-	// app.get('/protected', middleware.requireUser, routes.views.protected);
+		allResults = allResults.map(o => o.toObject());
+		let sortedResults = allResults.slice();
+		sortedResults.sort(sortByIssueReversed);
+		res.locals.data.articles = sortedResults.slice(0, 5);
+
+		// Render the view
+		return res.render("index.njk");
+	} catch (err) {
+		return next(err);
+	}
 };
