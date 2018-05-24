@@ -1,4 +1,5 @@
 let db = require("../db.js");
+let fetch = require("node-fetch");
 let sortByIssueReversed = require("../utils.js").sortByIssueReversed;
 
 module.exports = async function(req, res, next) {
@@ -11,17 +12,40 @@ module.exports = async function(req, res, next) {
 		shouldHaveLast: false,
 		articles: null
 	};
+	res.locals.data.pageNumber = ~~(+req.query.page || 1);
 
-	// SHOULD FETCH ALL AND SORT instead of pagination now
 	let articles = [];
 	try {
-		articles = await db.Article.find().exec();
+		// If a search param was provided, search Kerchoff for the articles. Otherwise just provide all stories.
+		if (req.query.q) {
+			let query = "q=" + req.query.q + "&page=" + res.locals.data.pageNumber;
+			let articles_res = await fetch(
+				"https://kerckhoff.dailybruin.com/api/packages/prime/search?" + query
+			);
+			let articles_data = await articles_res.json();
+
+			let article_slugs = [];
+			for (let article of articles_data.data) {
+				article_slugs.push(article._source.slug);
+			}
+
+			if (req.query.section) {
+				articles = await db.Article.find({
+					section: req.query.section,
+					modelSlug: { $in: article_slugs }
+				}).exec();
+			} else {
+				articles = await db.Article.find({
+					modelSlug: { $in: article_slugs }
+				}).exec();
+			}
+		} else {
+			articles = await db.Article.find().exec();
+		}
 	} catch (err) {
 		return next(err);
 	}
 	let count = articles.length;
-
-	res.locals.data.pageNumber = ~~(+req.query.page || 1);
 
 	articles = articles.map(o => o.toObject());
 	let sortedArticles = articles.slice();
