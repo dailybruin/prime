@@ -45,6 +45,13 @@ function createArticle(articlejson, endpoint) {
 		imgurl = s3ImageObject.url || "";
 	}
 
+	let gallery = metadata.gallery
+		? metadata.gallery.map(
+				image =>
+					articlejson.images.s3[image.substring(image.lastIndexOf("/" + 1))].url
+		  )
+		: [];
+
 	let issueslug = metadata.issue.toLowerCase().replace(/\s+/g, "");
 	let titleslug = slug(metadata.title).toLowerCase();
 
@@ -72,9 +79,7 @@ function createArticle(articlejson, endpoint) {
 		},
 		path: issueslug + "/" + titleslug,
 		prettyIssue: metadata.issue,
-		gallery: metadata.gallery
-			? metadata.gallery.map(image => articlejson.images.s3[image].url)
-			: []
+		gallery: gallery
 	});
 
 	article.save(function(err) {
@@ -92,7 +97,7 @@ let loadArticles = async function() {
 	let link = null;
 	// Fetch each individual article and load into database.
 	let endpoints_response = await fetch(
-		"https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true"
+		"https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true&all=true"
 	);
 	let endpoints = await endpoints_response.json();
 
@@ -117,12 +122,13 @@ let loadArticles = async function() {
 				console.error(
 					"Error saving article " + endpoint.slug + " to the database."
 				);
-				console.error(err);
+				// console.error(err);
 			}
 		};
 		tasks.push(task());
 	}
 	await Promise.all(tasks); // Run all the promises in parallel.
+	console.log("Done loading articles.");
 };
 
 module.exports = loadArticles;
