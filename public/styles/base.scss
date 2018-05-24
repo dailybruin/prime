@@ -53,6 +53,11 @@ a.link__article {
 	text-transform: uppercase;
 }
 
-.category-link:link, .category-link:hover, .category-link:visited, .category-link:active {
+.category-link:link,
+.category-link:visited,
+.category-link:active {
 	color: black;
+}
+.category-link:hover {
+	color: gray;
 }
