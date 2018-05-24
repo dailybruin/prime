@@ -1,15 +1,13 @@
 <div class="picture" itemscope itemtype="http://schema.org/ImageGallery">
-  {% for i in range(0, 3) %}
-  <div class="row">
-    {% for j in range(i*3, (i*3)+3) %}
-      <div class="photo-gallery column large-4">
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-          <a data-img="{{ data.article.gallery[j] }}" itemprop="contentUrl" data-size="1700x2200">
-              <img src="{{ data.article.gallery[j] }}" itemprop="thumbnail" alt="Image description" />
-          </a>
-        </figure>
-      </div>
-    {% endfor %}
+
+{% for item in data.article.gallery %}
+  <div class="photo-gallery column large-4">
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+	  <a data-img="{{ item }}" itemprop="contentUrl" data-size="1700x2200">
+		  <img src="{{ item }}" itemprop="thumbnail" alt="Image description" />
+	  </a>
+	</figure>
   </div>
-  {% endfor %}
+{% endfor %}
+
 </div>
