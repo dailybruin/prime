@@ -12,7 +12,7 @@
       </div>
       </a>
       <div class="col3__block-textbox">
-        <h3 class="col3__block-textbox-pretitle">{{ featured.section }}</h3>
+        <h3 class="col3__block-textbox-pretitle"><a href="/{{ featured.section }}" class="category-link">{{ featured.section | upper }}</a></h3>
         <a class="link__article" href="{{ featured.path }}">
           <h2 class="col3__block-textbox-title">{{ featured.title }}</h2>
           <h2 class="col3__block-textbox-author">BY <span class="author-name">{{ featured.author }}</span></h2>

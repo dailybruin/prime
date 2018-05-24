@@ -7,7 +7,7 @@
 				<div class="article-number">{{ loop.index }}.</div> 
 			</div>
 			<div class="column small-6">
-				<p class="article-type">{{ article.section | capitalize }}</p>
+				<p class="article-type"><a href="/{{ article.section }}" class="category-link">{{ article.section | upper }}</a></p>
 				<p class="article-title">{{ article.title }}</p>
 				<p class="article-author">{{ article.author }}</p>
 			</div>

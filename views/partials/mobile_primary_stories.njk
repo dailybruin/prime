@@ -5,7 +5,7 @@
     </a>
   </div>
   <div class="content">
-    <h3>{{ data.mainarticle.section }}</h3>
+    <h3><a href="/{{ data.mainarticle.section }}" class="category-link">{{ data.mainarticle.section | upper }}</a></h3>
     <a class="link__article" href="{{data.mainarticle.path }}">
       <h2>{{ data.mainarticle.title }}</h2>
       <h4>BY <span class="author-name">{{ data.mainarticle.author }}</span></h4>
