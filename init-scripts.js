@@ -92,7 +92,7 @@ let loadArticles = async function() {
 	let link = null;
 	// Fetch each individual article and load into database.
 	let endpoints_response = await fetch(
-		"https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true"
+		"https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true?all=true"
 	);
 	let endpoints = await endpoints_response.json();
 
