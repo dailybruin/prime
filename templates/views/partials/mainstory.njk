@@ -14,7 +14,9 @@
 	<div class="column large-4">
 		<div class="main-story">
 			<div class="category">
-				{{ data.mainarticle.section }}
+			<a href="/{{ data.mainarticle.section }}" class="category-link">
+				{{ data.mainarticle.section | upper }}
+			</a>
 			</div>
 			<a class="link__article" href="{{mainarticlepath}}">
         <div class="title">
