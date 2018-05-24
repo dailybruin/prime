@@ -5,7 +5,7 @@
 
 <articleinfo>
 <p class="article__category">
-  <a href="/{{ data.article.section}}" > {{ data.article.section | capitalize }} </a>
+  <a href="/{{ data.article.section}}" class="category-link"> {{ data.article.section | upper }} </a>
 </p>
 <h1 class="article__title">{{ data.article.title }}</h1>
 <div class="article__author byline">BY <span class="author-name">{{ data.article.author }}</span></div>

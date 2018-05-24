@@ -10,7 +10,7 @@
       </div>
     </a>
       <div class="large-8 column latest-stories__textbox">
-        <h2 class="latest-stories__textbox-pretitle">{{ story.section }}</h2>
+        <h2 class="latest-stories__textbox-pretitle"><a href="/{{ story.section }}" class="category-link">{{ story.section | upper }}</a></h2>
         <a class="link__article" href="{{ story.path }}">
           <h2 class="latest-stories__textbox-title">{{ story.title }}</h2>
           <h3 class="latest-stories__textbox-author">BY <span class="author-name">{{ story.author }}</span></h3>
@@ -30,7 +30,7 @@
     </div> #}
     <div class="small-8 column latest-stories__textbox-small">
       <a class="link__article" href="{{ story.path }}">
-        <h2 class="latest-stories__textbox-pretitle-small">{{ story.category }}</h2>
+        <h2 class="latest-stories__textbox-pretitle-small"><a href="/{{ story.category }}" class="category-link">{{ story.category | upper }}</a></h2>
         <h2 class="latest-stories__textbox-title-small">{{ story.title }}</h2>
         <h3 class="latest-stories__textbox-author-small">BY <span class="author-name">{{ story.author }}</span></h3>
       </a>
