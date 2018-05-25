@@ -25,6 +25,8 @@ let ArticleSchema = new Schema({
 	publishedDate: { type: Date, default: Date.now, index: true },
 	title: { type: String },
 	author: { type: String },
+	authorbio: { type: String },
+	authorimg: { type: String },
 	cover: {
 		imgurl: { type: String },
 		author: { type: String }

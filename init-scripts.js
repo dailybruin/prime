@@ -33,6 +33,15 @@ function createArticle(articlejson, endpoint) {
 	let md = articledata.body;
 	let html = marked(md, { renderer: renderer });
 
+	let authorimgurl = "";
+	if (metadata.authorimg) {
+		let fixedImagePath = metadata.authorimg.substring(
+			metadata.authorimg.lastIndexOf("/") + 1
+		);
+		let s3ImageObject = articlejson.images.s3[fixedImagePath] || {};
+		authorimgurl = s3ImageObject.url || "";
+	}
+
 	let imgurl = "";
 	if (metadata.cover && metadata.cover.img) {
 		// some paths have format: prime/spring-2017/article/IMG_7274.JPG
@@ -66,6 +75,8 @@ function createArticle(articlejson, endpoint) {
 		state: "published",
 		title: metadata.title,
 		author: metadata.author,
+		authorbio: metadata.authorbio,
+		authorimg: authorimgurl,
 		cover: {
 			imgurl: imgurl,
 			author: metadata.cover ? metadata.cover.author : ""
