@@ -67,9 +67,16 @@ exports = module.exports = function(req, res) {
 				.model.findOne({ slug: locals.data.config.mainarticle })
 				.populate("article" /*issue'*/);
 
-			// locals.data.featured = await keystone.list('Article').model
-			// 	.find().where('slug').in(locals.data.config.featured)
-			// 	.populate('article' /*issue'*/);
+			locals.data.featured = await keystone
+				.list("Article")
+				.model.find()
+				.where("slug")
+				.in(locals.data.config.featured)
+				.populate("article" /*issue'*/);
+
+			console.log(
+				locals.data.config.featured + [locals.data.config.mainarticle]
+			);
 
 			let allResults = await keystone
 				.list("Article")
@@ -78,6 +85,7 @@ exports = module.exports = function(req, res) {
 				})
 				.where("slug")
 				.nin(locals.data.config.featured + [locals.data.config.mainarticle]);
+
 			allResults = allResults.map(o => o.toObject());
 			let sortedResults = allResults.slice();
 			sortedResults.sort(sortByIssueReversed);
