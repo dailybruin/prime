@@ -23,10 +23,6 @@
 	margin-right: auto;
 }
 
-.three-cols {
-	flex-grow: 1;
-}
-
 .two-cols {
 	height: auto;
 	width: 500px;
@@ -36,4 +32,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
+}
+
+.photo-gallery.column.large-4 {
+	flex-grow: 1;
 }
