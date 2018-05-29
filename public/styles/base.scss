@@ -52,3 +52,12 @@ a.link__article {
 .author-name {
 	text-transform: uppercase;
 }
+
+.category-link:link,
+.category-link:visited,
+.category-link:active {
+	color: black;
+}
+.category-link:hover {
+	color: gray;
+}

@@ -222,13 +222,14 @@ let loadArticles = function(keystone) {
 			config = cfg;
 			// Fetch each individual article and load into database.
 			return fetch(
-				"https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true"
+				"https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true&all=true"
 			);
 		})
 		.then(endpointsresponse => {
 			return endpointsresponse.json();
 		})
 		.then(endpoints => {
+			console.log(endpoints);
 			let waterfall = endpoints.data.map(endpoint => {
 				return () =>
 					Article.model
@@ -268,6 +269,7 @@ let loadArticles = function(keystone) {
 
 			return runPromiseInSequense(waterfall);
 		})
+		/*
 		.then(() => {
 			// Fetch each individual article and load into database.
 			return fetch(
@@ -317,6 +319,7 @@ let loadArticles = function(keystone) {
 
 			return runPromiseInSequense(waterfall);
 		})
+		*/
 		.catch(err => {
 			console.log(
 				`Error retrieving list of endpoints from https://kerckhoff.dailybruin.com/api/packages/prime?endpoints=true: ${err}`

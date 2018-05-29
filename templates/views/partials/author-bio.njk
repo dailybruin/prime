@@ -4,12 +4,16 @@
 	<div class="article__author-bio-black-line-wrapper row">
 		<hr class="article__author-bio-black-line column medium-9">
 	</div>
-	<div class="row">	
-		<div class="article__author-bio-icon column medium-2">
-			<img src="{{ data.article.authorimgurl }}">
-		</div>
-		<div class="article__author-bio column medium-7">
-			{{ data.article.authorbio }}
+	<div class="row article__author-bio-offset">	
+		<div class="column large-8 large-centered">
+			<div class="row">
+				<div class="article__author-bio-icon column medium-2">
+					<img src="{{ data.article.authorimgurl }}">
+				</div>
+				<div class="article__author-bio column medium-10">
+					{{ data.article.authorbio }}
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="article__author-bio-black-line-wrapper row">
@@ -22,12 +26,15 @@
 		<hr class="article__author-bio-black-line column small-7">
 	</div>
 	<div class="row">	
-		<div class="article__author-bio-icon column small-2">
+		<div class="article__author-bio-icon column small-12 small-centered">
 			<img src="{{ data.article.authorimgurl }}">
 		</div>
-		<div class="article__author-bio column small-7">
+	</div>
+	<div class="row">
+		<div class="article__author-bio column small-8 small-centered">
 			{{ data.article.authorbio }}
 		</div>
+			
 	</div>
 	<div class="row">
 		<hr class="article__author-bio-black-line column small-7">
