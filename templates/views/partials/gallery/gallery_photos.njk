@@ -9,7 +9,7 @@
 <div class="picture" itemscope itemtype="http://schema.org/ImageGallery">
 
 {% for item in data.article.gallery %}
-  <div class="photo-gallery column large-4 three-cols ">
+  <div class="photo-gallery column large-4 two-cols ">
 	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 	  <a data-img="{{ item }}" itemprop="contentUrl" data-size="1700x2200">
 		  <img src="{{ item }}" itemprop="thumbnail" alt="Image description" />
