@@ -6,6 +6,12 @@
 	<div class="column medium-10 medium-centered">
 		<div class="latest-stories__container latest-stories_standalone__container">
 			<h1 class="latest-stories__title">ALL STORIES</h1>
+			<div class="row">
+				<form method = "GET" action="/all_stories">
+					<input type="text" name="query">
+					<input type="submit" value="search">
+				</form>
+			</div>
 			<div class="row small-collapse">
 				{% for story in data.articles %}
 					<div class="column small-12">
@@ -17,7 +23,7 @@
 			<!-- <hr class="hide-for-small-only latest-stories__black-line"> -->
 		</div>
 	</div>
-	
+
 	{{ pn.page_number(data.pageNumber, data.maxPageNumber, data.shouldHaveFirst, data.shouldHaveLast) }}
-	
+
 {% endblock %}
