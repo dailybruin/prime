@@ -1,0 +1,45 @@
+.article__author-bio-space {
+	color: white;
+}
+
+.article__author-bio-offset {
+	margin-left: 5em !important;
+}
+
+.article__author-bio-icon {
+	position: relative;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+	border-radius: 50%;
+	// margin-left: 16em;
+	img {
+		width: 100px;
+		height: 100px;
+		max-width: none;
+		margin-left: -22%;
+	}
+}
+
+.article__author-bio {
+	font-style: italic;
+	font-family: "Montserrat", sans-serif;
+	font-weight: lighter;
+	// margin-right: 7em;
+}
+
+.article__author-bio-black-line {
+	margin-right: 5em;
+}
+
+.show-for-small-only {
+	.article__author-bio-icon {
+		// margin-right: 16em;
+		// margin-bottom: 1em;
+		// margin-left: 14em;
+	}
+	.article__author-bio-black-line {
+		// padding-left: 2em;
+		// padding-right: 3em;
+	}
+}

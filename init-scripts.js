@@ -40,6 +40,10 @@ function createArticle(articlejson, endpoint, currentissue) {
 	article.endpoint = endpoint;
 	article.content.excerpt = metadata.excerpt;
 	article.author = metadata.author;
+	article.authorbio = metadata.authorbio ? metadata.authorbio : "";
+	article.authorimgurl = metadata.authorimg
+		? json.images.s3[metadata.authorimg].url
+		: "";
 	article.section = metadata.category.toLowerCase();
 	// article.cover.imgurl = metadata.cover && articlejson.images.s3[ metadata.cover.img ] ? articlejson.images.s3[ metadata.cover.img ].url : ""; // fix undefined issue
 	if (metadata.cover && metadata.cover.img) {
