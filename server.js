@@ -17,8 +17,9 @@ nunjucks.configure("views", {
 // Autocompile sass.
 app.use(
 	sass({
-		src: __dirname,
+		src: path.join(__dirname, "public/styles"),
 		dest: path.join(__dirname, "public/styles"),
+		indentedSyntax: false,
 		debug: false,
 		outputStyle: "compressed",
 		prefix: "/styles"
