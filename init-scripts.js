@@ -55,9 +55,16 @@ function createArticle(articlejson, endpoint) {
 	let issueslug = metadata.issue.toLowerCase().replace(/\s+/g, "");
 	let titleslug = slug(metadata.title).toLowerCase();
 
+	// Determine template. Default to either "article" or "gallery" depending on whether a gallery is present.
+	let template = metadata.template
+		? metadata.template.toLowerCase()
+		: gallery.length
+			? "gallery"
+			: "article";
+
 	article = new Article({
 		endpoint: endpoint,
-		template: metadata.template ? metadata.template.toLowerCase() : "article",
+		template: template,
 		modelSlug: articlejson.slug,
 		slug: titleslug,
 		featured: article.issue == currentissue ? "featured" : "no",
