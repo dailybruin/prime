@@ -17,7 +17,7 @@ module.exports = async function(req, res, next) {
 	try {
 		let articles = await db.Article.find({
 			section: req.params.section
-		});
+		}).exec();
 
 		// Check which articles are featured.
 		for (let i = 0; i < articles.length; i++) {
