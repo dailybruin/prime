@@ -28,5 +28,4 @@ This project follows a model-view-controller architecture pattern.
 ├── utils.js
 ├── db.js - This file connects to the database and makes available the models (e.g. Article model) that can be used to query the database. Include this file in any file you need to perform database operations in.
 Note - thanks to the way ES6 require() works, we only connect to the database once - not each time this is included.
-└── init-scripts.js - The "loadArticles()" function in this file is run every time server.js starts. It is used to retrieve
-all prime articles from Kerchoff and store them in the local mongo database.
+└── init-scripts.js - Run `node init-scripts.js`. Used to retrieve all prime articles from Kerchoff and store them in the local mongo database.

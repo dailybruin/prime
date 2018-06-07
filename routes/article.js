@@ -30,7 +30,7 @@ module.exports = async function(req, res, next) {
 			.exec();
 
 		// Render the view, based on the type of template used by the article.
-		article.template = article.template ? "article" : article.template;
+		article.template = article.template ? article.template : "article";
 		return res.render(article.template + ".njk");
 	} catch (err) {
 		return next(err);

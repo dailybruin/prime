@@ -13,5 +13,6 @@ mongoose
 let Article = require("./models/Article.js");
 
 module.exports = {
+	mongoose: mongoose,
 	Article: Article
 };

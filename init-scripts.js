@@ -2,7 +2,7 @@ const fm = require("front-matter");
 const marked = require("marked");
 const fetch = require("node-fetch");
 const slug = require("slug");
-const Article = require("./db.js").Article;
+const { Article, mongoose } = require("./db.js");
 const currentissue = require("./config.js").issue;
 
 /**
@@ -100,7 +100,20 @@ function createArticle(articlejson, endpoint) {
 	});
 }
 
-let loadArticles = async function() {
+(async function loadArticles() {
+	// Drop previous articles.
+	try {
+		if (mongoose.connection && mongoose.connection.collections["articles"]) {
+			await mongoose.connection.collections["articles"].drop();
+		} else if (!mongoose.connection) {
+			console.error("Run mongod first. Nothing done.");
+			process.exit();
+		}
+	} catch (err) {
+		console.error("Error dropping Articles.");
+	}
+	console.log("Cleared previously existing articles.");
+
 	let link = null;
 	// Fetch each individual article and load into database.
 	let endpoints_response = await fetch(
@@ -136,6 +149,7 @@ let loadArticles = async function() {
 	}
 	await Promise.all(tasks); // Run all the promises in parallel.
 	console.log("Done loading articles.");
-};
 
-module.exports = loadArticles;
+	process.exit();
+})();
+// module.exports = loadArticles;
